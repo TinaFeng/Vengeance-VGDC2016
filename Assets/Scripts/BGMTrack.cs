@@ -9,11 +9,12 @@ public class BGMTrack : MonoBehaviour {
 	public int numClips;
 	public int beatsPerClip;
 
-	private int currentClip;
+	private int currentClip = 0;
+	private bool started = false;
 
 	// Use this for initialization
 	void Start () {
-		currentClip = 0;
+		started = false;
 	}
 	
 /*
@@ -25,9 +26,10 @@ public class BGMTrack : MonoBehaviour {
 
 	// getNextClip returns the first clip if startFromBeginning is true
 	// or the next clip in the list if false
-	public AudioClip getNextClip(bool startFromBeginning = false) {
-		if (startFromBeginning) {
+	public AudioClip getNextClip() {
+		if (!started) {
 			currentClip = 0;
+			started = true;
 		} else {
 			currentClip = (currentClip  + 1) % clips.Length;
 		}

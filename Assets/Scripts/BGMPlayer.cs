@@ -23,6 +23,7 @@ public class BGMPlayer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		double time = AudioSettings.dspTime;
+
 		if (time + 1.0F > nextEventTime) {
 			audioSources[flip].clip = track.getNextClip();
 			audioSources[flip].PlayScheduled(nextEventTime);
