@@ -3,10 +3,8 @@ using System.Collections;
 
 public class BGMTrack : MonoBehaviour {
 
-	public string trackName;
 	public AudioClip[] clips; // order of the AudioClips matters!
 	public double bpm;
-	public int numClips;
 	public int beatsPerClip;
 
 	private int currentClip = 0;
