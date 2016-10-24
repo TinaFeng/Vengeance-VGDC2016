@@ -9,7 +9,9 @@ public class BGMPlayer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		audioSource = GetComponent<AudioSource>();
-
+		audioSource.clip = clipList[0];
+		audioSource.loop = true;
+		audioSource.Play();
 	}
 	
 	// Update is called once per frame
