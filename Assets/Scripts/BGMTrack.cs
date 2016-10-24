@@ -28,10 +28,9 @@ public class BGMTrack : MonoBehaviour {
 	public AudioClip getNextClip(bool startFromBeginning = false) {
 		if (startFromBeginning) {
 			currentClip = 0;
-			return clips[currentClip];
+		} else {
+			currentClip = (currentClip  + 1) % clips.Length;
 		}
-		
-		currentClip = (currentClip  + 1) % clips.Length;
 		return clips[currentClip];
 	}
 }
