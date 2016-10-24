@@ -4,13 +4,12 @@ using System.Collections;
 public class BGMPlayer : MonoBehaviour {
 
 	public AudioSource audioSource;	
-	public AudioClip[] clipList;
+	public BGMTrack track;
 
 	// Use this for initialization
 	void Start () {
 		audioSource = GetComponent<AudioSource>();
-		audioSource.clip = clipList[0];
-		audioSource.loop = true;
+		audioSource.clip = track.getNextClip(true);
 		audioSource.Play();
 	}
 	
