@@ -17,7 +17,7 @@ public class BGMPlayer : MonoBehaviour {
 			audioSources[i] = child.AddComponent<AudioSource>();
 		}
 
-		nextEventTime = AudioSettings.dspTime + 2.0F;
+		nextEventTime = AudioSettings.dspTime + track.startDelay;
 	}
 	
 	// Update is called once per frame

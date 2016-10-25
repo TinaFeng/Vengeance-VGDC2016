@@ -9,9 +9,10 @@ public class TEMP_GameManager : MonoBehaviour {
 	void Start () {
 		bgmPlayer = GetComponent<BGMPlayer>();
 	}
-	
+/*	
 	// Update is called once per frame
 	void Update () {
 	
 	}
+*/
 }
