@@ -6,7 +6,6 @@ public class BGMTrack : MonoBehaviour {
 	public AudioClip[] clips; // order of the AudioClips matters!
 	public double bpm;
 	public int beatsPerClip;
-	public double startDelay = 0.0F; // delay before first clip plays
 
 	private int currentClip = 0;
 	private bool started = false;

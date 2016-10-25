@@ -7,8 +7,9 @@ public class BGMPlayer : MonoBehaviour {
 	private AudioSource[] audioSources;
 	public BGMTrack track;
 	public float startingVolume = 1.0F;
-	private float mainVolume = 1.0F;
+	public double startDelay = 0.0F;
 
+	private float currentVolume = 1.0F;
 	private double nextEventTime;
 	private int flip = 0;
 
@@ -21,7 +22,7 @@ public class BGMPlayer : MonoBehaviour {
 			audioSources[i] = child.AddComponent<AudioSource>();
 		}
 
-		nextEventTime = AudioSettings.dspTime + track.startDelay;
+		nextEventTime = AudioSettings.dspTime + startDelay;
 	}
 	
 	// Update is called once per frame
@@ -52,11 +53,11 @@ public class BGMPlayer : MonoBehaviour {
 		double DEBUG_fadeoutTimer = AudioSettings.dspTime;
 		Debug.Log(string.Format("fadeOut() began at time {0}", DEBUG_fadeoutTimer));
 
-		while (mainVolume < startingVolume) {
+		while (currentVolume < startingVolume) {
 			foreach (var source in audioSources) {
 				source.volume += interval;
 			}
-			mainVolume += interval;		
+			currentVolume += interval;		
 			yield return new WaitForSeconds(lengthInSeconds * interval);
 		}
 
@@ -68,11 +69,11 @@ public class BGMPlayer : MonoBehaviour {
 		double DEBUG_fadeoutTimer = AudioSettings.dspTime;
 		Debug.Log(string.Format("fadeOut() began at time {0}", DEBUG_fadeoutTimer));
 
-		while (mainVolume > 0.0F) {
+		while (currentVolume > 0.0F) {
 			foreach (var source in audioSources) {
 				source.volume -= interval;
 			}
-			mainVolume -= interval;		
+			currentVolume -= interval;		
 			yield return new WaitForSeconds(lengthInSeconds * interval);
 		}
 		
