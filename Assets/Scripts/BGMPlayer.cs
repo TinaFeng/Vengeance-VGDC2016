@@ -3,7 +3,8 @@ using System.Collections;
 
 public class BGMPlayer : MonoBehaviour {
 
-	private AudioSource[] audioSources = new AudioSource[2];
+	public int numAudioSources = 2;
+	private AudioSource[] audioSources;
 	public BGMTrack track;
 
 	private double nextEventTime;
@@ -11,6 +12,7 @@ public class BGMPlayer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		audioSources = new AudioSource[numAudioSources];
 		for (int i = 0; i < audioSources.Length; ++i) {
 			GameObject child = new GameObject("MusicPlayer");
 			child.transform.parent = gameObject.transform;
@@ -30,5 +32,9 @@ public class BGMPlayer : MonoBehaviour {
 			nextEventTime += 60.0F / track.bpm * track.beatsPerClip;
 			flip = 1 - flip;
 		}
+	}
+
+	public IEnumerator fadeOut(double seconds) {
+		return null;	
 	}
 }
