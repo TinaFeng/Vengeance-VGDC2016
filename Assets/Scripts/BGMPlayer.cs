@@ -6,7 +6,7 @@ public class BGMPlayer : MonoBehaviour {
 	public int numAudioSources = 2;
 	private AudioSource[] audioSources;
 	public BGMTrack track;
-	public float startingVolume = 1.0F;
+	public float volume = 1.0F;
 	public double startDelay = 0.0F;
 
 	private float currentVolume = 1.0F;
@@ -53,7 +53,7 @@ public class BGMPlayer : MonoBehaviour {
 		double DEBUG_fadeoutTimer = AudioSettings.dspTime;
 		Debug.Log(string.Format("fadeOut() began at time {0}", DEBUG_fadeoutTimer));
 
-		while (currentVolume < startingVolume) {
+		while (currentVolume < volume) {
 			foreach (var source in audioSources) {
 				source.volume += interval;
 			}
