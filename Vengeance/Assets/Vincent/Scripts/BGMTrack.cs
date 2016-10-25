@@ -14,16 +14,9 @@ public class BGMTrack : MonoBehaviour {
 	void Start () {
 		started = false;
 	}
-	
-/*
-	// Update is called once per frame
-	void Update () {
-	
-	}
-*/
 
-	// getNextClip returns the first clip if startFromBeginning is true
-	// or the next clip in the list if false
+	// returns clips[0] if the BGMTrack object has just been initialized
+	// else, it returns the next clip in the array
 	public AudioClip getNextClip() {
 		if (!started) {
 			currentClip = 0;
