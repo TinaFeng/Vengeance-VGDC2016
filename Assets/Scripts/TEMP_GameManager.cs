@@ -21,10 +21,14 @@ public class TEMP_GameManager : MonoBehaviour {
 
 	private IEnumerator DEBUG_fadeTestCoroutine() {
 		DEBUG_waitThenFadeOutMusic();
+		
+		// fadeOut is also a coroutine, so this WaitForSeconds needs to be longer than the fadeOut
+		// just so that fadeIn isn't called while fadeOut is still executing
 		yield return new WaitForSeconds(4.0F);
-		DEBUG_waitThenFadeInMusic();
-	}
-
+		
+		DEBUG_waitThenFadeInMusic();			
+	}		
+		
 	void DEBUG_waitThenFadeInMusic() {
 		StartCoroutine(DEBUG_waitFadeIn());
 	}
