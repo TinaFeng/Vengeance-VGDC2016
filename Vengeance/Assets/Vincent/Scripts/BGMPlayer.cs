@@ -21,6 +21,7 @@ public class BGMPlayer : MonoBehaviour {
 			child.transform.parent = gameObject.transform;
 			audioSources[i] = child.AddComponent<AudioSource>();
 		}
+		track = GetComponentInChildren<BGMTrack>();
 
 		nextEventTime = AudioSettings.dspTime + startDelay;
 	}
