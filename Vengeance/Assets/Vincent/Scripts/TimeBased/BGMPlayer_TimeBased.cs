@@ -22,6 +22,8 @@ public class BGMPlayer_TimeBased : MonoBehaviour {
 			audioSources[i] = child.AddComponent<AudioSource>();
 		}
 
+		track = GetComponentInChildren<BGMTrack_TimeBased>();
+
 		nextEventTime = AudioSettings.dspTime + startDelay;
 	}
 	
