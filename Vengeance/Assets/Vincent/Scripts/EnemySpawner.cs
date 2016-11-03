@@ -3,13 +3,12 @@ using System.Collections;
 
 public class EnemySpawner : MonoBehaviour {
 
-	public EnemyPlaceholder enemyType; 
+	public BaseEnemy enemyType; 
 	private bool spawningStarted;
 	
 	// Use this for initialization
 	void Start () {
-		// TODO: should have abstract EnemyBase type, or is GameObject good enough?
-		enemyType = GetComponentInChildren<EnemyPlaceholder>();
+		enemyType = GetComponentInChildren<BaseEnemy>();
 		spawningStarted = false;
 	}
 	
