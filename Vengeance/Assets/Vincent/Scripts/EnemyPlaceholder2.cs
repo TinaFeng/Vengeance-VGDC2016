@@ -18,7 +18,7 @@ public class EnemyPlaceholder2 : BaseEnemy {
 	}
 
 	protected override void move() {
-		rb.MovePosition(Vector2.left);
+		rb.MovePosition(rb.position + Vector2.left * 2 * Time.fixedDeltaTime);
 	}
 
 	void OnBecameVisible() {
@@ -27,5 +27,6 @@ public class EnemyPlaceholder2 : BaseEnemy {
 
 	void OnBecameInvisible() {
 		isVisible = false;	
+		Destroy(gameObject);
 	}
 }

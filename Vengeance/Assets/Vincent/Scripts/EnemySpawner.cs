@@ -22,8 +22,8 @@ public class EnemySpawner : MonoBehaviour {
 
 	private IEnumerator spawnEnemyOncePerSecondCoroutine() {
 		for (int i = 0; i < 3; ++i) {
-			Debug.Log("Instantiating enemy " + i);
 			Instantiate(enemyType, transform.position, transform.rotation);
+			Debug.Log("Spawned enemy " + i);
 			yield return new WaitForSeconds(1.0f);
 		}
 	}
