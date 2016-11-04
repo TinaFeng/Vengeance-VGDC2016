@@ -51,6 +51,7 @@ public class EnemySpawner : MonoBehaviour {
 		}
 
 		foreach (EnemySpawnInfo spawn in spawnPlan) {
+			Debug.Log("Spawning " + spawn.enemyType + " with delay " + spawn.delayInSecs);
 			if (spawn.delayInSecs > 0.0f) {
 				yield return new WaitForSeconds(spawn.delayInSecs);
 			}
