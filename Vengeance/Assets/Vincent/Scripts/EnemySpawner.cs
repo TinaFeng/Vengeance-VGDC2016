@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class EnemySpawner : MonoBehaviour {
 
 	public Dictionary<string, GameObject> enemyDict;
+	public EnemySpawnInfo[] spawnPlan;
 	private bool spawningStarted;
 	
 	// Use this for initialization
@@ -29,14 +30,13 @@ public class EnemySpawner : MonoBehaviour {
 	}
 
 	private void startSpawning() {
-		StartCoroutine(spawnEnemiesFromDictionary());
+		StartCoroutine(startSpawnPlan());
 	}
 
-	private IEnumerator spawnEnemiesFromDictionary() {
-		Instantiate(enemyDict["EnemyPlaceholder"], transform.position, transform.rotation);
-		yield return new WaitForSeconds(1.0f);
-		Instantiate(enemyDict["EnemyPlaceholder2"], transform.position, transform.rotation);
-		yield return new WaitForSeconds(1.0f);
-		Instantiate(enemyDict["EnemyPlaceholder"], transform.position, transform.rotation);
+	private IEnumerator startSpawnPlan() {
+		foreach (EnemySpawnInfo spawn in spawnPlan) {
+			yield return new WaitForSeconds(spawn.delayInSecs);
+			Instantiate(enemyDict[spawn.enemyType], spawn.position, Quaternion.identity);
+		}
 	}
 }
