@@ -12,6 +12,7 @@ public class EnemySpawner : MonoBehaviour {
 
 	}
 
+	public float enemySpawnerStartDelay;
 	public Dictionary<string, GameObject> enemyDict;
 	public EnemySpawnInfo[] spawnPlan;
 	private bool spawningStarted;
@@ -20,6 +21,7 @@ public class EnemySpawner : MonoBehaviour {
 	void Start () {
 		enemyDict = new Dictionary<string, GameObject>();
 
+		// enemyDict only adds children GameObjects if they have the "Enemy" tag
 		foreach (Transform child in transform) {
 			if (child.tag == "Enemy") {
 				Debug.Log("Added " + child.gameObject.name);
@@ -41,9 +43,17 @@ public class EnemySpawner : MonoBehaviour {
 		StartCoroutine(startSpawnPlan());
 	}
 
+	// All enemies are spawned with rotation Quaternion.identity for now
+	// spawn.position uses absolute coordinates for now
 	private IEnumerator startSpawnPlan() {
+		if (enemySpawnerStartDelay > 0.0f) {
+			yield return new WaitForSeconds(enemySpawnerStartDelay);
+		}
+
 		foreach (EnemySpawnInfo spawn in spawnPlan) {
-			yield return new WaitForSeconds(spawn.delayInSecs);
+			if (spawn.delayInSecs > 0.0f) {
+				yield return new WaitForSeconds(spawn.delayInSecs);
+			}
 			Instantiate(enemyDict[spawn.enemyType], spawn.position, Quaternion.identity);
 		}
 	}
