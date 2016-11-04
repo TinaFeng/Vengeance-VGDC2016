@@ -4,14 +4,17 @@ using System.Collections.Generic;
 
 public class EnemySpawner : MonoBehaviour {
 
-	public List<GameObject> enemyTypes; 
+	public Dictionary<string, GameObject> enemyDict;
 	private bool spawningStarted;
 	
 	// Use this for initialization
 	void Start () {
+		enemyDict = new Dictionary<string, GameObject>();
+
 		foreach (Transform child in transform) {
 			if (child.tag == "Enemy") {
-				enemyTypes.Add(child.gameObject);
+				Debug.Log("Added " + child.gameObject.name);
+				enemyDict.Add(child.gameObject.name, child.gameObject);
 			}
 		}
 		spawningStarted = false;
@@ -26,16 +29,14 @@ public class EnemySpawner : MonoBehaviour {
 	}
 
 	private void startSpawning() {
-		StartCoroutine(spawnEnemyOncePerSecondCoroutine());
+		StartCoroutine(spawnEnemiesFromDictionary());
 	}
 
-	private IEnumerator spawnEnemyOncePerSecondCoroutine() {
-		int flip = 1;
-		for (int i = 0; i < 3; ++i) {
-			Instantiate(enemyTypes[flip], transform.position, transform.rotation);
-			Debug.Log("Spawned enemy " + i);
-			flip = 1 - flip;
-			yield return new WaitForSeconds(1.0f);
-		}
+	private IEnumerator spawnEnemiesFromDictionary() {
+		Instantiate(enemyDict["EnemyPlaceholder"], transform.position, transform.rotation);
+		yield return new WaitForSeconds(1.0f);
+		Instantiate(enemyDict["EnemyPlaceholder2"], transform.position, transform.rotation);
+		yield return new WaitForSeconds(1.0f);
+		Instantiate(enemyDict["EnemyPlaceholder"], transform.position, transform.rotation);
 	}
 }
