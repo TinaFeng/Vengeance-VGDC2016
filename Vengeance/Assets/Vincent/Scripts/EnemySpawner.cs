@@ -4,6 +4,14 @@ using System.Collections.Generic;
 
 public class EnemySpawner : MonoBehaviour {
 
+	[System.Serializable]
+	public class EnemySpawnInfo {
+		public string enemyType;
+		public Vector3 position;
+		public float delayInSecs;
+
+	}
+
 	public Dictionary<string, GameObject> enemyDict;
 	public EnemySpawnInfo[] spawnPlan;
 	private bool spawningStarted;
