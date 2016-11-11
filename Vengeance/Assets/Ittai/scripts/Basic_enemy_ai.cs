@@ -11,7 +11,9 @@ public class Basic_enemy_ai : MonoBehaviour {
     public int LIFE=50;
     public int speed;
 
-    public bool direction; // false=horizontal, true=vertical
+    public enum Directions {horizontal, vertical};
+    public Directions direction;
+
 	// Use this for initialization
 	void Start () {
         RB=GetComponent<Rigidbody2D>();
@@ -22,7 +24,7 @@ public class Basic_enemy_ai : MonoBehaviour {
         Vector2 Move_direction;
 
 
-        if (!direction)
+        if (direction == Directions.horizontal)
             Move_direction = new Vector2(speed, 0);
         else
             Move_direction = new Vector2(0, -speed); // negative bc coordinate system I guess
