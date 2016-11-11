@@ -2,6 +2,19 @@
 using System.Collections;
 using System.Collections.Generic;
 
+// ================
+// || HOW TO USE ||
+// ================
+// 1. Add one instance of each enemy type to this spawner as a child object
+// 2. Set enemy spawner settings
+//		Start Spawning On Creation - execute spawn plan once this spawner is created
+//			If this is set to false, enemies will not start spawning until startSpawning() is called by another script
+//		Start Delay - how long to wait once this spawner is started before creating the first enemy
+// 3. Set spawnPlan's length to the total number of enemes to spawn
+// 4. Edit each entry in spawnPlan
+// 		Enemy Type - the name of the child enemy game object to spawn
+//		Position - coordinates to spawn it at
+// 		Delay in Secs - how long to wait before spawning the enemy
 public class EnemySpawner : MonoBehaviour {
 
 	[System.Serializable]
@@ -12,10 +25,11 @@ public class EnemySpawner : MonoBehaviour {
 
 	}
 
-	public float enemySpawnerStartDelay;
-	public Dictionary<string, GameObject> enemyDict;
+	public bool startSpawningOnCreation;
+	public float startDelay;
 	public EnemySpawnInfo[] spawnPlan;
-	private bool spawningStarted;
+
+	private Dictionary<string, GameObject> enemyDict;
 	
 	// Use this for initialization
 	void Start () {
@@ -28,26 +42,21 @@ public class EnemySpawner : MonoBehaviour {
 				enemyDict.Add(child.gameObject.name, child.gameObject);
 			}
 		}
-		spawningStarted = false;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (!spawningStarted) {
+
+		if (startSpawningOnCreation) {
 			startSpawning();
-			spawningStarted = true;
 		}
 	}
 
-	private void startSpawning() {
+	public void startSpawning() {
 		StartCoroutine(startSpawnPlan());
 	}
 
 	// All enemies are spawned with rotation Quaternion.identity for now
 	// spawn.position uses absolute coordinates for now
 	private IEnumerator startSpawnPlan() {
-		if (enemySpawnerStartDelay > 0.0f) {
-			yield return new WaitForSeconds(enemySpawnerStartDelay);
+		if (startDelay > 0.0f) {
+			yield return new WaitForSeconds(startDelay);
 		}
 
 		foreach (EnemySpawnInfo spawn in spawnPlan) {
