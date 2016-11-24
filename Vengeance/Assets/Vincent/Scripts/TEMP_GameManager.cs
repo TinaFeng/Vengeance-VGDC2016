@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TEMP_GameManager_TimeBased : MonoBehaviour {
+public class TEMP_GameManager : MonoBehaviour {
 
-	public BGMPlayer_TimeBased bgmPlayer;
+	public BGMPlayer bgmPlayer;
 
 	// Use this for initialization
 	void Start () {
-		bgmPlayer = GetComponentInChildren<BGMPlayer_TimeBased>();
+		bgmPlayer = GetComponentInChildren<BGMPlayer>();
 	}
 
 	// Update is called once per frame

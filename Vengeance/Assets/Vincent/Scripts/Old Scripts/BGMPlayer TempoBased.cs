@@ -4,7 +4,7 @@ using System.Collections;
 public class BGMPlayer_TempoBased : MonoBehaviour {
 
 	public int numAudioSources = 2;
-	public BGMTrack track;
+	public BGMTrack_TempoBased track;
 	public float volume = 1.0F;
 	public double startDelay = 0.0F;
 
@@ -21,7 +21,7 @@ public class BGMPlayer_TempoBased : MonoBehaviour {
 			child.transform.parent = gameObject.transform;
 			audioSources[i] = child.AddComponent<AudioSource>();
 		}
-		track = GetComponentInChildren<BGMTrack>();
+		track = GetComponentInChildren<BGMTrack_TempoBased>();
 
 		nextEventTime = AudioSettings.dspTime + startDelay;
 	}

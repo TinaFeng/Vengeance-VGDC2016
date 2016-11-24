@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TEMP_GameManager : MonoBehaviour {
+public class TEMP_GameManager_TempoBased : MonoBehaviour {
 
 	public BGMPlayer bgmPlayer;
 
