@@ -21,6 +21,7 @@ public class BGMPlayer : MonoBehaviour {
 			child.transform.parent = gameObject.transform;
 			audioSources[i] = child.AddComponent<AudioSource>();
 		}
+
 		track = GetComponentInChildren<BGMTrack>();
 
 		nextEventTime = AudioSettings.dspTime + startDelay;
@@ -31,9 +32,10 @@ public class BGMPlayer : MonoBehaviour {
 		double time = AudioSettings.dspTime;
 
 		if (time + 1.0F > nextEventTime) {
-			audioSources[flip].clip = track.getNextClip();
+			BGMClip bgmClip = track.getNextClip();
+			audioSources[flip].clip = bgmClip.clip;
 			audioSources[flip].PlayScheduled(nextEventTime);
-			nextEventTime += 60.0F / track.bpm * track.beatsPerClip;
+			nextEventTime += bgmClip.lengthInSeconds;
 			flip = 1 - flip;
 		}
 	}
@@ -69,3 +71,4 @@ public class BGMPlayer : MonoBehaviour {
 	}
 
 }
+

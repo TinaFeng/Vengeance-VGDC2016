@@ -3,9 +3,8 @@ using System.Collections;
 
 public class BGMTrack : MonoBehaviour {
 
-	public AudioClip[] clips; // order of the AudioClips matters!
-	public double bpm;
-	public int beatsPerClip;
+	public BGMClip[] clips; 
+	public string loopType;
 
 	private int currentClip = 0;
 	private bool started = false;
@@ -17,7 +16,11 @@ public class BGMTrack : MonoBehaviour {
 
 	// returns clips[0] if the BGMTrack object has just been initialized
 	// else, it returns the next clip in the array
-	public AudioClip getNextClip() {
+	public BGMClip getNextClip() {
+		return playThroughAndLoopClips();
+	}
+
+	private BGMClip playThroughAndLoopClips() {
 		if (!started) {
 			currentClip = 0;
 			started = true;
@@ -28,3 +31,4 @@ public class BGMTrack : MonoBehaviour {
 	}
 
 }
+

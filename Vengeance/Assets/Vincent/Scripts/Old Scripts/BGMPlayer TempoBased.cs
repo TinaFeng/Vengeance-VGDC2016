@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BGMPlayer_TimeBased : MonoBehaviour {
+public class BGMPlayer_TempoBased : MonoBehaviour {
 
 	public int numAudioSources = 2;
-	public BGMTrack_TimeBased track;
+	public BGMTrack track;
 	public float volume = 1.0F;
 	public double startDelay = 0.0F;
 
@@ -21,8 +21,7 @@ public class BGMPlayer_TimeBased : MonoBehaviour {
 			child.transform.parent = gameObject.transform;
 			audioSources[i] = child.AddComponent<AudioSource>();
 		}
-
-		track = GetComponentInChildren<BGMTrack_TimeBased>();
+		track = GetComponentInChildren<BGMTrack>();
 
 		nextEventTime = AudioSettings.dspTime + startDelay;
 	}
@@ -32,10 +31,9 @@ public class BGMPlayer_TimeBased : MonoBehaviour {
 		double time = AudioSettings.dspTime;
 
 		if (time + 1.0F > nextEventTime) {
-			BGMClip bgmClip = track.getNextClip();
-			audioSources[flip].clip = bgmClip.clip;
+			audioSources[flip].clip = track.getNextClip();
 			audioSources[flip].PlayScheduled(nextEventTime);
-			nextEventTime += bgmClip.lengthInSeconds;
+			nextEventTime += 60.0F / track.bpm * track.beatsPerClip;
 			flip = 1 - flip;
 		}
 	}
@@ -71,4 +69,3 @@ public class BGMPlayer_TimeBased : MonoBehaviour {
 	}
 
 }
-

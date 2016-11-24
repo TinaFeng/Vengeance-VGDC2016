@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BGMTrack_TimeBased : MonoBehaviour {
+public class BGMTrack_TempoBased : MonoBehaviour {
 
-	public BGMClip[] clips; 
+	public AudioClip[] clips; // order of the AudioClips matters!
+	public double bpm;
+	public int beatsPerClip;
 
 	private int currentClip = 0;
 	private bool started = false;
@@ -15,7 +17,7 @@ public class BGMTrack_TimeBased : MonoBehaviour {
 
 	// returns clips[0] if the BGMTrack object has just been initialized
 	// else, it returns the next clip in the array
-	public BGMClip getNextClip() {
+	public AudioClip getNextClip() {
 		if (!started) {
 			currentClip = 0;
 			started = true;
@@ -26,4 +28,3 @@ public class BGMTrack_TimeBased : MonoBehaviour {
 	}
 
 }
-
