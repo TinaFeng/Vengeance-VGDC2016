@@ -34,7 +34,7 @@ public class BGMTrack : MonoBehaviour {
 				case LoopType.OnlyLastClip:
 					return OnlyLastClip();
 				default:
-					Debug.LogError("No loopType selected.");
+					Debug.LogError("No loopType selected! Looping current clip");
 					return clips[currentClip];
 			}
 		}
