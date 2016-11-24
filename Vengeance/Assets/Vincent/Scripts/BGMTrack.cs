@@ -3,9 +3,14 @@ using System.Collections;
 
 public class BGMTrack : MonoBehaviour {
 
-	public AudioClip[] clips; // order of the AudioClips matters!
-	public double bpm;
-	public int beatsPerClip;
+	// Types of loop algorithms available:
+	//		FullRunthrough -- Play through the clip array from beginning to end, then repeat everthing
+	//		AllButFirstClip -- Play through the entire array once, then repeat from the second clip (index 1)
+	//		OnlyLastClip -- Play through the entire array once, then repeat only the last clip
+	public enum LoopType { FullRunthrough, AllButFirstClip, OnlyLastClip }
+
+	public BGMClip[] clips; 
+	public LoopType loopType;
 
 	private int currentClip = 0;
 	private bool started = false;
@@ -15,16 +20,48 @@ public class BGMTrack : MonoBehaviour {
 		started = false;
 	}
 
-	// returns clips[0] if the BGMTrack object has just been initialized
-	// else, it returns the next clip in the array
-	public AudioClip getNextClip() {
-		if (!started) {
+	public BGMClip getNextClip() {
+		if (!started) {			// All clip playback algorithms start from index 0 initially
 			currentClip = 0;
 			started = true;
+			return clips[currentClip];
 		} else {
-			currentClip = (currentClip  + 1) % clips.Length;
+			switch (loopType) {
+				case LoopType.FullRunthrough:
+					return FullRunthrough();
+				case LoopType.AllButFirstClip:
+					return AllButFirstClip();
+				case LoopType.OnlyLastClip:
+					return OnlyLastClip();
+				default:
+					Debug.LogError("No loopType selected! Looping current clip");
+					return clips[currentClip];
+			}
 		}
+	}
+
+	private BGMClip FullRunthrough() {
+		currentClip = (currentClip  + 1) % clips.Length;
+		return clips[currentClip];
+	}
+
+	private BGMClip AllButFirstClip() {
+		if (currentClip == clips.Length - 1) {
+			currentClip = 1;
+		} else {
+			currentClip = (currentClip + 1) % clips.Length;
+		}
+
+		return clips[currentClip];
+	}
+
+	private BGMClip OnlyLastClip() {
+		if (currentClip < clips.Length - 1) {
+			currentClip = (currentClip + 1) % clips.Length;
+		}
+
 		return clips[currentClip];
 	}
 
 }
+
