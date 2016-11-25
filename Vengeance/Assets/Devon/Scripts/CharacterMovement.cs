@@ -1,27 +1,41 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
-public class CharacterMovement : MonoBehaviour {
+public class CharacterMovement : MonoBehaviour
+{
+    /**Public Variables**/
 
-    //public variables
+    //Floats
     public float speed;
 
-    //private variables
+    //Texts
+    public Text livesText;
+    public Text scoreText;
+
+
+    /**private variables**/
+
+    //Ints
+    private int lives;
+    private int score;
+
+    //Vectors
     private Vector2 movement;
-    private Vector2 halfPlayerDimensions;
-    private Vector2 cameraDimensions;
+
+    //Objects & Components
+    private GameObject myObject;
 
     private Rigidbody2D rb2d;
 
     private SpriteRenderer charRenderer;
 
-    private GameObject myObject;
-
     //z = fire; x = bomb; c = cycle through abilities
-    public enum myAttackKeys {FIRE = 'Z', BOMB = 'X', CYCLE = 'C'};
+    public enum myAttackKeys { FIRE = 'Z', BOMB = 'X', CYCLE = 'C' };
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         //initialize movement to a vector2(x,y)
         movement = new Vector2();
 
@@ -36,21 +50,15 @@ public class CharacterMovement : MonoBehaviour {
         //disable the dot so that it only shows up when keys are depressed
         charRenderer.enabled = false;
 
+        //initialize our score and lives
+        lives = 3;
+        score = 0;
 
-        //capture half the player's width and height for calculating collsion with camera frustum
-        //Sprite tempSprite = charRenderer.sprite;
-        Vector4 tempBorder = charRenderer.sprite.border;
-        //print("X: " + tempBorder.x + ", Y: " + tempBorder.y);
-
-        GameObject tempCamera = GameObject.Find("Main Camera");
-
-        //capture camera's width and height
-        //cameraDimensions.x
-        //cameraDimensions.y = Camera.current.rect.height;
-
-        print("X: " + cameraDimensions.x + ", Y: " + cameraDimensions.y);
+        //Initialize our textboxes
+        updateLivesText();
+        updateScoreText();
     }
-	
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
@@ -65,17 +73,47 @@ public class CharacterMovement : MonoBehaviour {
         }
     }
 
-	// Update is called once per frame
-	void FixedUpdate () {
-
+    // Update is called once per frame
+    void FixedUpdate()
+    {
         //get player's inputs
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
         //apply them to the character
         rb2d.velocity = movement * speed;
+    }
 
-        //check to see if the player is out of bounds, and if so, keep them in bounds
+    //function that's called when our player collides with a 2D trigger
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("1up"))
+        {
+            lives++;
+            updateLivesText();
+        }
+        else if (other.gameObject.CompareTag("bullet"))
+        {
+            lives--;
+            updateLivesText();
+        }
+        else if (other.gameObject.CompareTag("pBlock"))
+        {
+            score += 100;
+            updateScoreText();
+        }
 
-	}
+    }
+    //update our lives text
+    void updateLivesText()
+    {
+        livesText.text = "Lives: " + lives.ToString();
+    }
+
+    //update our score text
+    void updateScoreText()
+    {
+        scoreText.text = "Score: " + score.ToString();
+    }
+
 }
