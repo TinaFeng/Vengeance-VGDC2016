@@ -3,6 +3,7 @@ using System.Collections;
 
 public class playerBulletMove : MonoBehaviour {
 
+    //the Rigidbody2D of our bullet
     private Rigidbody2D rb2d;
 
     // Use this for initialization
@@ -11,13 +12,14 @@ public class playerBulletMove : MonoBehaviour {
         //get our rigidbody
         rb2d = GetComponent<Rigidbody2D>();
 
-        //temporary way to get rid of it
+        //initiate self-destruct sequence
         Destroy(gameObject, 2);
 	}
 	
-	// Update is called once per frame
+	//occurs on a set timer independent of frame
 	void FixedUpdate ()
     {
+        //set velocity to move bullet up by a vector of 10 / update
         rb2d.velocity = Vector3.up * 10f;
     }
 }

@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class CharacterMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     /**Public Variables**/
 
@@ -38,7 +38,7 @@ public class CharacterMovement : MonoBehaviour
     private SpriteRenderer charRenderer;
 
     //z = fire; x = bomb; c = cycle through abilities
-    public enum playerControls { FIRE = KeyCode.Z, BOMB = KeyCode.X, CYCLE = KeyCode.C, GRAZE = KeyCode.LeftShift};
+    //1-5 bullets per shot
     private enum attackPattern {I, II, III, IV, V};
 
     //Enumerated Variables
@@ -79,6 +79,7 @@ public class CharacterMovement : MonoBehaviour
         currentAttackPattern = attackPattern.I;
     }
 
+    //occurs every frame
     void Update()
     {
         //handle graze mode
@@ -100,7 +101,7 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+    //occurs based on set time, independent of frame
     void FixedUpdate()
     {
         //get player's inputs
@@ -182,35 +183,41 @@ public class CharacterMovement : MonoBehaviour
     //playershoot
     void playerShoot()
     {
+        //Instantiate the player's bullets at our current location, slightly offset depending on the current pattern
         switch (currentAttackPattern)
         {
             case attackPattern.V:
-                spawnedBullet = (GameObject)Instantiate(playerBullet, transform.position + Vector3.up + Vector3.left, transform.rotation);
-                spawnedBullet = (GameObject)Instantiate(playerBullet, transform.position + Vector3.up * 1.1f + Vector3.left * 0.5f, transform.rotation);
-                spawnedBullet = (GameObject)Instantiate(playerBullet, transform.position + Vector3.up * 1.2f, transform.rotation);
-                spawnedBullet = (GameObject)Instantiate(playerBullet, transform.position + Vector3.up * 1.1f + Vector3.right * 0.5f, transform.rotation);
-                spawnedBullet = (GameObject)Instantiate(playerBullet, transform.position + Vector3.up + Vector3.right, transform.rotation);
+                spawnBullet(Vector3.up +Vector3.left);
+                spawnBullet(Vector3.up * 1.1f + Vector3.left * 0.5f);
+                spawnBullet(Vector3.up * 1.2f);
+                spawnBullet(Vector3.up * 1.1f + Vector3.right * 0.5f);
+                spawnBullet(Vector3.up + Vector3.right);
                 break;
             case attackPattern.IV:
-                spawnedBullet = (GameObject)Instantiate(playerBullet, transform.position + Vector3.up + Vector3.left, transform.rotation);
-                spawnedBullet = (GameObject)Instantiate(playerBullet, transform.position + Vector3.up * 1.1f + Vector3.left * 0.5f, transform.rotation);
-                spawnedBullet = (GameObject)Instantiate(playerBullet, transform.position + Vector3.up * 1.1f + Vector3.right * 0.5f, transform.rotation);
-                spawnedBullet = (GameObject)Instantiate(playerBullet, transform.position + Vector3.up + Vector3.right, transform.rotation);
+                spawnBullet(Vector3.up + Vector3.left);
+                spawnBullet(Vector3.up + Vector3.left * 0.5f);
+                spawnBullet(Vector3.up + Vector3.right * 0.5f);
+                spawnBullet(Vector3.up + Vector3.right);
                 break;
             case attackPattern.III:
-                spawnedBullet = (GameObject)Instantiate(playerBullet, transform.position + Vector3.up + Vector3.left, transform.rotation);
-                spawnedBullet = (GameObject)Instantiate(playerBullet, transform.position + Vector3.up * 1.1f, transform.rotation);
-                spawnedBullet = (GameObject)Instantiate(playerBullet, transform.position + Vector3.up + Vector3.right, transform.rotation);
+                spawnBullet(Vector3.up + Vector3.left);
+                spawnBullet(Vector3.up * 1.1f);
+                spawnBullet(Vector3.up + Vector3.right);
                 break;
             case attackPattern.II:
-                spawnedBullet = (GameObject)Instantiate(playerBullet, transform.position + Vector3.up + Vector3.left, transform.rotation);
-                spawnedBullet = (GameObject)Instantiate(playerBullet, transform.position + Vector3.up + Vector3.right, transform.rotation);
+                spawnBullet(Vector3.up + Vector3.left);
+                spawnBullet(Vector3.up + Vector3.right);
                 break;
             default: //This is implicitly case I
-                //Instantiate the player's bullet at our current location, slightly offset
-                spawnedBullet = (GameObject)Instantiate(playerBullet, transform.position + Vector3.up, transform.rotation);
+                spawnBullet(Vector3.up);
                 break;
         }
 
+    }
+
+    //spawn a bullet at the player's location and adjusted by offset
+    void spawnBullet(Vector3 offset)
+    {
+        spawnedBullet = (GameObject)Instantiate(playerBullet, transform.position + offset, transform.rotation);
     }
 }
