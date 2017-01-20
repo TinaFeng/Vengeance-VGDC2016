@@ -4,14 +4,18 @@ using System.Collections;
 public class BGMPlayer : MonoBehaviour {
 
 	public int numAudioSources = 2;
-	public BGMTrack track;
+	public BGMTrack[] tracks;
+	public int startingTrackIndex = 0; // default: play the first BGMTrack in the list unless otherwise specified
 	public float volume = 1.0F;
 	public double startDelay = 0.0F;
+	public bool startOnInit = true; // default: start BGM playback when the Player is created
 
 	private AudioSource[] audioSources;
+	private BGMTrack currentTrack;
 	private float currentVolume = 1.0F;
 	private double nextEventTime;
 	private int flip = 0;
+	private bool isPlaying = false;
 
 	// Use this for initialization
 	void Start () {
@@ -22,21 +26,39 @@ public class BGMPlayer : MonoBehaviour {
 			audioSources[i] = child.AddComponent<AudioSource>();
 		}
 
-		track = GetComponentInChildren<BGMTrack>();
+		tracks = GetComponentInChildren<BGMTrack[]>();
+		currentTrack = tracks[startingTrackIndex];
 
-		nextEventTime = AudioSettings.dspTime + startDelay;
+		if (startOnInit) {
+			start();
+		}
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		double time = AudioSettings.dspTime;
+		if (isPlaying) {
+			double time = AudioSettings.dspTime;
 
-		if (time + 1.0F > nextEventTime) {
-			BGMClip bgmClip = track.getNextClip();
-			audioSources[flip].clip = bgmClip.clip;
-			audioSources[flip].PlayScheduled(nextEventTime);
-			nextEventTime += bgmClip.lengthInSeconds;
-			flip = 1 - flip;
+			if (time + 1.0F > nextEventTime) {
+				BGMClip bgmClip = currentTrack.getNextClip();
+				audioSources[flip].clip = bgmClip.clip;
+				audioSources[flip].PlayScheduled(nextEventTime);
+				nextEventTime += bgmClip.lengthInSeconds;
+				flip = 1 - flip;
+			}
+		}
+	}
+
+	public void start() {
+		isPlaying = true;
+		nextEventTime = AudioSettings.dspTime + startDelay;
+	}
+
+	public void stop() {
+		isPlaying = false;
+		foreach (AudioSource source in audioSources) {
+			source.Stop();
 		}
 	}
 
