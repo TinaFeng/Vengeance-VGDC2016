@@ -1,0 +1,63 @@
+[]
+
+Testing empty command bracket "[]" for narration. Press 'C' to proceed to the next text line. Before the next line a character will come in and bounce.
+
+[LPort:Player, LName:Left,LSpeaking:T, Anim:LBounce]
+
+Now Testing for Item!
+
+[LSpeaking:F, Item:AirRune]
+
+(You obtained an Air Rune!)
+
+[LSpeaking:T]
+
+Yeesh, what am I going to do with this?
+
+On to music testing!
+
+[Music:5]
+
+The coin sound should have just played
+
+This should be the next line of text stuff. Press 'C' again to see a lot of text.
+
+A lot of text...I don't know what the character limit should be until we set the window size. Text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text. Press 'C' to continue...
+
+Every time there is a blank line in between paragraph of text, that signifies the next block of text to be printed. 
+
+Now to add a character.
+
+[RPort:Shopkeep, RName:Right, RSpeaking:F]
+
+He's grayed out because he's not speaking. Press 'C' to switch speakers.
+
+[LSpeaking:F, RSpeaking:T]
+
+Testing narration by setting RSpeaking:F. LSpeaking is already set to False.
+
+[RSpeaking:F]
+
+This should seem like a narrator line. If you want the portraits to remain in scene. You may clear all the portraits if you want a narration scene without characters.
+
+Now testing if both bounce.
+
+[Anim:LBounce, Anim:RBounce]
+
+Now to remove the left guy.
+
+[LPort:None]
+
+Now to see if we can clear the scene of all speakers with [Clear].
+
+[Clear]
+
+Now to introduce a speaking character without a portrait. Make sure to give that character a name.
+
+[RSpeaker:True, RName:Shopkeeper]
+
+Making both the player.
+
+[RPort:Player, LPort:Player]
+
+Does it work?
