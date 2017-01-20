@@ -26,7 +26,9 @@ public class BGMPlayer : MonoBehaviour {
 			audioSources[i] = child.AddComponent<AudioSource>();
 		}
 
-		tracks = GetComponentInChildren<BGMTrack[]>();
+		tracks = GetComponentsInChildren<BGMTrack>();
+
+		// add children to list of BGMTracks
 		currentTrack = tracks[startingTrackIndex];
 
 		if (startOnInit) {
@@ -37,29 +39,36 @@ public class BGMPlayer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (isPlaying) {
-			double time = AudioSettings.dspTime;
+		if (!isPlaying) {
+			return;
+		}
+		double time = AudioSettings.dspTime;
 
-			if (time + 1.0F > nextEventTime) {
-				BGMClip bgmClip = currentTrack.getNextClip();
-				audioSources[flip].clip = bgmClip.clip;
-				audioSources[flip].PlayScheduled(nextEventTime);
-				nextEventTime += bgmClip.lengthInSeconds;
-				flip = 1 - flip;
-			}
+		if (time + 1.0F > nextEventTime) {
+			BGMClip bgmClip = currentTrack.getNextClip();
+			audioSources[flip].clip = bgmClip.clip;
+			audioSources[flip].PlayScheduled(nextEventTime);
+			nextEventTime += bgmClip.lengthInSeconds;
+			flip = 1 - flip;
 		}
 	}
 
 	public void start() {
 		isPlaying = true;
 		nextEventTime = AudioSettings.dspTime + startDelay;
+		Debug.Log("BGMPlayer started");
 	}
 
-	public void stop() {
+	public void stop(bool smoothStop = true) {
 		isPlaying = false;
 		foreach (AudioSource source in audioSources) {
-			source.Stop();
+			if (smoothStop) {
+				fadeOut(0.1f);
+			} else {
+				source.Stop();
+			}
 		}
+		Debug.Log("BGMPlayer stopped");
 	}
 
 	// NOTE: length of the fadein will not match lengthInSeconds exactly
