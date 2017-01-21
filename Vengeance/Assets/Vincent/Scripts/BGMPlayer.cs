@@ -8,7 +8,7 @@ public class BGMPlayer : MonoBehaviour {
 	public int startingTrackIndex = 0; // default: play the first BGMTrack in the list unless otherwise specified
 	public float volume = 1.0F;
 	public double startDelay = 0.0F;
-	public bool startOnInit = true; // default: start BGM playback when the Player is created
+	public bool startOnCreation = true; // default: start BGM playback when the Player is created
 
 	private AudioSource[] audioSources;
 	private BGMTrack currentTrack;
@@ -26,12 +26,12 @@ public class BGMPlayer : MonoBehaviour {
 			audioSources[i] = child.AddComponent<AudioSource>();
 		}
 
+		// add children to list of BGMTracks
 		tracks = GetComponentsInChildren<BGMTrack>();
 
-		// add children to list of BGMTracks
 		currentTrack = tracks[startingTrackIndex];
 
-		if (startOnInit) {
+		if (startOnCreation) {
 			start();
 		}
 
@@ -53,7 +53,10 @@ public class BGMPlayer : MonoBehaviour {
 		}
 	}
 
-	public void start() {
+	// if there is another track currently playing, the player first stops that track.
+	// There will be a short pause between stopping the currently playing track and starting the new one
+	public void start(int trackIndex = 0) {
+		currentTrack = tracks[trackIndex];
 		isPlaying = true;
 		nextEventTime = AudioSettings.dspTime + startDelay;
 		Debug.Log("BGMPlayer started");
@@ -63,12 +66,42 @@ public class BGMPlayer : MonoBehaviour {
 		isPlaying = false;
 		foreach (AudioSource source in audioSources) {
 			if (smoothStop) {
-				fadeOut(0.1f);
+				fadeOut(0.06f);
 			} else {
 				source.Stop();
 			}
 		}
 		Debug.Log("BGMPlayer stopped");
+	}
+
+	public void changeTrack(int index) {
+		if (isPlaying) {
+			stop();
+		}
+		currentTrack = tracks[index];
+		Debug.Log("queued track: " + currentTrack.name + " in BGMPlayer");
+		start();
+	}
+
+	// I hate this but I can't think of a better way to do it at the moment
+	private IEnumerator changeTrackCoroutine(int newTrackIndex) {
+		// fast fadeout
+		while (currentVolume > 0.0F) {
+			foreach (var source in audioSources) {
+				source.volume -= 0.05f;
+			}
+			currentVolume -= 0.05f;		
+			yield return new WaitForSeconds(0.06f * 0.05f);
+		}
+		// stop audioSources and reset volumes
+		foreach (var source in audioSources) {
+			source.Stop();
+			source.volume = volume;
+		}
+		// change currentTrack to the new track
+		currentTrack = tracks[newTrackIndex];
+		// start playback again
+		start();
 	}
 
 	// NOTE: length of the fadein will not match lengthInSeconds exactly
@@ -79,6 +112,12 @@ public class BGMPlayer : MonoBehaviour {
 	// NOTE: length of the fadeout will not match lengthInSeconds exactly
 	public void fadeOut(float lengthInSeconds = 1.0F, float interval = 0.05F) {
 		StartCoroutine(fadeOutCoroutine(lengthInSeconds, interval));
+	}
+
+	public void resetVolume() {
+		foreach (var source in audioSources) {
+			source.volume += volume;
+		}
 	}
 
 	private IEnumerator fadeInCoroutine(float lengthInSeconds, float interval) {

@@ -24,6 +24,8 @@ public class TEMP_GameManager : MonoBehaviour {
 		Debug.Log("calling bgmPlayer.start()");
 		bgmPlayer.start();
 		yield return new WaitForSeconds(seconds * 2);
+		bgmPlayer.playTrack(0);
+		yield return new WaitForSeconds(seconds * 2);
 		Debug.Log("calling bgmPlayer.stop()");
 		bgmPlayer.stop();
 	}
