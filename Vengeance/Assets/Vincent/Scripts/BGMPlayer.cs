@@ -7,11 +7,11 @@ public class BGMPlayer : MonoBehaviour {
 	public BGMTrack[] tracks;
 	public int startingTrackIndex = 0; // default: play the first BGMTrack in the list unless otherwise specified
 	public float volume = 1.0F;
-	public double startDelay = 0.0F;
 	public bool startOnCreation = true; // default: start BGM playback when the Player is created
 
 	private AudioSource[] audioSources;
 	private BGMTrack currentTrack;
+	private int currentTrackIndex; // ugly, but Invoke doesn't allow passing parameters and I don't want to be in Coroutine hell
 	private float currentVolume = 1.0F;
 	private double nextEventTime;
 	private int flip = 0;
@@ -29,6 +29,7 @@ public class BGMPlayer : MonoBehaviour {
 		// add children to list of BGMTracks
 		tracks = GetComponentsInChildren<BGMTrack>();
 
+		currentTrackIndex = startingTrackIndex;
 		currentTrack = tracks[startingTrackIndex];
 
 		if (startOnCreation) {
@@ -56,9 +57,9 @@ public class BGMPlayer : MonoBehaviour {
 	// if there is another track currently playing, the player first stops that track.
 	// There will be a short pause between stopping the currently playing track and starting the new one
 	public void start(int trackIndex = 0) {
-		currentTrack = tracks[trackIndex];
+		currentTrack = tracks[currentTrackIndex];
 		isPlaying = true;
-		nextEventTime = AudioSettings.dspTime + startDelay;
+		nextEventTime = AudioSettings.dspTime;
 		Debug.Log("BGMPlayer started");
 	}
 
@@ -74,33 +75,25 @@ public class BGMPlayer : MonoBehaviour {
 		Debug.Log("BGMPlayer stopped");
 	}
 
+	public void stopSources() {
+		foreach (AudioSource source in audioSources) {
+			source.Stop();
+		}
+	}
+
 	public void changeTrack(int index) {
+		// fadeout current track
 		if (isPlaying) {
 			stop();
 		}
-		currentTrack = tracks[index];
-		Debug.Log("queued track: " + currentTrack.name + " in BGMPlayer");
-		start();
+		currentTrackIndex = index;
+		Invoke("restartWithNewTrack", 0.5f);
 	}
 
-	// I hate this but I can't think of a better way to do it at the moment
-	private IEnumerator changeTrackCoroutine(int newTrackIndex) {
-		// fast fadeout
-		while (currentVolume > 0.0F) {
-			foreach (var source in audioSources) {
-				source.volume -= 0.05f;
-			}
-			currentVolume -= 0.05f;		
-			yield return new WaitForSeconds(0.06f * 0.05f);
-		}
-		// stop audioSources and reset volumes
-		foreach (var source in audioSources) {
-			source.Stop();
-			source.volume = volume;
-		}
-		// change currentTrack to the new track
-		currentTrack = tracks[newTrackIndex];
-		// start playback again
+	public void restartWithNewTrack() {
+		currentTrack = tracks[currentTrackIndex]; // currentTrackIndex is changed by changeTrack(), because Invoke can't pass any parameters to its function
+		Debug.Log("queued track: " + currentTrack.name + " in BGMPlayer");
+		resetVolume();
 		start();
 	}
 
@@ -118,6 +111,7 @@ public class BGMPlayer : MonoBehaviour {
 		foreach (var source in audioSources) {
 			source.volume += volume;
 		}
+		Debug.Log("reset volume");
 	}
 
 	private IEnumerator fadeInCoroutine(float lengthInSeconds, float interval) {
@@ -138,7 +132,6 @@ public class BGMPlayer : MonoBehaviour {
 			currentVolume -= interval;		
 			yield return new WaitForSeconds(lengthInSeconds * interval);
 		}
+		stopSources();
 	}
-
 }
-

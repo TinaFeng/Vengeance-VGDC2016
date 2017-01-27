@@ -20,14 +20,13 @@ public class TEMP_GameManager : MonoBehaviour {
 	}
 
 	private IEnumerator waitCoroutine(float seconds) {
-		yield return new WaitForSeconds(seconds);
+		//yield return new WaitForSeconds(seconds);
 		Debug.Log("calling bgmPlayer.start()");
 		bgmPlayer.start();
-		yield return new WaitForSeconds(seconds * 2);
-		//bgmPlayer.playTrack(0); //throws error, needed to comment to allow for me to test - Ittai
-		yield return new WaitForSeconds(seconds * 2);
-		Debug.Log("calling bgmPlayer.stop()");
-		bgmPlayer.stop();
+		yield return new WaitForSeconds(seconds);
+		bgmPlayer.changeTrack(1);
+		// Debug.Log("calling bgmPlayer.stop()";
+		// bgmPlayer.stop();
 	}
 
 
