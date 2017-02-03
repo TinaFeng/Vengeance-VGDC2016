@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FollowPlayer : MonoBehaviour
 {
-    public string player = "PlayerShip";
+    public string player = "Player";
     public float speed = 5f;
 
     // Use this for initialization

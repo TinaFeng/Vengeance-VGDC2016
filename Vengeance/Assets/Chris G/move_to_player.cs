@@ -17,7 +17,7 @@ public class move_to_player : MonoBehaviour {
         Quaternion rot = transform.rotation;
         if (x == 0)
         {
-            Vector3 dir = transform.position - GameObject.Find("PlayerShip").transform.position;
+            Vector3 dir = transform.position - GameObject.Find("Player").transform.position;
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             rot = Quaternion.Euler(0, 0, angle+90.0f);
             transform.rotation = rot;

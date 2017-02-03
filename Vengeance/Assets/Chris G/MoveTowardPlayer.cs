@@ -5,7 +5,7 @@ public class MoveTowardPlayer : MonoBehaviour
 {
 
     public float speed = 5f;
-    public string player = "PlayerShip";
+    public string player = "Player";
 
     int x = 0;
 

@@ -18,7 +18,7 @@ public class SpawnShotgun : MonoBehaviour {
         if (timer <= 0)
         {
             timer = delay;
-            Vector3 dir = transform.position - GameObject.Find("PlayerShip").transform.position;
+            Vector3 dir = transform.position - GameObject.Find("Player").transform.position;
             float angle = (Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg) + 90.0f;
             Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, angle));
             Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, angle-10.0f));
