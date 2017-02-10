@@ -4,7 +4,9 @@ using System.Collections;
 public class BoundaryExplode : MonoBehaviour
 {
     public GameObject bullet;
-    float BoundaryRadius = 0.1f;
+    public float direction = 0;
+    float BoundaryRadius = 0.0f;
+
 
     // Use this for initialization
     void Start()
@@ -16,37 +18,42 @@ public class BoundaryExplode : MonoBehaviour
     void Update()
     {
         Vector3 pos = transform.position;
-        if (pos.y + BoundaryRadius > Camera.main.orthographicSize)
+        if (pos.y + BoundaryRadius >= Camera.main.orthographicSize)
         {
-            Destroy(gameObject);
-            Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, 180));
-            Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, 135));
-            Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, 225));
+            
+            Instantiate(bullet, transform.position, Quaternion.Euler(direction, 0, 180));
+            Instantiate(bullet, transform.position, Quaternion.Euler(direction, 0, 135));
+            Instantiate(bullet, transform.position, Quaternion.Euler(direction, 0, 225));
+            Destroy(this);
+            
         }
-        if (pos.y - BoundaryRadius < -Camera.main.orthographicSize)
+        if (pos.y - BoundaryRadius <= -Camera.main.orthographicSize)
         {
-            Destroy(gameObject);
-            Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, 0));
-            Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, 45));
-            Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, 315));
+            
+            Instantiate(bullet, transform.position, Quaternion.Euler(direction, 0, 0));
+            Instantiate(bullet, transform.position, Quaternion.Euler(direction, 0, 45));
+            Instantiate(bullet, transform.position, Quaternion.Euler(direction, 0, 315));
+            Destroy(this);
         }
 
         float screenRatio = (float)Screen.width / (float)Screen.height;
         float widthOrtho = Camera.main.orthographicSize * screenRatio;
 
-        if (pos.x + BoundaryRadius > widthOrtho)
+        if (pos.x + BoundaryRadius >= widthOrtho)
         {
-            Destroy(gameObject);
-            Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, 90));
-            Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, 45));
-            Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, 135));
+            
+            Instantiate(bullet, transform.position, Quaternion.Euler(direction, 0, 90));
+            Instantiate(bullet, transform.position, Quaternion.Euler(direction, 0, 45));
+            Instantiate(bullet, transform.position, Quaternion.Euler(direction, 0, 135));
+            Destroy(this);
         }
-        if (pos.x - BoundaryRadius < -widthOrtho)
+        if (pos.x - BoundaryRadius <= -widthOrtho)
         {
-            Destroy(gameObject);
-            Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, 270));
-            Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, 315));
-            Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, 225));
+            
+            Instantiate(bullet, transform.position, Quaternion.Euler(direction, 0, 270));
+            Instantiate(bullet, transform.position, Quaternion.Euler(direction, 0, 315));
+            Instantiate(bullet, transform.position, Quaternion.Euler(direction, 0, 225));
+            Destroy(this);
         }
     }
 }

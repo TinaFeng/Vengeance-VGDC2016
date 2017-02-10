@@ -1,9 +1,49 @@
 fileFormatVersion: 2
 guid: 4711cf2ca9f070c418860da85bfd782e
-timeCreated: 1484950254
+timeCreated: 1486710678
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Spark_Rock_Spritesheet_0
+    21300002: Spark_Rock_Spritesheet_1
+    21300004: Spark_Rock_Spritesheet_2
+    21300006: Spark_Rock_Spritesheet_3
+    21300008: Spark_Rock_Spritesheet_4
+    21300010: Spark_Rock_Spritesheet_5
+    21300012: Spark_Rock_Spritesheet_6
+    21300014: Spark_Rock_Spritesheet_7
+    21300016: Spark_Rock_Spritesheet_8
+    21300018: Spark_Rock_Spritesheet_9
+    21300020: Spark_Rock_Spritesheet_10
+    21300022: Spark_Rock_Spritesheet_11
+    21300024: Spark_Rock_Spritesheet_12
+    21300026: Spark_Rock_Spritesheet_13
+    21300028: Spark_Rock_Spritesheet_14
+    21300030: Spark_Rock_Spritesheet_15
+    21300032: Spark_Rock_Spritesheet_16
+    21300034: Spark_Rock_Spritesheet_17
+    21300036: Spark_Rock_Spritesheet_18
+    21300038: Spark_Rock_Spritesheet_19
+    21300040: Spark_Rock_Spritesheet_20
+    21300042: Spark_Rock_Spritesheet_21
+    21300044: Spark_Rock_Spritesheet_22
+    21300046: Spark_Rock_Spritesheet_23
+    21300048: Spark_Rock_Spritesheet_24
+    21300050: Spark_Rock_Spritesheet_25
+    21300052: Spark_Rock_Spritesheet_26
+    21300054: Spark_Rock_Spritesheet_27
+    21300056: Spark_Rock_Spritesheet_28
+    21300058: Spark_Rock_Spritesheet_29
+    21300060: Spark_Rock_Spritesheet_30
+    21300062: Spark_Rock_Spritesheet_31
+    21300064: Spark_Rock_Spritesheet_32
+    21300066: Spark_Rock_Spritesheet_33
+    21300068: Spark_Rock_Spritesheet_34
+    21300070: Spark_Rock_Spritesheet_35
+    21300072: Spark_Rock_Spritesheet_36
+    21300074: Spark_Rock_Spritesheet_37
+    21300076: Spark_Rock_Spritesheet_38
+    21300078: Spark_Rock_Spritesheet_39
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -34,7 +74,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -58,9 +98,537 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1932
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 1932
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 1932
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 1932
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 1932
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 1610
+        y: 1932
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1610
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 1610
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 1610
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 1610
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 1610
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 1610
+        y: 1610
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1288
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 1288
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 1288
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 1288
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 1288
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 1610
+        y: 1288
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 966
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 966
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 966
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 966
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 966
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 1610
+        y: 966
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 644
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 644
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 644
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 644
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 644
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 1610
+        y: 644
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 322
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 322
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 322
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 322
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 322
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 1610
+        y: 322
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 0
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 0
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spark_Rock_Spritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 0
+        width: 322
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 

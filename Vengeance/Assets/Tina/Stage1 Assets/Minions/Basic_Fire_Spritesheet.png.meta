@@ -1,9 +1,35 @@
 fileFormatVersion: 2
 guid: 81b5335a176105e4db72c5a604cb4653
-timeCreated: 1484950256
+timeCreated: 1486709956
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Basic_Fire_Spritesheet_0
+    21300002: Basic_Fire_Spritesheet_1
+    21300004: Basic_Fire_Spritesheet_2
+    21300006: Basic_Fire_Spritesheet_3
+    21300008: Basic_Fire_Spritesheet_4
+    21300010: Basic_Fire_Spritesheet_5
+    21300012: Basic_Fire_Spritesheet_6
+    21300014: Basic_Fire_Spritesheet_7
+    21300016: Basic_Fire_Spritesheet_8
+    21300018: Basic_Fire_Spritesheet_9
+    21300020: Basic_Fire_Spritesheet_10
+    21300022: Basic_Fire_Spritesheet_11
+    21300024: Basic_Fire_Spritesheet_12
+    21300026: Basic_Fire_Spritesheet_13
+    21300028: Basic_Fire_Spritesheet_14
+    21300030: Basic_Fire_Spritesheet_15
+    21300032: Basic_Fire_Spritesheet_16
+    21300034: Basic_Fire_Spritesheet_17
+    21300036: Basic_Fire_Spritesheet_18
+    21300038: Basic_Fire_Spritesheet_19
+    21300040: Basic_Fire_Spritesheet_20
+    21300042: Basic_Fire_Spritesheet_21
+    21300044: Basic_Fire_Spritesheet_22
+    21300046: Basic_Fire_Spritesheet_23
+    21300048: Basic_Fire_Spritesheet_24
+    21300050: Basic_Fire_Spritesheet_25
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -34,7 +60,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -58,9 +84,355 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Basic_Fire_Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1136
+        width: 136
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Basic_Fire_Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 1136
+        width: 136
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Basic_Fire_Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 1136
+        width: 136
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Basic_Fire_Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 994
+        width: 136
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Basic_Fire_Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 994
+        width: 136
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Basic_Fire_Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 994
+        width: 136
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Basic_Fire_Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 852
+        width: 136
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Basic_Fire_Spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 852
+        width: 136
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Basic_Fire_Spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 852
+        width: 136
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Basic_Fire_Spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 710
+        width: 136
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Basic_Fire_Spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 710
+        width: 136
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Basic_Fire_Spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 710
+        width: 136
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Basic_Fire_Spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 568
+        width: 136
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Basic_Fire_Spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 568
+        width: 136
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Basic_Fire_Spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 568
+        width: 136
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Basic_Fire_Spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 426
+        width: 136
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Basic_Fire_Spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 426
+        width: 136
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Basic_Fire_Spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 426
+        width: 136
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Basic_Fire_Spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 284
+        width: 136
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Basic_Fire_Spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 284
+        width: 136
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Basic_Fire_Spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 284
+        width: 136
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Basic_Fire_Spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 142
+        width: 136
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Basic_Fire_Spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 142
+        width: 136
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Basic_Fire_Spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 142
+        width: 136
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Basic_Fire_Spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 136
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Basic_Fire_Spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 0
+        width: 136
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 

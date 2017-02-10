@@ -120,7 +120,7 @@ public class PlayerController : MonoBehaviour
             lives++;
             updateLivesText();
         }
-        else if (other.gameObject.CompareTag("enemyBullet"))
+        else if (other.gameObject.CompareTag("Enemy"))
         {
             lives--;
             updateLivesText();

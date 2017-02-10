@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BoundaryDestroy : MonoBehaviour
 {
-    float BoundaryRadius = 0.1f;
+    float BoundaryRadius = -0.1f;
 
     // Use this for initialization
     void Start()

@@ -26,6 +26,8 @@ public class EnemyMovement : MonoBehaviour {
     // Bounce speed is based on speed variable
     public void Bounce(float wallDist, string direction)
     {
+        if (RB2D == null)
+            RB2D = gameObject.GetComponent<Rigidbody2D>();
         Vector2 movement = new Vector2(0, 0);
         if (direction == "Horizontal")
         {

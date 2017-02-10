@@ -24,7 +24,6 @@ public class EnemySpawner : MonoBehaviour {
 		public float delayInSecs;
 
 	}
-
 	public bool startSpawningOnCreation;
 	public float startDelay;
 	public EnemySpawnInfo[] spawnPlan;

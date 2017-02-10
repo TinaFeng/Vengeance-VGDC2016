@@ -18,6 +18,7 @@ public class SpawnPerpendicular : MonoBehaviour {
         if (timer <= 0)
         {
             timer = delay;
+            Debug.Log(Mathf.Sin(gameObject.GetComponent<Rigidbody2D>().velocity.x + gameObject.GetComponent<Rigidbody2D>().velocity.y));
             Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, 90));
             Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, 270));
         }
