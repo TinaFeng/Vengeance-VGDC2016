@@ -97,12 +97,12 @@ public class PlayerController : MonoBehaviour
         }
 
         //handle spawning bullets
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            playerShoot();
-        }
+        //if (Input.GetKeyDown(KeyCode.Z))
+        //{
+        //    playerShoot();
+        //}
         shootTime += Time.deltaTime;
-        if (shootTime > 0.3)
+        if (shootTime > 0.07)
         {
             playerShoot();
             shootTime = 0;
