@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
 
     //Ints
     private int lives;
-    private int score;
+    public int score;
     private int bombCount;
 
     //Vectors
@@ -40,13 +40,14 @@ public class PlayerController : MonoBehaviour
     //z = fire; x = bomb; c = cycle through abilities
     //1-5 bullets per shot
     private enum attackPattern {I, II, III, IV, V};
-
+    private float shootTime;
     //Enumerated Variables
     attackPattern currentAttackPattern;
 
     // Use this for initialization
     void Start()
     {
+        shootTime = 0;
         //initialize movement to a vector2(x,y)
         movement = new Vector2();
 
@@ -82,6 +83,7 @@ public class PlayerController : MonoBehaviour
     //occurs every frame
     void Update()
     {
+        
         //handle graze mode
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -98,6 +100,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             playerShoot();
+        }
+        shootTime += Time.deltaTime;
+        if (shootTime > 0.3)
+        {
+            playerShoot();
+            shootTime = 0;
         }
     }
 

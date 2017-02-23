@@ -30,9 +30,11 @@ public class EnemyAI : MonoBehaviour {
             gameObject.GetComponent<EnemyMovement>().Bounce(wallDist, movement.Substring(6));
         }
 
-        if (health == 0)
+        if (health <= 0)
         {
+            GameObject.Find("Player").GetComponent<PlayerController>().score += 100;
             Destroy(gameObject);
+            
         }
 
         TimeToShoot--;
