@@ -17,8 +17,11 @@ public class PlayerController : MonoBehaviour
 
     //Game Objects
     public GameObject playerBullet;
-    
+
     /**private variables**/
+
+    //flags
+    private bool firePressed = false;
 
     //Ints
     private int lives;
@@ -87,7 +90,7 @@ public class PlayerController : MonoBehaviour
         //handle graze mode
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            speed = 3;
+            speed = 5;
             charRenderer.enabled = true;
         }
         else if (Input.GetKeyUp(KeyCode.LeftShift))
@@ -97,12 +100,11 @@ public class PlayerController : MonoBehaviour
         }
 
         //handle spawning bullets
-        //if (Input.GetKeyDown(KeyCode.Z))
-        //{
-        //    playerShoot();
-        //}
+        if (Input.GetKeyDown(KeyCode.Z)) { firePressed = true; }
+        else if(Input.GetKeyUp(KeyCode.Z)) { firePressed = false; }
+
         shootTime += Time.deltaTime;
-        if (shootTime > 0.07)
+        if (shootTime > 0.07 && firePressed)
         {
             playerShoot();
             shootTime = 0;
