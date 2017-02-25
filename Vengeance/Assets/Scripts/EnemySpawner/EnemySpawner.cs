@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
 using System.Xml.Serialization;
 using System.IO;
 
@@ -28,6 +29,8 @@ public class EnemySpawner : MonoBehaviour {
 	}
 	public bool startSpawningOnCreation;
 	public float startDelay;
+	public string spawnPlanXmlFilename = "test.xml";
+	public bool saveSpawnPlanOnExit = true;
 	public EnemySpawnInfo[] spawnPlan;
 
 	private Dictionary<string, GameObject> enemyDict;
@@ -47,13 +50,21 @@ public class EnemySpawner : MonoBehaviour {
 
 		spawnPlanSerializer = new XmlSerializer(typeof(EnemySpawnInfo[]));
 
+        if (spawnPlanXmlFilename.Length > 0) {
+			loadSpawnPlanFromXml(spawnPlanXmlFilename);
+			Debug.Log("Successfully loaded spawnPlan from " + spawnPlanXmlFilename);
+		}
+
 		if (startSpawningOnCreation) {
 			startSpawning();
 		}
 	}
 
 	void OnApplicationQuit() {
-		spawnPlanToXML();
+        if (saveSpawnPlanOnExit) {
+			spawnPlanToXml();
+			Debug.Log("Successfully saved spawnPlan to " + spawnPlanXmlFilename);
+		}
 	}
 
 	public void startSpawning() {
@@ -76,9 +87,27 @@ public class EnemySpawner : MonoBehaviour {
 		}
 	}
 
-	public void spawnPlanToXML() {
-		using (var xmlFile = File.OpenWrite("test.xml")) {
-			spawnPlanSerializer.Serialize(xmlFile, spawnPlan);
+	public void spawnPlanToXml() {
+        try {
+			using (var xmlFile = File.OpenWrite(spawnPlanXmlFilename)) {
+				spawnPlanSerializer.Serialize(xmlFile, spawnPlan);
+			}
+		} catch (IOException e) {
+			Debug.Log("Error saving spawnPlan: " + e.Message);
+		} catch (XmlException e) {
+			Debug.Log("Error savingSpawnPlan: " + e.Message);
+		}
+	}
+
+	public void loadSpawnPlanFromXml(string filename) {
+		try {
+			using (var inFile = File.OpenRead(filename)) {
+				spawnPlan = (EnemySpawnInfo[]) spawnPlanSerializer.Deserialize(inFile);
+			}
+		} catch (IOException e) {
+			Debug.Log("Error loading spawnPlan: " + e.Message);
+		} catch (XmlException e) {
+			Debug.Log("Error loading spawnPlan: " + e.Message);
 		}
 	}
 }
