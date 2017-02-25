@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.IO;
 
 // ================
 // || HOW TO USE ||
@@ -29,6 +31,7 @@ public class EnemySpawner : MonoBehaviour {
 	public EnemySpawnInfo[] spawnPlan;
 
 	private Dictionary<string, GameObject> enemyDict;
+	private XmlSerializer spawnPlanSerializer;
 	
 	// Use this for initialization
 	void Start () {
@@ -42,9 +45,15 @@ public class EnemySpawner : MonoBehaviour {
 			}
 		}
 
+		spawnPlanSerializer = new XmlSerializer(typeof(EnemySpawnInfo[]));
+
 		if (startSpawningOnCreation) {
 			startSpawning();
 		}
+	}
+
+	void OnApplicationQuit() {
+		spawnPlanToXML();
 	}
 
 	public void startSpawning() {
@@ -64,6 +73,12 @@ public class EnemySpawner : MonoBehaviour {
 				yield return new WaitForSeconds(spawn.delayInSecs);
 			}
 			Instantiate(enemyDict[spawn.enemyType], spawn.position, Quaternion.identity);
+		}
+	}
+
+	public void spawnPlanToXML() {
+		using (var xmlFile = File.OpenWrite("test.xml")) {
+			spawnPlanSerializer.Serialize(xmlFile, spawnPlan);
 		}
 	}
 }
