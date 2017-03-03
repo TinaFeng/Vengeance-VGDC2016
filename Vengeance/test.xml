@@ -8,6 +8,7 @@
       <z>0</z>
     </position>
     <delayInSecs>0</delayInSecs>
+    <bgmFlag>START_MUSIC</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>BasicFire</enemyType>
@@ -17,6 +18,7 @@
       <z>0</z>
     </position>
     <delayInSecs>2</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>BasicFire</enemyType>
@@ -26,6 +28,7 @@
       <z>0</z>
     </position>
     <delayInSecs>1</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>BasicFire</enemyType>
@@ -35,6 +38,7 @@
       <z>0</z>
     </position>
     <delayInSecs>2</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>BasicFire</enemyType>
@@ -44,6 +48,7 @@
       <z>0</z>
     </position>
     <delayInSecs>1</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>BasicFire</enemyType>
@@ -53,6 +58,7 @@
       <z>0</z>
     </position>
     <delayInSecs>3</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>FireElemental</enemyType>
@@ -62,6 +68,7 @@
       <z>0</z>
     </position>
     <delayInSecs>3</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>SparkRock</enemyType>
@@ -71,6 +78,7 @@
       <z>0</z>
     </position>
     <delayInSecs>1</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>SparkRock</enemyType>
@@ -80,6 +88,7 @@
       <z>0</z>
     </position>
     <delayInSecs>0</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>GhostFlame</enemyType>
@@ -89,6 +98,7 @@
       <z>0</z>
     </position>
     <delayInSecs>3</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>GhostFlame</enemyType>
@@ -98,6 +108,7 @@
       <z>0</z>
     </position>
     <delayInSecs>0</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>BasicFire</enemyType>
@@ -107,6 +118,7 @@
       <z>0</z>
     </position>
     <delayInSecs>5</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>BasicFire</enemyType>
@@ -116,6 +128,7 @@
       <z>0</z>
     </position>
     <delayInSecs>0</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>BasicFire</enemyType>
@@ -125,6 +138,7 @@
       <z>0</z>
     </position>
     <delayInSecs>2</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>BasicFire</enemyType>
@@ -134,6 +148,7 @@
       <z>0</z>
     </position>
     <delayInSecs>0</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>FireElemental</enemyType>
@@ -143,6 +158,7 @@
       <z>0</z>
     </position>
     <delayInSecs>2</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>FireElemental</enemyType>
@@ -152,6 +168,7 @@
       <z>0</z>
     </position>
     <delayInSecs>0</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>FireElemental</enemyType>
@@ -161,6 +178,7 @@
       <z>0</z>
     </position>
     <delayInSecs>0</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>BasicFire</enemyType>
@@ -170,6 +188,7 @@
       <z>0</z>
     </position>
     <delayInSecs>3</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>BasicFire</enemyType>
@@ -179,6 +198,7 @@
       <z>0</z>
     </position>
     <delayInSecs>1</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>SparkRock</enemyType>
@@ -188,6 +208,7 @@
       <z>0</z>
     </position>
     <delayInSecs>1</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>BasicFire</enemyType>
@@ -197,6 +218,7 @@
       <z>0</z>
     </position>
     <delayInSecs>2</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>BasicFire</enemyType>
@@ -206,6 +228,7 @@
       <z>0</z>
     </position>
     <delayInSecs>1</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>SparkRock</enemyType>
@@ -215,6 +238,7 @@
       <z>0</z>
     </position>
     <delayInSecs>1</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>GhostFlame</enemyType>
@@ -224,6 +248,7 @@
       <z>0</z>
     </position>
     <delayInSecs>4</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>GhostFlame</enemyType>
@@ -233,6 +258,7 @@
       <z>0</z>
     </position>
     <delayInSecs>0</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>FireElemental</enemyType>
@@ -242,6 +268,7 @@
       <z>0</z>
     </position>
     <delayInSecs>2</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>BasicFire</enemyType>
@@ -251,6 +278,7 @@
       <z>0</z>
     </position>
     <delayInSecs>1</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>BasicFire</enemyType>
@@ -260,6 +288,7 @@
       <z>0</z>
     </position>
     <delayInSecs>1</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>BasicFire</enemyType>
@@ -269,6 +298,7 @@
       <z>0</z>
     </position>
     <delayInSecs>1</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>GhostFlame</enemyType>
@@ -278,6 +308,7 @@
       <z>0</z>
     </position>
     <delayInSecs>2</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>FireElemental</enemyType>
@@ -287,6 +318,7 @@
       <z>0</z>
     </position>
     <delayInSecs>1</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>BasicFire</enemyType>
@@ -296,6 +328,7 @@
       <z>0</z>
     </position>
     <delayInSecs>1</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>BasicFire</enemyType>
@@ -305,6 +338,7 @@
       <z>0</z>
     </position>
     <delayInSecs>1</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>BasicFire</enemyType>
@@ -314,6 +348,7 @@
       <z>0</z>
     </position>
     <delayInSecs>1</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
     <enemyType>Alicia</enemyType>
@@ -323,14 +358,15 @@
       <z>0</z>
     </position>
     <delayInSecs>15</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
-  <EnemySpawnInfo>
-    <enemyType>BasicFire</enemyType>
+</ArrayOfEnemySpawnInfo>pe>BasicFire</enemyType>
     <position>
       <x>0</x>
       <y>10</y>
       <z>0</z>
     </position>
     <delayInSecs>2</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
 </ArrayOfEnemySpawnInfo>

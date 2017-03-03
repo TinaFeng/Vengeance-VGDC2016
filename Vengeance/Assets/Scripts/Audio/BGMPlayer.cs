@@ -11,7 +11,7 @@ public class BGMPlayer : MonoBehaviour {
 
 	private AudioSource[] audioSources;
 	private BGMTrack currentTrack;
-	private int currentTrackIndex; // ugly, but Invoke doesn't allow passing parameters and I don't want to be in Coroutine hell
+	public int currentTrackIndex; // ugly, but Invoke doesn't allow passing parameters and I don't want to be in Coroutine hell
 	private float currentVolume = 1.0F;
 	private double nextEventTime;
 	private int flip = 0;
@@ -54,25 +54,40 @@ public class BGMPlayer : MonoBehaviour {
 		}
 	}
 
+	public void reset() {
+		foreach (BGMTrack track in tracks) {
+			track.reset();
+		}
+	}
+
 	// if there is another track currently playing, the player first stops that track.
 	// There will be a short pause between stopping the currently playing track and starting the new one
 	public void start(int trackIndex = 0) {
-		currentTrack = tracks[currentTrackIndex];
-		isPlaying = true;
-		nextEventTime = AudioSettings.dspTime;
-		Debug.Log("BGMPlayer started");
+        if (!isPlaying) {
+			currentTrack = tracks[currentTrackIndex];
+			isPlaying = true;
+			nextEventTime = AudioSettings.dspTime;
+			Debug.Log("BGMPlayer started");
+		} else {
+			Debug.Log("BGMPlayer.start() was called but BGMPlayer was already started");
+		}
 	}
 
 	public void stop(bool smoothStop = true) {
-		isPlaying = false;
-		foreach (AudioSource source in audioSources) {
-			if (smoothStop) {
-				fadeOut(0.06f);
-			} else {
-				source.Stop();
+        if (isPlaying) {
+			isPlaying = false;
+			foreach (AudioSource source in audioSources) {
+				if (smoothStop) {
+					fadeOut(0.06f);
+				} else {
+					source.Stop();
+				}
 			}
+			Debug.Log("BGMPlayer stopped");
+		} else {
+			Debug.Log("BGMPlayer.stop() was called but BGMPlayer was already stopped");
 		}
-		Debug.Log("BGMPlayer stopped");
+		reset();
 	}
 
 	public void stopSources() {
@@ -133,5 +148,6 @@ public class BGMPlayer : MonoBehaviour {
 			yield return new WaitForSeconds(lengthInSeconds * interval);
 		}
 		stopSources();
+		resetVolume();
 	}
 }

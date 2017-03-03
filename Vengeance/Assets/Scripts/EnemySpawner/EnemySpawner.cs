@@ -18,27 +18,36 @@ using System.IO;
 // 		Enemy Type - the name of the child enemy game object to spawn
 //		Position - coordinates to spawn it at
 // 		Delay in Secs - how long to wait before spawning the enemy
+
+public enum BGMFlag { NONE, START_MUSIC, STOP_MUSIC, CHANGE_MUSIC }
+
 public class EnemySpawner : MonoBehaviour {
 
 	[System.Serializable]
 	public class EnemySpawnInfo {
-		public string enemyType;
+		public string enemyType = ""; // default is empty string
 		public Vector3 position;
 		public float delayInSecs;
+		public BGMFlag bgmFlag = BGMFlag.NONE;
 
+		// TODO: make the below field appear in the inspector ONLY if bgmFlag equals BGMFlag.CHANGE_TRACK
+		// public int indexOfMusicToPlay = 0;
 	}
 	public bool startSpawningOnCreation;
 	public float startDelay;
 	public string spawnPlanXmlFilename = "test.xml";
+    public bool loadSpawnPlanOnStartup = false;
 	public bool saveSpawnPlanOnExit = true;
 	public EnemySpawnInfo[] spawnPlan;
 
 	private Dictionary<string, GameObject> enemyDict;
 	private XmlSerializer spawnPlanSerializer;
+	private BGMPlayer bgmPlayer;
 	
 	// Use this for initialization
 	void Start () {
 		enemyDict = new Dictionary<string, GameObject>();
+		bgmPlayer = FindObjectOfType<BGMPlayer>();
 
 		// enemyDict only adds children GameObjects if they have the "Enemy" tag
 		foreach (Transform child in transform) {
@@ -50,7 +59,7 @@ public class EnemySpawner : MonoBehaviour {
 
 		spawnPlanSerializer = new XmlSerializer(typeof(EnemySpawnInfo[]));
 
-        if (spawnPlanXmlFilename.Length > 0) {
+        if (spawnPlanXmlFilename.Length > 0 && loadSpawnPlanOnStartup) {
 			loadSpawnPlanFromXml(spawnPlanXmlFilename);
 			Debug.Log("Successfully loaded spawnPlan from " + spawnPlanXmlFilename);
 		}
@@ -79,11 +88,34 @@ public class EnemySpawner : MonoBehaviour {
 		}
 
 		foreach (EnemySpawnInfo spawn in spawnPlan) {
-			Debug.Log("Spawning " + spawn.enemyType + " with delay " + spawn.delayInSecs);
-			if (spawn.delayInSecs > 0.0f) {
-				yield return new WaitForSeconds(spawn.delayInSecs);
+            if (!spawn.enemyType.Equals("")) {
+				Debug.Log("Spawning " + spawn.enemyType + " with delay " + spawn.delayInSecs);
+				if (spawn.delayInSecs > 0.0f) {
+					yield return new WaitForSeconds(spawn.delayInSecs);
+				}
+				Instantiate(enemyDict[spawn.enemyType], spawn.position, Quaternion.identity);
 			}
-			Instantiate(enemyDict[spawn.enemyType], spawn.position, Quaternion.identity);
+            if (spawn.bgmFlag != BGMFlag.NONE) {
+				updateBGMPlayer(spawn.bgmFlag);
+			}
+		}
+	}
+
+	private void updateBGMPlayer(BGMFlag flag) {
+		switch (flag) {
+			case BGMFlag.START_MUSIC:
+				bgmPlayer.start();
+				break;
+			case BGMFlag.STOP_MUSIC:
+				bgmPlayer.stop();
+				break;
+			case BGMFlag.CHANGE_MUSIC:
+				bgmPlayer.changeTrack(bgmPlayer.currentTrackIndex + 1);
+				break;
+			case BGMFlag.NONE:
+			default:
+				Debug.Log("Invalid flag passed to updateBGMPlayer(): " + flag.ToString());
+				break;
 		}
 	}
 

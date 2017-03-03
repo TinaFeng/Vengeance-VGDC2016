@@ -20,6 +20,10 @@ public class BGMTrack : MonoBehaviour {
 		started = false;
 	}
 
+	public void reset() {
+		started = false;
+	}
+
 	public BGMClip getNextClip() {
 		if (!started) {			// All clip playback algorithms start from index 0 initially
 			currentClip = 0;
