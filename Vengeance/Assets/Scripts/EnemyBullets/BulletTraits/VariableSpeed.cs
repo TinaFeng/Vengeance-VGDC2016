@@ -10,7 +10,8 @@ public class VariableSpeed : MonoBehaviour
     public float delay = 1f;
     public float timer = 1f;
 
-    public int angle = 180;
+    int x = 0;
+    float angle = 0f;
     // Use this for initialization
     void Start()
     {
@@ -20,6 +21,11 @@ public class VariableSpeed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (x == 0)
+        {
+            angle = transform.rotation.z;
+            x = 1;
+        }
         float timer = delay;
         Quaternion rot = transform.rotation;
         rot = Quaternion.Euler(0, 0, angle);

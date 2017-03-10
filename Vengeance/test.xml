@@ -1,58 +1,56 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="Windows-1252"?>
 <ArrayOfEnemySpawnInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EnemySpawnInfo>
-    <enemyType>BasicFire</enemyType>
+    <enemyType>EnemyPlaceholder</enemyType>
     <position>
-      <x>10</x>
-      <y>10</y>
+      <x>0</x>
+      <y>0</y>
       <z>0</z>
     </position>
-    <delayInSecs>0</delayInSecs>
-    <bgmFlag>START_MUSIC</bgmFlag>
-  </EnemySpawnInfo>
-  <EnemySpawnInfo>
-    <enemyType>BasicFire</enemyType>
-    <position>
-      <x>-10</x>
-      <y>9</y>
-      <z>0</z>
-    </position>
-    <delayInSecs>2</delayInSecs>
+    <delayInSecs>0.5</delayInSecs>
     <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
-    <enemyType>BasicFire</enemyType>
+    <enemyType>EnemyPlaceholder2</enemyType>
     <position>
-      <x>-10</x>
-      <y>7</y>
+      <x>0</x>
+      <y>0</y>
       <z>0</z>
     </position>
-    <delayInSecs>1</delayInSecs>
+    <delayInSecs>0.5</delayInSecs>
     <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
-    <enemyType>BasicFire</enemyType>
+    <enemyType>EnemyPlaceholder</enemyType>
     <position>
-      <x>10</x>
-      <y>7</y>
+      <x>0</x>
+      <y>0</y>
       <z>0</z>
     </position>
-    <delayInSecs>2</delayInSecs>
+    <delayInSecs>0.5</delayInSecs>
     <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
-    <enemyType>BasicFire</enemyType>
+    <enemyType>EnemyPlaceholder2</enemyType>
     <position>
-      <x>-10</x>
-      <y>5</y>
+      <x>0</x>
+      <y>0</y>
       <z>0</z>
     </position>
-    <delayInSecs>1</delayInSecs>
+    <delayInSecs>0.5</delayInSecs>
     <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
-    <enemyType>BasicFire</enemyType>
+    <enemyType>EnemyPlaceholder</enemyType>
     <position>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </position>
+    <delayInSecs>0.5</delayInSecs>
+    <bgmFlag>NONE</bgmFlag>
+  </EnemySpawnInfo>
+</ArrayOfEnemySpawnInfo><position>
       <x>10</x>
       <y>5</y>
       <z>0</z>
@@ -360,7 +358,7 @@
     <delayInSecs>15</delayInSecs>
     <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
-</ArrayOfEnemySpawnInfo>pe>BasicFire</enemyType>
+</ArrayOfEnemySpawnInfo>fo>pe>BasicFire</enemyType>
     <position>
       <x>0</x>
       <y>10</y>
