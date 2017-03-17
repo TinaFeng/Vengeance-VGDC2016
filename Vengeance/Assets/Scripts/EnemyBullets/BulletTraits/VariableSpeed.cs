@@ -26,9 +26,7 @@ public class VariableSpeed : MonoBehaviour
             angle = transform.rotation.z;
             x = 1;
         }
-        float timer = delay;
-        Quaternion rot = transform.rotation;
-        rot = Quaternion.Euler(0, 0, angle);
+        Quaternion rot = Quaternion.Euler(0, 0, angle);
         transform.rotation = rot;
 
         if (startspeed > minspeed)

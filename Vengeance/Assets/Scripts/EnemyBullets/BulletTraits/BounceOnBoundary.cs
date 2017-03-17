@@ -4,6 +4,7 @@ using System.Collections;
 public class BounceOnBoundary : MonoBehaviour
 {
     float BoundaryRadius = 0.0f;
+    int x = 0;
     float angle = 0f;
 
     // Use this for initialization
@@ -18,13 +19,13 @@ public class BounceOnBoundary : MonoBehaviour
         Vector3 pos = transform.position;
         if (pos.y + BoundaryRadius >= Camera.main.orthographicSize)
         {
-            angle = transform.rotation.z + 180f;
-            Quaternion rot = Quaternion.Euler(0, 0, angle);
-            transform.rotation = rot;
+            Instantiate(gameObject, transform.position, Quaternion.Euler(0, 0, 0f - transform.rotation.z));
+            Destroy(gameObject);
         }
         if (pos.y - BoundaryRadius <= -Camera.main.orthographicSize)
         {
-            transform.rotation = Quaternion.Euler(0, 0, -angle);
+            Instantiate(gameObject, transform.position, Quaternion.Euler(0, 0, 180f - transform.rotation.z));
+            Destroy(gameObject);
         }
 
         float screenRatio = (float)Screen.width / (float)Screen.height;
@@ -32,15 +33,13 @@ public class BounceOnBoundary : MonoBehaviour
 
         if (pos.x + BoundaryRadius >= widthOrtho)
         {
-            angle = transform.rotation.z + 180f; ;
-            Quaternion rot = Quaternion.Euler(0, 0, angle);
-            transform.rotation = rot;
+            Instantiate(gameObject, transform.position, Quaternion.Euler(0, 0, 225f - transform.rotation.z));
+            Destroy(gameObject);
         }
         if (pos.x - BoundaryRadius <= -widthOrtho)
         {
-            angle = transform.rotation.z + 180f;
-            Quaternion rot = Quaternion.Euler(0, 0, angle);
-            transform.rotation = rot;
+            Instantiate(gameObject, transform.position, Quaternion.Euler(0, 0, 135f - transform.rotation.z));
+            Destroy(gameObject);
         }
     }
 }

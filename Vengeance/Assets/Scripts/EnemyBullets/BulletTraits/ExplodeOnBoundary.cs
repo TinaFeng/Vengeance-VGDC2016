@@ -24,8 +24,8 @@ public class ExplodeOnBoundary : MonoBehaviour
             Instantiate(bullet, transform.position, Quaternion.Euler(direction, 0, 180));
             Instantiate(bullet, transform.position, Quaternion.Euler(direction, 0, 135));
             Instantiate(bullet, transform.position, Quaternion.Euler(direction, 0, 225));
-            Destroy(this);
-            
+            Destroy(gameObject);
+
         }
         if (pos.y - BoundaryRadius <= -Camera.main.orthographicSize)
         {
@@ -33,7 +33,7 @@ public class ExplodeOnBoundary : MonoBehaviour
             Instantiate(bullet, transform.position, Quaternion.Euler(direction, 0, 0));
             Instantiate(bullet, transform.position, Quaternion.Euler(direction, 0, 45));
             Instantiate(bullet, transform.position, Quaternion.Euler(direction, 0, 315));
-            Destroy(this);
+            Destroy(gameObject);
         }
 
         float screenRatio = (float)Screen.width / (float)Screen.height;
@@ -45,7 +45,7 @@ public class ExplodeOnBoundary : MonoBehaviour
             Instantiate(bullet, transform.position, Quaternion.Euler(direction, 0, 90));
             Instantiate(bullet, transform.position, Quaternion.Euler(direction, 0, 45));
             Instantiate(bullet, transform.position, Quaternion.Euler(direction, 0, 135));
-            Destroy(this);
+            Destroy(gameObject);
         }
         if (pos.x - BoundaryRadius <= -widthOrtho)
         {
@@ -53,7 +53,7 @@ public class ExplodeOnBoundary : MonoBehaviour
             Instantiate(bullet, transform.position, Quaternion.Euler(direction, 0, 270));
             Instantiate(bullet, transform.position, Quaternion.Euler(direction, 0, 315));
             Instantiate(bullet, transform.position, Quaternion.Euler(direction, 0, 225));
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 }

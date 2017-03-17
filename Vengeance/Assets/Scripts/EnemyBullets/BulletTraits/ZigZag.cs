@@ -7,6 +7,7 @@ public class ZigZag : MonoBehaviour {
     public float changespeed = 1f;
     public float delay = .25f;
     public float timer = .25f;
+
     int x = 0;
     int turn = 0;
     float angle = 0f;
