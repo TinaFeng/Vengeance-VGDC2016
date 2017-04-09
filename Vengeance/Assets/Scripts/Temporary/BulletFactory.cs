@@ -14,6 +14,7 @@ public class BulletFactory : MonoBehaviour {
 
     public GameObject BulletMaker(int index)
     {
+        print("huh00");
         return Instantiate(bullets[index]);
     }
 

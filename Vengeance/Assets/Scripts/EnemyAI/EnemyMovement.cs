@@ -12,7 +12,9 @@ public class EnemyMovement : MonoBehaviour {
 
     void Start()
     {
+
         RB2D = gameObject.GetComponent<Rigidbody2D>();
+        transform.position = new Vector3(location.x, location.y, 0);
     }
 
     //moves to a point in space

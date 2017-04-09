@@ -40,7 +40,7 @@ public class EnemyAI : MonoBehaviour {
         TimeToShoot--;
         if (TimeToShoot < 0)
         {
-            //gameObject.GetComponent<BulletFactory>().BulletMaker(bullets);
+            gameObject.GetComponent<BulletFactory>().BulletMaker(bullets);
             TimeToShoot = OriginalTimeToShoot;
         }
     }

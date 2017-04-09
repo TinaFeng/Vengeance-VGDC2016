@@ -1,56 +1,58 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <ArrayOfEnemySpawnInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EnemySpawnInfo>
-    <enemyType>EnemyPlaceholder</enemyType>
+    <enemyType>BasicFire</enemyType>
     <position>
-      <x>0</x>
-      <y>0</y>
+      <x>10</x>
+      <y>10</y>
       <z>0</z>
     </position>
-    <delayInSecs>0.5</delayInSecs>
+    <delayInSecs>0</delayInSecs>
     <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
-    <enemyType>EnemyPlaceholder2</enemyType>
+    <enemyType>BasicFire</enemyType>
     <position>
-      <x>0</x>
-      <y>0</y>
+      <x>-10</x>
+      <y>9</y>
       <z>0</z>
     </position>
-    <delayInSecs>0.5</delayInSecs>
+    <delayInSecs>2</delayInSecs>
     <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
-    <enemyType>EnemyPlaceholder</enemyType>
+    <enemyType>BasicFire</enemyType>
     <position>
-      <x>0</x>
-      <y>0</y>
+      <x>-10</x>
+      <y>7</y>
       <z>0</z>
     </position>
-    <delayInSecs>0.5</delayInSecs>
+    <delayInSecs>1</delayInSecs>
     <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
-    <enemyType>EnemyPlaceholder2</enemyType>
+    <enemyType>BasicFire</enemyType>
     <position>
-      <x>0</x>
-      <y>0</y>
+      <x>10</x>
+      <y>7</y>
       <z>0</z>
     </position>
-    <delayInSecs>0.5</delayInSecs>
+    <delayInSecs>2</delayInSecs>
     <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
   <EnemySpawnInfo>
-    <enemyType>EnemyPlaceholder</enemyType>
+    <enemyType>BasicFire</enemyType>
     <position>
-      <x>0</x>
-      <y>0</y>
+      <x>-10</x>
+      <y>5</y>
       <z>0</z>
     </position>
-    <delayInSecs>0.5</delayInSecs>
+    <delayInSecs>1</delayInSecs>
     <bgmFlag>NONE</bgmFlag>
   </EnemySpawnInfo>
-</ArrayOfEnemySpawnInfo><position>
+  <EnemySpawnInfo>
+    <enemyType>BasicFire</enemyType>
+    <position>
       <x>10</x>
       <y>5</y>
       <z>0</z>
