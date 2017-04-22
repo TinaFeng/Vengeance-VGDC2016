@@ -6,17 +6,10 @@ public class MoveTowardPlayer : MonoBehaviour
 
     public float speed = 5f;
     public string player = "Player";
-
     int x = 0;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Quaternion rot = transform.rotation;
         if (x == 0)

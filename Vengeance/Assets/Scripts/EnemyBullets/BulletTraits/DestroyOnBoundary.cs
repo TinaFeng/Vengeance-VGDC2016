@@ -5,14 +5,8 @@ public class DestroyOnBoundary : MonoBehaviour
 {
     float BoundaryRadius = -0.1f;
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Vector3 pos = transform.position;
         if (pos.y + BoundaryRadius > Camera.main.orthographicSize)
@@ -23,7 +17,6 @@ public class DestroyOnBoundary : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
         float screenRatio = (float)Screen.width / (float)Screen.height;
         float widthOrtho = Camera.main.orthographicSize * screenRatio;
 
@@ -36,4 +29,5 @@ public class DestroyOnBoundary : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 }
