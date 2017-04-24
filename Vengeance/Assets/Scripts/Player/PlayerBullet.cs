@@ -3,10 +3,8 @@ using System.Collections;
 
 public class PlayerBullet : MonoBehaviour {
 
-    public float speed = 20f;
-
 	void FixedUpdate ()
     {
-        transform.Translate(0, speed*Time.deltaTime, 0);
+        transform.Translate(0, gameObject.GetComponent<BulletStats>().speed*Time.deltaTime, 0);
     }
 }

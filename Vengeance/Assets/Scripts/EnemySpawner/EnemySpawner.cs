@@ -23,20 +23,10 @@ public enum BGMFlag { NONE, START_MUSIC, STOP_MUSIC, CHANGE_MUSIC }
 
 public class EnemySpawner : MonoBehaviour {
     [System.Serializable]
-    public class Movements
-    {
-        public Vector2[] positions;
-        public float speed;
-    }
-
-    [System.Serializable]
 	public class EnemySpawnInfo {
-		public string enemyType = ""; // default is empty string
-		public Vector3 position;
+        public GameObject enemy;
 		public float delayInSecs;
 		public BGMFlag bgmFlag = BGMFlag.NONE;
-        public CurveMovement.Movements[] moves;
-        public bool repeat;
         // TODO: make the below field appear in the inspector ONLY if bgmFlag equals BGMFlag.CHANGE_TRACK
         // public int indexOfMusicToPlay = 0;
     }
@@ -95,16 +85,11 @@ public class EnemySpawner : MonoBehaviour {
 		}
 
 		foreach (EnemySpawnInfo spawn in spawnPlan) {
-            if (!spawn.enemyType.Equals("")) {
-				Debug.Log("Spawning " + spawn.enemyType + " with delay " + spawn.delayInSecs);
+            if (spawn.enemy != null) {
 				if (spawn.delayInSecs > 0.0f) {
 					yield return new WaitForSeconds(spawn.delayInSecs);
 				}
-				GameObject foo = Instantiate(enemyDict[spawn.enemyType], spawn.position, Quaternion.identity);
-                foo.AddComponent<CurveMovement>();
-                foo.GetComponent<CurveMovement>().moves = spawn.moves;
-                foo.GetComponent<CurveMovement>().repeat = spawn.repeat;
-
+                spawn.enemy.SetActive(true);
             }
             if (spawn.bgmFlag != BGMFlag.NONE) {
 				updateBGMPlayer(spawn.bgmFlag);

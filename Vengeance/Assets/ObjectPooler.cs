@@ -6,8 +6,7 @@ public class ObjectPooler : MonoBehaviour {
 
     public GameObject objectPooled;
     public int pooledAmount;
-
-    Stack<GameObject> deactivatedObjects;
+    public Stack<GameObject> deactivatedObjects;
     
 
 	// Use this for initialization
@@ -17,8 +16,7 @@ public class ObjectPooler : MonoBehaviour {
 		for(int i = 0; i < pooledAmount; i++)
         {
             GameObject obj = (GameObject)Instantiate(objectPooled, transform);
-            obj.SetActive(false);
-            deactivatedObjects.Push(obj);
+            obj.GetComponent<BulletStats>().objectPool = this;
         }
 	}
 
@@ -30,7 +28,9 @@ public class ObjectPooler : MonoBehaviour {
         }
         else
         {
-            return (GameObject)Instantiate(objectPooled, transform);
+            GameObject obj = (GameObject)Instantiate(objectPooled, transform);
+            obj.GetComponent<BulletStats>().objectPool = this;
+            return obj;
         }
     }
 }
