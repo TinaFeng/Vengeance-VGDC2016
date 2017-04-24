@@ -101,7 +101,7 @@ public class BulletStats : MonoBehaviour {
             rotPos += rot * velocity;
             transform.position = rotPos;
         }
-
+        
         if(((int)moveType & 2) == 2)
         {
             rot = transform.rotation;

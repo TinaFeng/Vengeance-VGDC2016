@@ -17,6 +17,7 @@ public class ObjectPooler : MonoBehaviour {
         {
             GameObject obj = (GameObject)Instantiate(objectPooled, transform);
             obj.GetComponent<BulletStats>().objectPool = this;
+            obj.SetActive(false);
         }
 	}
 
@@ -30,6 +31,7 @@ public class ObjectPooler : MonoBehaviour {
         {
             GameObject obj = (GameObject)Instantiate(objectPooled, transform);
             obj.GetComponent<BulletStats>().objectPool = this;
+            pooledAmount++;
             return obj;
         }
     }
