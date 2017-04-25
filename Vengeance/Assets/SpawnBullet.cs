@@ -15,7 +15,8 @@ public class SpawnBullet : MonoBehaviour {
     GameObject obj;
 
     public Vector3 offset;
-    public float dir;
+    public AnimationCurve dir;
+    float deltaTime;
 
     //Radial
     public float radMin;
@@ -48,13 +49,18 @@ public class SpawnBullet : MonoBehaviour {
         {
             InvokeRepeating(functionName, repFreq + repDelay, repFreq);
         }
+        deltaTime = 0;
     }
 	
+    void FixedUpdate()
+    {
+        deltaTime += Time.deltaTime;
+    }
 	void Forward()
     {
         obj = bulletPool.GetObject();
         obj.transform.position = transform.position + offset;
-        obj.transform.rotation = Quaternion.Euler(0f, 0f, dir);
+        obj.transform.rotation = Quaternion.Euler(0f, 0f, dir.Evaluate(deltaTime));
         obj.SetActive(true);
     }
 
@@ -64,7 +70,7 @@ public class SpawnBullet : MonoBehaviour {
         {
             obj = bulletPool.GetObject();
             obj.transform.position = transform.position + offset;
-            obj.transform.rotation = Quaternion.Euler(0f, 0f, dir + radMin + (i*(radMax - radMin)/(radNum-1)));
+            obj.transform.rotation = Quaternion.Euler(0f, 0f, dir.Evaluate(deltaTime) + radMin + (i*(radMax - radMin)/(radNum-1)));
             obj.SetActive(true);
         }
     }
@@ -73,7 +79,7 @@ public class SpawnBullet : MonoBehaviour {
     {
         obj = bulletPool.GetObject();
         obj.transform.position = transform.position + offset;
-        obj.transform.rotation = Quaternion.Euler(0f, 0f, dir + chaMin + (Random.value * (chaMax - chaMin)));
+        obj.transform.rotation = Quaternion.Euler(0f, 0f, dir.Evaluate(deltaTime) + chaMin + (Random.value * (chaMax - chaMin)));
         obj.SetActive(true);
     }
 
@@ -100,7 +106,7 @@ public class SpawnBulletEditor : Editor
         var script = target as SpawnBullet;
         script.bulletPool = EditorGUILayout.ObjectField("Bullet Pool", script.bulletPool, typeof(ObjectPooler), true) as ObjectPooler;
         script.offset = EditorGUILayout.Vector3Field("Offset", script.offset);
-        script.dir = EditorGUILayout.FloatField("Direction", script.dir);
+        script.dir = EditorGUILayout.CurveField("Direction", script.dir);
         //Position Options
         script.posType = (Position)EditorGUILayout.EnumMaskField("Spawn Position Type", script.posType);
         if (((int)script.posType & 2) == 2)

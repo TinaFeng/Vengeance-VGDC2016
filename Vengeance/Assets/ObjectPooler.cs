@@ -21,6 +21,11 @@ public class ObjectPooler : MonoBehaviour {
         }
 	}
 
+    void FixedUpdate()
+    {
+        Debug.Log(pooledAmount - deactivatedObjects.Count);
+    }
+
     public GameObject GetObject()
     {
         if(deactivatedObjects.Count > 0)
@@ -29,10 +34,10 @@ public class ObjectPooler : MonoBehaviour {
         }
         else
         {
-            //GameObject obj = (GameObject)Instantiate(objectPooled, transform);
-            //obj.GetComponent<BulletStats>().objectPool = this;
-            //pooledAmount++;
-            return null;
+            GameObject obj = (GameObject)Instantiate(objectPooled, transform);
+            obj.GetComponent<BulletStats>().objectPool = this;
+            pooledAmount++;
+            return obj;
         }
     }
 }

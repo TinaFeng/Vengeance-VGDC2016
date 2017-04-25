@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-public enum Movement {Target = 1, Bounce = 2};
+public enum Movement {Target = 1, Bounce = 2, Size = 4};
 public enum Disable {Boundary = 1, Time = 2};
 
 public class BulletStats : MonoBehaviour {
@@ -12,141 +12,121 @@ public class BulletStats : MonoBehaviour {
 
     //General Variables
     public ObjectPooler objectPool;
-    public float speedX;
-    public float speedY;
     public Disable disableType;
     public Movement moveType;
     bool start = true;
-
+    Vector3 tempVector3;
+    GameObject player;
+    float dis;
 
     //Rotation
     Quaternion rot;
     Vector3 dir;
-    Vector3 rotPos;
-    Vector3 velocity;
     float angle;
 
-    //Player Tag and Gameobjects
-
-
     //Follow/Target Movement
-    public float followTime = 5f;
-    float startFollowTime;
-    public string followTargetTag;
-    GameObject followTarget;
-    bool startTarget;
+    public string targetTag;
+    GameObject target;
 
     //Variable Speed
     public AnimationCurve speedVarX;
     public AnimationCurve speedVarY;
-    float speedTime;
-    float timeChange;
+    public AnimationCurve size;
+    float sizeTemp;
+    float aliveTime = -1;
+    float deltaTime;
 
     //Bounce
-    public int bounceMax;
+    public int bounceMax = 0;
     public float bounceRadius;
-    int bounceCount = 0;
+    public int bounceCount = 0;
     Resolution resolution;
-
-    //Disable Boundary
-    public float boundaryRadius = -0.1f;
-    Vector3 disablePos;
     float screenRatio;
     float widthOrtho;
+
+    //Disable Boundary TEMP
+    public float boundaryRadius = -0.1f;
 
     //Disable Time
     public float disableTime;
 
     void OnEnable()
     {
-        speedTime = 0;
-        resolution = Screen.currentResolution;
-        if (start)
+        if (aliveTime < 0 && ((int)moveType & 1) == 1)
         {
-            if (((int)moveType & 1) == 1)
-            {
-                followTarget = GameObject.FindGameObjectWithTag(followTargetTag);
-            }
-            start = false;
+            target = GameObject.FindGameObjectWithTag(targetTag);
         }
-        if (((int)moveType & 1) == 1)
+        if(player == null)
         {
-            if (followTarget != null)
-            {
-                dir = transform.position - followTarget.transform.position;
-                angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-                rot = Quaternion.Euler(0, 0, angle + 90.0f);
-                transform.rotation = rot;
-            }
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
+        if (((int)moveType & 1) == 1 && target != null)
+        {
+            //FIND A WAY TO TARGET ON SPAWN WITHOUT BLOWING OUT WITH SEARCHING
+            dir = transform.position - target.transform.position;
+            angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            rot = Quaternion.Euler(0, 0, angle + 90.0f);
+            transform.rotation = rot;
         }
         if (((int)moveType & 2) == 2)
         {
             bounceCount = 0;
         }
 
+        if (((int)moveType & 4) == 4)
+        {
+            tempVector3.Set(1, 1, 1);
+            transform.localScale = tempVector3;
+        }
+
         if (((int)disableType & 2) == 2)
         {
             Invoke("Disable", disableTime);
         }
+        aliveTime = 0;
+        resolution = Screen.currentResolution;
         rot = transform.rotation;
     }
 
     void FixedUpdate()
     {
         //Bullet Movement
-        timeChange = Time.deltaTime;
-        speedX = speedVarX.Evaluate(speedTime);
-        speedY = speedVarY.Evaluate(speedTime);
-        speedTime += timeChange;
-        velocity.Set(0, speedY * timeChange, 0);
-        transform.position += rot * velocity;
-
-        //Weirdly changes rotation ATM
-        if (((int)moveType & 2) == 2)
+        dis = Vector3.Distance(player.transform.position, transform.position); // + radius offset of bullet
+        //if dis < 0.5, kill player
+        rot = transform.rotation;
+        deltaTime = Time.deltaTime;
+        tempVector3.Set(speedVarX.Evaluate(aliveTime) * deltaTime, speedVarY.Evaluate(aliveTime) * deltaTime, 0);
+        transform.position += rot * tempVector3;
+        if (((int)moveType & 4) == 4)
         {
-            if (bounceCount < bounceMax)
+            //Colliders that are too small will not be picked up by boundary deletion
+            sizeTemp = size.Evaluate(aliveTime);
+            tempVector3.Set(sizeTemp, sizeTemp, sizeTemp);
+            transform.localScale = tempVector3;
+        }
+        tempVector3 = transform.position;
+        if (bounceCount < bounceMax)
+        {
+            if(tempVector3.x > 10 || tempVector3.x < -10) // + offset
             {
-                if(!resolution.Equals(Screen.currentResolution))
-                {
-                    screenRatio = (float)Screen.width / (float)Screen.height;
-                    widthOrtho = Camera.main.orthographicSize * screenRatio;
-                }
-
-                if (transform.position.y + bounceRadius >= Camera.main.orthographicSize)
-                {
-                    transform.rotation = Quaternion.Euler(0f, 0f, 180f - transform.rotation.z);
-                    bounceCount++;
-                }
-                if (transform.position.y - bounceRadius <= -Camera.main.orthographicSize)
-                {
-                    transform.rotation = Quaternion.Euler(0f, 0f, 0f - transform.rotation.z);
-                    bounceCount++;
-                }
-                if (transform.position.x + bounceRadius >= widthOrtho)
-                {
-                    transform.rotation = Quaternion.Euler(0f, 0f, 135f - transform.rotation.z);
-                    bounceCount++;
-                }
-                if (transform.position.x - bounceRadius <= -widthOrtho)
-                {
-                    transform.rotation = Quaternion.Euler(0f, 0f, 225f - transform.rotation.z);
-                    bounceCount++;
-                }
+                transform.rotation = Quaternion.Euler(0f, 0f, -transform.rotation.eulerAngles.z);
+                bounceCount++;
+            }
+            if (bounceCount < bounceMax && (tempVector3.y > 15 || tempVector3.y < -15)) // + offset
+            {
+                transform.rotation = Quaternion.Euler(0f, 0f, 180 - transform.rotation.eulerAngles.z);
+                bounceCount++;
             }
         }
-
-        //MOVE TO A COLLIDER NOT ON THE BULLET
-        //Disable Bullets
-        //if (((int)disableType & 1) == 1)
-        //{
-        //    disablePos = transform.position;
-        //    screenRatio = (float)Screen.width / (float)Screen.height;
-        //    widthOrtho = Camera.main.orthographicSize * screenRatio;
-        //    if (disablePos.y + boundaryRadius > Camera.main.orthographicSize || disablePos.y - boundaryRadius < -Camera.main.orthographicSize || disablePos.x + boundaryRadius > widthOrtho || disablePos.x - boundaryRadius < -widthOrtho)
-        //    {
-        //        gameObject.SetActive(false);
-        //    }
-        //}
+        if (tempVector3.x > 11 || tempVector3.x < -11) // + offset
+        {
+            Disable();
+        }
+        if (bounceCount < bounceMax && (tempVector3.y > 16 || tempVector3.y < -16)) // + offset
+        {
+            Disable();
+        }
+        aliveTime += deltaTime;
     }
 
     void Disable()
@@ -161,9 +141,6 @@ public class BulletStats : MonoBehaviour {
     }
 }
 
-
-
-
 [CustomEditor(typeof(BulletStats))]
 public class BulletStatsEditor : Editor
 {
@@ -175,17 +152,21 @@ public class BulletStatsEditor : Editor
         //Movement Options
         script.speedVarX = EditorGUILayout.CurveField("Speed Curve X", script.speedVarX);
         script.speedVarY = EditorGUILayout.CurveField("Speed Curve Y", script.speedVarY);
+        
         script.moveType = (Movement)EditorGUILayout.EnumMaskField("Move Type", script.moveType);
         if (((int)script.moveType & 1) == 1)
         {
-            script.followTargetTag = EditorGUILayout.TextField("Target Tag", script.followTargetTag);
+            script.targetTag = EditorGUILayout.TextField("Target Tag", script.targetTag);
         }
         if (((int)script.moveType & 2) == 2)
         {
             script.bounceMax = EditorGUILayout.IntField("Max Bounces", script.bounceMax);
             script.bounceRadius = EditorGUILayout.FloatField("Bounce Radius", script.bounceRadius);
         }
-
+        if (((int)script.moveType & 4) == 4)
+        {
+            script.size = EditorGUILayout.CurveField("Size Curve", script.size);
+        }
         //Disable Options
         script.disableType = (Disable)EditorGUILayout.EnumMaskField("Disable Type", script.disableType);
         if (((int)script.disableType & 1) == 1)
