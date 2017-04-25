@@ -103,7 +103,7 @@ public class SpawnBulletEditor : Editor
         script.dir = EditorGUILayout.FloatField("Direction", script.dir);
         //Position Options
         script.posType = (Position)EditorGUILayout.EnumMaskField("Spawn Position Type", script.posType);
-        if(((int)script.posType & 2) == 2)
+        if (((int)script.posType & 2) == 2)
         {
             script.radMin = EditorGUILayout.FloatField("Left Raidial", script.radMin);
             script.radMax = EditorGUILayout.FloatField("Right Raidial", script.radMax);
@@ -121,6 +121,6 @@ public class SpawnBulletEditor : Editor
             script.repFreq = EditorGUILayout.FloatField("Repeating Frequency", script.repFreq);
             script.repDelay = EditorGUILayout.FloatField("Delay to Start", script.repDelay);
         }
-        
+
     }
 }

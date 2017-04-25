@@ -29,10 +29,10 @@ public class ObjectPooler : MonoBehaviour {
         }
         else
         {
-            GameObject obj = (GameObject)Instantiate(objectPooled, transform);
-            obj.GetComponent<BulletStats>().objectPool = this;
-            pooledAmount++;
-            return obj;
+            //GameObject obj = (GameObject)Instantiate(objectPooled, transform);
+            //obj.GetComponent<BulletStats>().objectPool = this;
+            //pooledAmount++;
+            return null;
         }
     }
 }
