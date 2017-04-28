@@ -30,7 +30,8 @@ public class SpawnBullet : MonoBehaviour {
     //Repeating
     public float repFreq;
     public float repDelay;
-	
+    public int shotMax;
+    int shotCount = 0;
 
 	void OnEnable () {
 		if(((int)posType & 1) == 1)
@@ -62,6 +63,7 @@ public class SpawnBullet : MonoBehaviour {
         obj.transform.position = transform.position + offset;
         obj.transform.rotation = Quaternion.Euler(0f, 0f, dir.Evaluate(deltaTime));
         obj.SetActive(true);
+        Refire();
     }
 
     void Radial()
@@ -73,6 +75,7 @@ public class SpawnBullet : MonoBehaviour {
             obj.transform.rotation = Quaternion.Euler(0f, 0f, dir.Evaluate(deltaTime) + radMin + (i*(radMax - radMin)/(radNum-1)));
             obj.SetActive(true);
         }
+        Refire();
     }
 
     void Chaos()
@@ -81,6 +84,21 @@ public class SpawnBullet : MonoBehaviour {
         obj.transform.position = transform.position + offset;
         obj.transform.rotation = Quaternion.Euler(0f, 0f, dir.Evaluate(deltaTime) + chaMin + (Random.value * (chaMax - chaMin)));
         obj.SetActive(true);
+        Refire();
+    }
+
+    void Refire()
+    {
+        if (((int)freqType & 4) != 4)
+        {
+            shotCount++;
+            if(shotCount > shotMax && shotMax != 0)
+            {
+                shotCount = 0;
+                CancelInvoke();
+                InvokeRepeating(functionName, repFreq + repDelay, repFreq);
+            }
+        }
     }
 
     void OnDisable()
@@ -126,6 +144,7 @@ public class SpawnBulletEditor : Editor
         {
             script.repFreq = EditorGUILayout.FloatField("Repeating Frequency", script.repFreq);
             script.repDelay = EditorGUILayout.FloatField("Delay to Start", script.repDelay);
+            script.shotMax = EditorGUILayout.IntField("Burst Number", script.shotMax);
         }
 
     }

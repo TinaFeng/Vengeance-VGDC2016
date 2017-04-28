@@ -18,6 +18,7 @@ public class BulletStats : MonoBehaviour {
     Vector3 tempVector3;
     GameObject player;
     float dis;
+    public float radius;
 
     //Rotation
     Quaternion rot;
@@ -38,7 +39,6 @@ public class BulletStats : MonoBehaviour {
 
     //Bounce
     public int bounceMax = 0;
-    public float bounceRadius;
     public int bounceCount = 0;
     Resolution resolution;
     float screenRatio;
@@ -62,7 +62,6 @@ public class BulletStats : MonoBehaviour {
         }
         if (((int)moveType & 1) == 1 && target != null)
         {
-            //FIND A WAY TO TARGET ON SPAWN WITHOUT BLOWING OUT WITH SEARCHING
             dir = transform.position - target.transform.position;
             angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             rot = Quaternion.Euler(0, 0, angle + 90.0f);
@@ -75,7 +74,8 @@ public class BulletStats : MonoBehaviour {
 
         if (((int)moveType & 4) == 4)
         {
-            tempVector3.Set(1, 1, 1);
+            sizeTemp = size.Evaluate(0);
+            tempVector3.Set(sizeTemp, sizeTemp, sizeTemp);
             transform.localScale = tempVector3;
         }
 
@@ -91,38 +91,51 @@ public class BulletStats : MonoBehaviour {
     void FixedUpdate()
     {
         //Bullet Movement
-        dis = Vector3.Distance(player.transform.position, transform.position); // + radius offset of bullet
-        //if dis < 0.5, kill player
         rot = transform.rotation;
         deltaTime = Time.deltaTime;
         tempVector3.Set(speedVarX.Evaluate(aliveTime) * deltaTime, speedVarY.Evaluate(aliveTime) * deltaTime, 0);
         transform.position += rot * tempVector3;
         if (((int)moveType & 4) == 4)
         {
-            //Colliders that are too small will not be picked up by boundary deletion
             sizeTemp = size.Evaluate(aliveTime);
             tempVector3.Set(sizeTemp, sizeTemp, sizeTemp);
             transform.localScale = tempVector3;
+            dis = Vector3.Distance(player.transform.position, transform.position) - (radius * sizeTemp); //doesnt work on nonsphere hitboxes
+        }
+        else
+        {
+            dis = Vector3.Distance(player.transform.position, transform.position) - radius;
+        }
+        if(dis < 0) //Utilize this for bomb
+        {
+            if(aliveTime < 1) //ensure some bullets dont kill player on spawn, needs more conditions
+            {
+                Disable();
+            }
+            else
+            {
+                //Debug.Log("Deadaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            }
         }
         tempVector3 = transform.position;
-        if (bounceCount < bounceMax)
+        if (((int)moveType & 2) == 2 && bounceCount < bounceMax)
         {
-            if(tempVector3.x > 10 || tempVector3.x < -10) // + offset
+            if(tempVector3.x + radius > 10 || tempVector3.x - radius < -10)
             {
                 transform.rotation = Quaternion.Euler(0f, 0f, -transform.rotation.eulerAngles.z);
                 bounceCount++;
             }
-            if (bounceCount < bounceMax && (tempVector3.y > 15 || tempVector3.y < -15)) // + offset
+            if (bounceCount < bounceMax && (tempVector3.y + radius > 15 || tempVector3.y - radius < -15))
             {
                 transform.rotation = Quaternion.Euler(0f, 0f, 180 - transform.rotation.eulerAngles.z);
                 bounceCount++;
             }
         }
-        if (tempVector3.x > 11 || tempVector3.x < -11) // + offset
+        if (tempVector3.x > 11 + radius || tempVector3.x < -11 - radius)
         {
             Disable();
         }
-        if (bounceCount < bounceMax && (tempVector3.y > 16 || tempVector3.y < -16)) // + offset
+        if (tempVector3.y > 16 + radius || tempVector3.y < -16 - radius)
         {
             Disable();
         }
@@ -152,7 +165,7 @@ public class BulletStatsEditor : Editor
         //Movement Options
         script.speedVarX = EditorGUILayout.CurveField("Speed Curve X", script.speedVarX);
         script.speedVarY = EditorGUILayout.CurveField("Speed Curve Y", script.speedVarY);
-        
+        script.radius = EditorGUILayout.FloatField("Hitbox Radius", script.radius);
         script.moveType = (Movement)EditorGUILayout.EnumMaskField("Move Type", script.moveType);
         if (((int)script.moveType & 1) == 1)
         {
@@ -161,7 +174,6 @@ public class BulletStatsEditor : Editor
         if (((int)script.moveType & 2) == 2)
         {
             script.bounceMax = EditorGUILayout.IntField("Max Bounces", script.bounceMax);
-            script.bounceRadius = EditorGUILayout.FloatField("Bounce Radius", script.bounceRadius);
         }
         if (((int)script.moveType & 4) == 4)
         {
