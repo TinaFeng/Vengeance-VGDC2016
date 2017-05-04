@@ -23,7 +23,7 @@ public class ObjectPooler : MonoBehaviour {
 
     void FixedUpdate()
     {
-        Debug.Log(pooledAmount - deactivatedObjects.Count);
+        //Debug.Log(pooledAmount - deactivatedObjects.Count);
     }
 
     public GameObject GetObject()

@@ -55,12 +55,12 @@ public class PlayerController : MonoBehaviour
         //handle graze mode
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            speed*=2;
+            speed/=2;
             charRenderer.enabled = true;
         }
         else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            speed/=2;
+            speed*=2;
             charRenderer.enabled = false;
         }
     }
@@ -69,8 +69,8 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         //get player's inputs
-        movement.x = Input.GetAxisRaw("Horizontal")/speed;
-        movement.y = Input.GetAxisRaw("Vertical")/speed;
+        movement.x = Input.GetAxisRaw("Horizontal") * speed/100;
+        movement.y = Input.GetAxisRaw("Vertical") * speed/100;
 
         gameObject.transform.Translate(movement);
     }

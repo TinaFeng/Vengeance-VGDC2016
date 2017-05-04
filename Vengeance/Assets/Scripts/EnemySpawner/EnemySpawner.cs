@@ -22,55 +22,21 @@ using System.IO;
 public enum BGMFlag { NONE, START_MUSIC, STOP_MUSIC, CHANGE_MUSIC }
 
 public class EnemySpawner : MonoBehaviour {
+
     [System.Serializable]
 	public class EnemySpawnInfo {
         public GameObject enemy;
 		public float delayInSecs;
 		public BGMFlag bgmFlag = BGMFlag.NONE;
-        // TODO: make the below field appear in the inspector ONLY if bgmFlag equals BGMFlag.CHANGE_TRACK
-        // public int indexOfMusicToPlay = 0;
     }
-	public bool startSpawningOnCreation;
 	public float startDelay;
-	public string spawnPlanXmlFilename = "test.xml";
-    public bool loadSpawnPlanOnStartup = false;
-	public bool saveSpawnPlanOnExit = true;
 	public EnemySpawnInfo[] spawnPlan;
-
-	private Dictionary<string, GameObject> enemyDict;
-	private XmlSerializer spawnPlanSerializer;
 	private BGMPlayer bgmPlayer;
 	
 	// Use this for initialization
 	void Start () {
-		enemyDict = new Dictionary<string, GameObject>();
 		bgmPlayer = FindObjectOfType<BGMPlayer>();
-
-		// enemyDict only adds children GameObjects if they have the "Enemy" tag
-		foreach (Transform child in transform) {
-			if (child.tag == "Enemy") {
-				Debug.Log("Added " + child.gameObject.name);
-				enemyDict.Add(child.gameObject.name, child.gameObject);
-			}
-		}
-
-		spawnPlanSerializer = new XmlSerializer(typeof(EnemySpawnInfo[]));
-
-        if (spawnPlanXmlFilename.Length > 0 && loadSpawnPlanOnStartup) {
-			loadSpawnPlanFromXml(spawnPlanXmlFilename);
-			Debug.Log("Successfully loaded spawnPlan from " + spawnPlanXmlFilename);
-		}
-
-		if (startSpawningOnCreation) {
-			startSpawning();
-		}
-	}
-
-	void OnApplicationQuit() {
-        if (saveSpawnPlanOnExit) {
-			spawnPlanToXml();
-			Debug.Log("Successfully saved spawnPlan to " + spawnPlanXmlFilename);
-		}
+        startSpawning();
 	}
 
 	public void startSpawning() {
@@ -89,6 +55,7 @@ public class EnemySpawner : MonoBehaviour {
 				if (spawn.delayInSecs > 0.0f) {
 					yield return new WaitForSeconds(spawn.delayInSecs);
 				}
+                Debug.Log(true);
                 spawn.enemy.SetActive(true);
             }
             if (spawn.bgmFlag != BGMFlag.NONE) {
@@ -112,30 +79,6 @@ public class EnemySpawner : MonoBehaviour {
 			default:
 				Debug.Log("Invalid flag passed to updateBGMPlayer(): " + flag.ToString());
 				break;
-		}
-	}
-
-	public void spawnPlanToXml() {
-        try {
-			using (var xmlFile = File.OpenWrite(spawnPlanXmlFilename)) {
-				spawnPlanSerializer.Serialize(xmlFile, spawnPlan);
-			}
-		} catch (IOException e) {
-			Debug.Log("Error saving spawnPlan: " + e.Message);
-		} catch (XmlException e) {
-			Debug.Log("Error savingSpawnPlan: " + e.Message);
-		}
-	}
-
-	public void loadSpawnPlanFromXml(string filename) {
-		try {
-			using (var inFile = File.OpenRead(filename)) {
-				spawnPlan = (EnemySpawnInfo[]) spawnPlanSerializer.Deserialize(inFile);
-			}
-		} catch (IOException e) {
-			Debug.Log("Error loading spawnPlan: " + e.Message);
-		} catch (XmlException e) {
-			Debug.Log("Error loading spawnPlan: " + e.Message);
 		}
 	}
 }

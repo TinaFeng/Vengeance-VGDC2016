@@ -5,25 +5,21 @@ using UnityEngine;
 public class EnemyStats : MonoBehaviour {
 
     GameObject player;
-    public int startHealth = 50;
-    int health;
+    public int health = 50;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        health = startHealth;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "playerBullet")
+        other.gameObject.SetActive(false);
+        health -= 10;
+        if (health <= 0)
         {
-            health -= 10;
-            if (health <= 0)
-            {
-                player.GetComponent<PlayerController>().score += 100;
-                gameObject.SetActive(false);
-            }
+            player.GetComponent<PlayerController>().score += 100;
+            gameObject.SetActive(false);
         }
     }
 }
