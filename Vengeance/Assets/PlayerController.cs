@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public Text scoreText;
     public Text bombsText;
     public Text AttackPatternText;
-    public ObjectPooler BulletPool;
+    public GameObject playerBullets;
 
     private bool firePressed = false;
     private int lives;
@@ -51,20 +51,26 @@ public class PlayerController : MonoBehaviour
     //occurs every frame
     void Update()
     {
-        
-        //handle graze mode
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+
+        if (Input.GetButtonDown("Fire2"))
         {
-            speed/=2;
+            speed /= 2;
             charRenderer.enabled = true;
         }
-        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        else if (Input.GetButtonUp("Fire2"))
         {
-            speed*=2;
+            speed *= 2;
             charRenderer.enabled = false;
         }
+        if (Input.GetButtonDown("Fire1"))
+        {
+            playerBullets.SetActive(true);
+        }
+        if (Input.GetButtonUp("Fire1"))
+        {
+            playerBullets.SetActive(false);
+        }
     }
-
     //occurs based on set time, independent of frame
     void FixedUpdate()
     {
