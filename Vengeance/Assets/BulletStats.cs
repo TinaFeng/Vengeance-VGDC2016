@@ -108,14 +108,9 @@ public class BulletStats : MonoBehaviour {
         }
         if(dis < 0) //Utilize this for bomb
         {
-            if(aliveTime < 1) //ensure some bullets dont kill player on spawn, needs more conditions
-            {
-                Disable();
-            }
-            else
-            {
-                //Debug.Log("Deadaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-            }
+            player.GetComponent<PlayerController>().lives--;
+            player.GetComponent<PlayerController>().updateLivesText();
+            Disable();
         }
         tempVector3 = transform.position;
         if (((int)moveType & 2) == 2 && bounceCount < bounceMax)

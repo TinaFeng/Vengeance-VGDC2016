@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Xml;
 using System.Xml.Serialization;
 using System.IO;
+using UnityEditor;
 
 // ================
 // || HOW TO USE ||
@@ -23,16 +24,12 @@ public enum BGMFlag { NONE, START_MUSIC, STOP_MUSIC, CHANGE_MUSIC }
 
 public class EnemySpawner : MonoBehaviour {
 
-    [System.Serializable]
-	public class EnemySpawnInfo {
-        public GameObject enemy;
-		public float delayInSecs;
-		public BGMFlag bgmFlag = BGMFlag.NONE;
-    }
+
 	public float startDelay;
-	public EnemySpawnInfo[] spawnPlan;
+	public float[] spawnPlan;
 	private BGMPlayer bgmPlayer;
-	
+    int i = 0;
+
 	// Use this for initialization
 	void Start () {
 		bgmPlayer = FindObjectOfType<BGMPlayer>();
@@ -49,18 +46,13 @@ public class EnemySpawner : MonoBehaviour {
 		if (startDelay > 0.0f) {
 			yield return new WaitForSeconds(startDelay);
 		}
-
-		foreach (EnemySpawnInfo spawn in spawnPlan) {
-            if (spawn.enemy != null) {
-				if (spawn.delayInSecs > 0.0f) {
-					yield return new WaitForSeconds(spawn.delayInSecs);
-				}
-                Debug.Log(true);
-                spawn.enemy.SetActive(true);
+		foreach (Transform child in transform) {
+            if (spawnPlan[i] > 0.0f)
+            {
+                yield return new WaitForSeconds(spawnPlan[i]);
             }
-            if (spawn.bgmFlag != BGMFlag.NONE) {
-				updateBGMPlayer(spawn.bgmFlag);
-			}
+            child.gameObject.SetActive(true);
+            i++;
 		}
 	}
 

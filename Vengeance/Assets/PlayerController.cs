@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public GameObject playerBullets;
 
     private bool firePressed = false;
-    private int lives;
+    public int lives;
     private int bombCount;
     private Vector2 movement;
     Vector3 playerBulletOffset;
@@ -89,17 +89,6 @@ public class PlayerController : MonoBehaviour
             lives++;
             updateLivesText();
         }
-        else if (other.gameObject.CompareTag("Enemy"))
-        {
-            lives--;
-            updateLivesText();
-
-            if (currentAttackPattern > attackPattern.I)
-            {
-                currentAttackPattern--;
-                updatePatternText();
-            }
-        }
         /*else if (other.gameObject.CompareTag("pBlock"))
         {
             score += 100;
@@ -126,13 +115,13 @@ public class PlayerController : MonoBehaviour
 
     }
     //update our lives text
-    void updateLivesText()
+    public void updateLivesText()
     {
         livesText.text = "Lives: " + lives.ToString();
     }
 
     //update our score text
-    void updateScoreText()
+    public void updateScoreText()
     {
         scoreText.text = "Score: " + score.ToString();
     }

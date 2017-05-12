@@ -13,9 +13,13 @@ public class SpawnBullet : MonoBehaviour {
     public Frequency freqType;
     string functionName;
     GameObject obj;
+    GameObject target;
 
     public Vector3 offset;
     public AnimationCurve dir;
+    public bool towardPlayer;
+    Vector3 tPlayer;
+    float angle;
     float deltaTime;
 
     //Radial
@@ -34,7 +38,12 @@ public class SpawnBullet : MonoBehaviour {
     int shotCount = 0;
 
 	void OnEnable () {
-		if(((int)posType & 1) == 1)
+        deltaTime = 0;
+        if (target == null)
+        {
+            target = GameObject.FindGameObjectWithTag("Player");
+        }
+        if (((int)posType & 1) == 1)
         {
             functionName = "Forward";
         }
@@ -50,7 +59,6 @@ public class SpawnBullet : MonoBehaviour {
         {
             InvokeRepeating(functionName, repFreq + repDelay, repFreq);
         }
-        deltaTime = 0;
     }
 	
     void FixedUpdate()
@@ -68,7 +76,13 @@ public class SpawnBullet : MonoBehaviour {
 
     void Radial()
     {
-        for(int i = 0; i < radNum; i++)
+        if (towardPlayer)
+        {
+            tPlayer = transform.position - target.transform.position;
+            angle = Mathf.Atan2(tPlayer.y, tPlayer.x) * Mathf.Rad2Deg;
+            dir.AddKey(deltaTime, angle + 90);
+        }
+        for (int i = 0; i < radNum; i++)
         {
             obj = bulletPool.GetObject();
             obj.transform.position = transform.position + offset;
@@ -124,6 +138,7 @@ public class SpawnBulletEditor : Editor
         var script = target as SpawnBullet;
         script.bulletPool = EditorGUILayout.ObjectField("Bullet Pool", script.bulletPool, typeof(ObjectPooler), true) as ObjectPooler;
         script.offset = EditorGUILayout.Vector3Field("Offset", script.offset);
+        script.towardPlayer = EditorGUILayout.Toggle("Toward Player", script.towardPlayer);
         script.dir = EditorGUILayout.CurveField("Direction", script.dir);
         //Position Options
         script.posType = (Position)EditorGUILayout.EnumMaskField("Spawn Position Type", script.posType);
