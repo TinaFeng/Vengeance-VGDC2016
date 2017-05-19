@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-public enum Movement {Target = 1, Bounce = 2, Size = 4};
+public enum Movement {Target = 1, Bounce = 2, Size = 4, Rotate = 8};
 public enum Disable {Boundary = 1, Time = 2};
 
 public class BulletStats : MonoBehaviour {
@@ -24,6 +24,7 @@ public class BulletStats : MonoBehaviour {
     Quaternion rot;
     Vector3 dir;
     float angle;
+    float startAngle;
 
     //Follow/Target Movement
     public string targetTag;
@@ -32,6 +33,7 @@ public class BulletStats : MonoBehaviour {
     //Variable Speed
     public AnimationCurve speedVarX;
     public AnimationCurve speedVarY;
+    public AnimationCurve rotation;
     public AnimationCurve size;
     float sizeTemp;
     float aliveTime = -1;
@@ -78,7 +80,10 @@ public class BulletStats : MonoBehaviour {
             tempVector3.Set(sizeTemp, sizeTemp, sizeTemp);
             transform.localScale = tempVector3;
         }
-
+        if (((int)moveType & 8) == 8)
+        {
+            startAngle = transform.eulerAngles.z;
+        }
         if (((int)disableType & 2) == 2)
         {
             Invoke("Disable", disableTime);
@@ -106,7 +111,12 @@ public class BulletStats : MonoBehaviour {
         {
             dis = Vector3.Distance(player.transform.position, transform.position) - radius;
         }
-        if(dis < 0) //Utilize this for bomb
+        if (((int)moveType & 8) == 8)
+        {
+            rot = Quaternion.Euler(0, 0, startAngle + rotation.Evaluate(aliveTime));
+            transform.rotation = rot;
+        }
+        if (dis < 0) //Utilize this for bomb
         {
             player.GetComponent<PlayerController>().lives--;
             player.GetComponent<PlayerController>().updateLivesText();
@@ -173,6 +183,10 @@ public class BulletStatsEditor : Editor
         if (((int)script.moveType & 4) == 4)
         {
             script.size = EditorGUILayout.CurveField("Size Curve", script.size);
+        }
+        if (((int)script.moveType & 8) == 8)
+        {
+            script.rotation = EditorGUILayout.CurveField("Rotation Curve", script.rotation);
         }
         //Disable Options
         script.disableType = (Disable)EditorGUILayout.EnumMaskField("Disable Type", script.disableType);

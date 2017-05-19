@@ -57,7 +57,7 @@ public class SpawnBullet : MonoBehaviour {
         }
         if (((int)freqType & 2) != 2)
         {
-            InvokeRepeating(functionName, repFreq + repDelay, repFreq);
+            InvokeRepeating(functionName, repDelay, repFreq);
         }
     }
 	
@@ -94,6 +94,12 @@ public class SpawnBullet : MonoBehaviour {
 
     void Chaos()
     {
+        if (towardPlayer)
+        {
+            tPlayer = transform.position - target.transform.position;
+            angle = Mathf.Atan2(tPlayer.y, tPlayer.x) * Mathf.Rad2Deg;
+            dir.AddKey(deltaTime, angle + 90);
+        }
         obj = bulletPool.GetObject();
         obj.transform.position = transform.position + offset;
         obj.transform.rotation = Quaternion.Euler(0f, 0f, dir.Evaluate(deltaTime) + chaMin + (Random.value * (chaMax - chaMin)));
@@ -110,7 +116,7 @@ public class SpawnBullet : MonoBehaviour {
             {
                 shotCount = 0;
                 CancelInvoke();
-                InvokeRepeating(functionName, repFreq + repDelay, repFreq);
+                InvokeRepeating(functionName, repDelay, repFreq);
             }
         }
     }
