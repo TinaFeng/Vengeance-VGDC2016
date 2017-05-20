@@ -1,0 +1,1254 @@
+fileFormatVersion: 2
+guid: bffe0acee9da6db44b6fc7b274fda003
+timeCreated: 1495313623
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Alicia2.0-Left_0
+    21300002: Alicia2.0-Left_1
+    21300004: Alicia2.0-Left_2
+    21300006: Alicia2.0-Left_3
+    21300008: Alicia2.0-Left_4
+    21300010: Alicia2.0-Left_5
+    21300012: Alicia2.0-Left_6
+    21300014: Alicia2.0-Left_7
+    21300016: Alicia2.0-Left_8
+    21300018: Alicia2.0-Left_9
+    21300020: Alicia2.0-Left_10
+    21300022: Alicia2.0-Left_11
+    21300024: Alicia2.0-Left_12
+    21300026: Alicia2.0-Left_13
+    21300028: Alicia2.0-Left_14
+    21300030: Alicia2.0-Left_15
+    21300032: Alicia2.0-Left_16
+    21300034: Alicia2.0-Left_17
+    21300036: Alicia2.0-Left_18
+    21300038: Alicia2.0-Left_19
+    21300040: Alicia2.0-Left_20
+    21300042: Alicia2.0-Left_21
+    21300044: Alicia2.0-Left_22
+    21300046: Alicia2.0-Left_23
+    21300048: Alicia2.0-Left_24
+    21300050: Alicia2.0-Left_25
+    21300052: Alicia2.0-Left_26
+    21300054: Alicia2.0-Left_27
+    21300056: Alicia2.0-Left_28
+    21300058: Alicia2.0-Left_29
+    21300060: Alicia2.0-Left_30
+    21300062: Alicia2.0-Left_31
+    21300064: Alicia2.0-Left_32
+    21300066: Alicia2.0-Left_33
+    21300068: Alicia2.0-Left_34
+    21300070: Alicia2.0-Left_35
+    21300072: Alicia2.0-Left_36
+    21300074: Alicia2.0-Left_37
+    21300076: Alicia2.0-Left_38
+    21300078: Alicia2.0-Left_39
+    21300080: Alicia2.0-Left_40
+    21300082: Alicia2.0-Left_41
+    21300084: Alicia2.0-Left_42
+    21300086: Alicia2.0-Left_43
+    21300088: Alicia2.0-Left_44
+    21300090: Alicia2.0-Left_45
+    21300092: Alicia2.0-Left_46
+    21300094: Alicia2.0-Left_47
+    21300096: Alicia2.0-Left_48
+    21300098: Alicia2.0-Left_49
+    21300100: Alicia2.0-Left_50
+    21300102: Alicia2.0-Left_51
+    21300104: Alicia2.0-Left_52
+    21300106: Alicia2.0-Left_53
+    21300108: Alicia2.0-Left_54
+    21300110: Alicia2.0-Left_55
+    21300112: Alicia2.0-Left_56
+    21300114: Alicia2.0-Left_57
+    21300116: Alicia2.0-Left_58
+    21300118: Alicia2.0-Left_59
+    21300120: Alicia2.0-Left_60
+    21300122: Alicia2.0-Left_61
+    21300124: Alicia2.0-Left_62
+    21300126: Alicia2.0-Left_63
+    21300128: Alicia2.0-Left_64
+    21300130: Alicia2.0-Left_65
+    21300132: Alicia2.0-Left_66
+    21300134: Alicia2.0-Left_67
+    21300136: Alicia2.0-Left_68
+    21300138: Alicia2.0-Left_69
+    21300140: Alicia2.0-Left_70
+    21300142: Alicia2.0-Left_71
+    21300144: Alicia2.0-Left_72
+    21300146: Alicia2.0-Left_73
+    21300148: Alicia2.0-Left_74
+    21300150: Alicia2.0-Left_75
+    21300152: Alicia2.0-Left_76
+    21300154: Alicia2.0-Left_77
+    21300156: Alicia2.0-Left_78
+    21300158: Alicia2.0-Left_79
+    21300160: Alicia2.0-Left_80
+    21300162: Alicia2.0-Left_81
+    21300164: Alicia2.0-Left_82
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 0
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 200
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Alicia2.0-Left_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2886
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_1
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 2886
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_2
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 2886
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_3
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 2886
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_4
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 2886
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_5
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 2886
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_6
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 2886
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_7
+      rect:
+        serializedVersion: 2
+        x: 2156
+        y: 2886
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_8
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 2886
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_9
+      rect:
+        serializedVersion: 2
+        x: 2772
+        y: 2886
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_10
+      rect:
+        serializedVersion: 2
+        x: 3080
+        y: 2886
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_11
+      rect:
+        serializedVersion: 2
+        x: 3388
+        y: 2886
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2405
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_13
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 2405
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_14
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 2405
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_15
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 2405
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_16
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 2405
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_17
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 2405
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_18
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 2405
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_19
+      rect:
+        serializedVersion: 2
+        x: 2156
+        y: 2405
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_20
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 2405
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_21
+      rect:
+        serializedVersion: 2
+        x: 2772
+        y: 2405
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_22
+      rect:
+        serializedVersion: 2
+        x: 3080
+        y: 2405
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_23
+      rect:
+        serializedVersion: 2
+        x: 3388
+        y: 2405
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1924
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_25
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 1924
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_26
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 1924
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_27
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 1924
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_28
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 1924
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_29
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 1924
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_30
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 1924
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_31
+      rect:
+        serializedVersion: 2
+        x: 2156
+        y: 1924
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_32
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 1924
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_33
+      rect:
+        serializedVersion: 2
+        x: 2772
+        y: 1924
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_34
+      rect:
+        serializedVersion: 2
+        x: 3080
+        y: 1924
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_35
+      rect:
+        serializedVersion: 2
+        x: 3388
+        y: 1924
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1443
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_37
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 1443
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_38
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 1443
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_39
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 1443
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_40
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 1443
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_41
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 1443
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_42
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 1443
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_43
+      rect:
+        serializedVersion: 2
+        x: 2156
+        y: 1443
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_44
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 1443
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_45
+      rect:
+        serializedVersion: 2
+        x: 2772
+        y: 1443
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_46
+      rect:
+        serializedVersion: 2
+        x: 3080
+        y: 1443
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_47
+      rect:
+        serializedVersion: 2
+        x: 3388
+        y: 1443
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 962
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_49
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 962
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_50
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 962
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_51
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 962
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_52
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 962
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_53
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 962
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_54
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 962
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_55
+      rect:
+        serializedVersion: 2
+        x: 2156
+        y: 962
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_56
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 962
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_57
+      rect:
+        serializedVersion: 2
+        x: 2772
+        y: 962
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_58
+      rect:
+        serializedVersion: 2
+        x: 3080
+        y: 962
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_59
+      rect:
+        serializedVersion: 2
+        x: 3388
+        y: 962
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 481
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_61
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 481
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_62
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 481
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_63
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 481
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_64
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 481
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_65
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 481
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_66
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 481
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_67
+      rect:
+        serializedVersion: 2
+        x: 2156
+        y: 481
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_68
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 481
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_69
+      rect:
+        serializedVersion: 2
+        x: 2772
+        y: 481
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_70
+      rect:
+        serializedVersion: 2
+        x: 3080
+        y: 481
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_71
+      rect:
+        serializedVersion: 2
+        x: 3388
+        y: 481
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_73
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 0
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_74
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 0
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_75
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 0
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_76
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 0
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_77
+      rect:
+        serializedVersion: 2
+        x: 1540
+        y: 0
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_78
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 0
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_79
+      rect:
+        serializedVersion: 2
+        x: 2156
+        y: 0
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_80
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 0
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_81
+      rect:
+        serializedVersion: 2
+        x: 2772
+        y: 0
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Left_82
+      rect:
+        serializedVersion: 2
+        x: 3080
+        y: 0
+        width: 308
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
