@@ -11,6 +11,8 @@ public class BulletStats : MonoBehaviour {
     //Consider Polar Coordinates around a spawn location
 
     //General Variables
+    PoolManager poolManager;
+    BulletStats bomb;
     public ObjectPooler objectPool;
     public Disable disableType;
     public Movement moveType;
@@ -18,6 +20,7 @@ public class BulletStats : MonoBehaviour {
     Vector3 tempVector3;
     GameObject player;
     float dis;
+    float disBomb;
     public float radius;
 
     //Rotation
@@ -51,9 +54,23 @@ public class BulletStats : MonoBehaviour {
 
     //Disable Time
     public float disableTime;
+    bool isBomb;
 
     void OnEnable()
     {
+        isBomb = (gameObject.name == "Bomb");
+        if(!isBomb && bomb == null)
+        {
+            bomb = GameObject.Find("Bomb").GetComponent<BulletStats>();
+        }
+        if (poolManager == null)
+        {
+            poolManager = GameObject.Find("ObjectPooling").GetComponent<PoolManager>();
+        }
+        if (poolManager != null && poolManager.destroyAll)
+        {
+            Disable();
+        }
         if (aliveTime < 0 && ((int)moveType & 1) == 1)
         {
             target = GameObject.FindGameObjectWithTag(targetTag);
@@ -88,6 +105,10 @@ public class BulletStats : MonoBehaviour {
         {
             Invoke("Disable", disableTime);
         }
+        if (isBomb)
+        {
+            transform.position = player.transform.position;
+        }
         aliveTime = 0;
         resolution = Screen.currentResolution;
         rot = transform.rotation;
@@ -95,6 +116,10 @@ public class BulletStats : MonoBehaviour {
 
     void FixedUpdate()
     {
+        if (poolManager.destroyAll)
+        {
+            Disable();
+        }
         //Bullet Movement
         rot = transform.rotation;
         deltaTime = Time.deltaTime;
@@ -105,22 +130,44 @@ public class BulletStats : MonoBehaviour {
             sizeTemp = size.Evaluate(aliveTime);
             tempVector3.Set(sizeTemp, sizeTemp, sizeTemp);
             transform.localScale = tempVector3;
-            dis = Vector3.Distance(player.transform.position, transform.position) - (radius * sizeTemp); //doesnt work on nonsphere hitboxes
+            if (!isBomb)
+            {
+                if (poolManager.bombActive)
+                {
+                    disBomb = Distance(bomb.gameObject, sizeTemp);
+                }
+                dis = Distance(player, sizeTemp); //doesnt work on nonsphere hitboxes
+            }
+
         }
         else
         {
-            dis = Vector3.Distance(player.transform.position, transform.position) - radius;
+            if (!isBomb)
+            {
+                if (poolManager.bombActive)
+                {
+                    disBomb = Distance(bomb.gameObject, sizeTemp);
+                }
+                dis = Distance(player, 1);
+            }
         }
         if (((int)moveType & 8) == 8)
         {
             rot = Quaternion.Euler(0, 0, startAngle + rotation.Evaluate(aliveTime));
             transform.rotation = rot;
         }
-        if (dis < 0) //Utilize this for bomb
+        if (dis < 0 && !isBomb) //Utilize this for bomb
         {
             player.GetComponent<PlayerController>().lives--;
             player.GetComponent<PlayerController>().updateLivesText();
             Disable();
+        }
+        if (poolManager.bombActive)
+        {
+            if(disBomb < 0)
+            {
+                Disable();
+            }
         }
         tempVector3 = transform.position;
         if (((int)moveType & 2) == 2 && bounceCount < bounceMax)
@@ -130,7 +177,7 @@ public class BulletStats : MonoBehaviour {
                 transform.rotation = Quaternion.Euler(0f, 0f, -transform.rotation.eulerAngles.z);
                 bounceCount++;
             }
-            if (bounceCount < bounceMax && (tempVector3.y + radius > 15 || tempVector3.y - radius < -15))
+            if (bounceCount < bounceMax && (tempVector3.y + radius > 15))
             {
                 transform.rotation = Quaternion.Euler(0f, 0f, 180 - transform.rotation.eulerAngles.z);
                 bounceCount++;
@@ -149,13 +196,30 @@ public class BulletStats : MonoBehaviour {
 
     void Disable()
     {
-        gameObject.SetActive(false);
+        if (!isBomb)
+            gameObject.SetActive(false);
+        else
+        {
+            this.enabled = false;
+            poolManager.bombActive = false;
+        }
     }
 
     void OnDisable()
     {
         CancelInvoke();
-        gameObject.GetComponent<BulletStats>().objectPool.deactivatedObjects.Push(gameObject);
+        if (!isBomb)
+            gameObject.GetComponent<BulletStats>().objectPool.deactivatedObjects.Push(gameObject);
+    }
+
+    float Distance(GameObject t, float s)
+    {
+        if(t.name == "Bomb")
+        {
+            return Vector3.Distance(t.transform.position, transform.position) - (radius * s) - (bomb.radius * bomb.sizeTemp);
+        }
+        else
+            return Vector3.Distance(t.transform.position, transform.position) - (radius * s);
     }
 }
 

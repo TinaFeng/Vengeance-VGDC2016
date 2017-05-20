@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public Text bombsText;
     public Text AttackPatternText;
     public GameObject playerBullets;
+    public GameObject bomb;
+    public PoolManager poolManager;
 
     private bool firePressed = false;
     public int lives;
@@ -51,7 +53,11 @@ public class PlayerController : MonoBehaviour
     //occurs every frame
     void Update()
     {
-
+        if (Input.GetButtonDown("Bomb"))
+        {
+            bomb.GetComponent<BulletStats>().enabled = true;
+            poolManager.bombActive = true;
+        }
         if (Input.GetButtonDown("Fire2"))
         {
             speed /= 2;
