@@ -47,12 +47,15 @@ public class EnemySpawner : MonoBehaviour {
 			yield return new WaitForSeconds(startDelay);
 		}
 		foreach (Transform child in transform) {
-            if (spawnPlan[i] > 0.0f)
+            if (i < spawnPlan.Length)
             {
-                yield return new WaitForSeconds(spawnPlan[i]);
+                if (spawnPlan[i] > 0.0f)
+                {
+                    yield return new WaitForSeconds(spawnPlan[i]);
+                }
+                child.gameObject.SetActive(true);
+                i++;
             }
-            child.gameObject.SetActive(true);
-            i++;
 		}
 	}
 
