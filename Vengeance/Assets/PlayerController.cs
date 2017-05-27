@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-
+using System.Collections.Generic;
 public class PlayerController : MonoBehaviour
 {
     public int score;
@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public Text livesText;
     public Text scoreText;
     public Text bombsText;
+    public GameObject BombIcon; //Bomb display
     public Text AttackPatternText;
     public GameObject playerBullets;
     public GameObject bomb;
@@ -23,6 +24,8 @@ public class PlayerController : MonoBehaviour
     private GameObject spawnedBullet;
     private Rigidbody2D rb2d;
     private SpriteRenderer charRenderer;
+    private float BombIcon_Position = 19.2f;//x-position of bombicons;
+    private List<GameObject> Bombs;//A list for icon objects
     private enum attackPattern {I, II, III, IV, V};
     private float shootTime;
     attackPattern currentAttackPattern;
@@ -30,6 +33,7 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        
         shootTime = 0;
         movement = new Vector2();
         myObject = GameObject.Find("HitDot");
@@ -38,16 +42,19 @@ public class PlayerController : MonoBehaviour
 
         lives = 3;
         score = 0;
-        bombCount = 2;
+        bombCount = 3;
+        Bombs = new List<GameObject>();
 
         updateLivesText();
         updateScoreText();
         updateBombText();
         updatePatternText();
 
+   
         playerBulletOffset = new Vector3(0, 1, 0);
 
         currentAttackPattern = attackPattern.I;
+
     }
 
     //occurs every frame
@@ -55,8 +62,13 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Bomb"))
         {
-            bomb.GetComponent<BulletStats>().enabled = true;
-            poolManager.bombActive = true;
+            if (bombCount != 0)
+            {
+                bomb.GetComponent<BulletStats>().enabled = true;
+                poolManager.bombActive = true;
+                bombCount -= 1;
+                updateBombText();
+            }
         }
         if (Input.GetButtonDown("Fire2"))
         {
@@ -135,6 +147,19 @@ public class PlayerController : MonoBehaviour
     //update our bomb text
     void updateBombText()
     {
+ 
+            for (int x = 0; x != Bombs.Count; x++)  //Clear the List by destroying all objexts
+                Destroy(Bombs[x]);
+            for (int i = 0; i <= bombCount-1; i++) //calculat the spawn distance of icons
+            {
+                Vector3 Iconpos = new Vector3(BombIcon_Position + (i * 1.3f), 0.3f, 0);
+
+                GameObject clone = (GameObject)Instantiate(BombIcon, Iconpos, Quaternion.identity);
+                Bombs.Add(clone);
+            }
+
+        
+
         bombsText.text = "Bombs: " + bombCount.ToString();
     }
 
