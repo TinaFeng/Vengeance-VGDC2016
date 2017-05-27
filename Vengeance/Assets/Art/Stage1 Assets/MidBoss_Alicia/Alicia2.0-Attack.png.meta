@@ -1,0 +1,1338 @@
+fileFormatVersion: 2
+guid: 4ba23a2739bda094fa55733db2decf0a
+timeCreated: 1495867709
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Alicia2.0-Attack_0
+    21300002: Alicia2.0-Attack_1
+    21300004: Alicia2.0-Attack_2
+    21300006: Alicia2.0-Attack_3
+    21300008: Alicia2.0-Attack_4
+    21300010: Alicia2.0-Attack_5
+    21300012: Alicia2.0-Attack_6
+    21300014: Alicia2.0-Attack_7
+    21300016: Alicia2.0-Attack_8
+    21300018: Alicia2.0-Attack_9
+    21300020: Alicia2.0-Attack_10
+    21300022: Alicia2.0-Attack_11
+    21300024: Alicia2.0-Attack_12
+    21300026: Alicia2.0-Attack_13
+    21300028: Alicia2.0-Attack_14
+    21300030: Alicia2.0-Attack_15
+    21300032: Alicia2.0-Attack_16
+    21300034: Alicia2.0-Attack_17
+    21300036: Alicia2.0-Attack_18
+    21300038: Alicia2.0-Attack_19
+    21300040: Alicia2.0-Attack_20
+    21300042: Alicia2.0-Attack_21
+    21300044: Alicia2.0-Attack_22
+    21300046: Alicia2.0-Attack_23
+    21300048: Alicia2.0-Attack_24
+    21300050: Alicia2.0-Attack_25
+    21300052: Alicia2.0-Attack_26
+    21300054: Alicia2.0-Attack_27
+    21300056: Alicia2.0-Attack_28
+    21300058: Alicia2.0-Attack_29
+    21300060: Alicia2.0-Attack_30
+    21300062: Alicia2.0-Attack_31
+    21300064: Alicia2.0-Attack_32
+    21300066: Alicia2.0-Attack_33
+    21300068: Alicia2.0-Attack_34
+    21300070: Alicia2.0-Attack_35
+    21300072: Alicia2.0-Attack_36
+    21300074: Alicia2.0-Attack_37
+    21300076: Alicia2.0-Attack_38
+    21300078: Alicia2.0-Attack_39
+    21300080: Alicia2.0-Attack_40
+    21300082: Alicia2.0-Attack_41
+    21300084: Alicia2.0-Attack_42
+    21300086: Alicia2.0-Attack_43
+    21300088: Alicia2.0-Attack_44
+    21300090: Alicia2.0-Attack_45
+    21300092: Alicia2.0-Attack_46
+    21300094: Alicia2.0-Attack_47
+    21300096: Alicia2.0-Attack_48
+    21300098: Alicia2.0-Attack_49
+    21300100: Alicia2.0-Attack_50
+    21300102: Alicia2.0-Attack_51
+    21300104: Alicia2.0-Attack_52
+    21300106: Alicia2.0-Attack_53
+    21300108: Alicia2.0-Attack_54
+    21300110: Alicia2.0-Attack_55
+    21300112: Alicia2.0-Attack_56
+    21300114: Alicia2.0-Attack_57
+    21300116: Alicia2.0-Attack_58
+    21300118: Alicia2.0-Attack_59
+    21300120: Alicia2.0-Attack_60
+    21300122: Alicia2.0-Attack_61
+    21300124: Alicia2.0-Attack_62
+    21300126: Alicia2.0-Attack_63
+    21300128: Alicia2.0-Attack_64
+    21300130: Alicia2.0-Attack_65
+    21300132: Alicia2.0-Attack_66
+    21300134: Alicia2.0-Attack_67
+    21300136: Alicia2.0-Attack_68
+    21300138: Alicia2.0-Attack_69
+    21300140: Alicia2.0-Attack_70
+    21300142: Alicia2.0-Attack_71
+    21300144: Alicia2.0-Attack_72
+    21300146: Alicia2.0-Attack_73
+    21300148: Alicia2.0-Attack_74
+    21300150: Alicia2.0-Attack_75
+    21300152: Alicia2.0-Attack_76
+    21300154: Alicia2.0-Attack_77
+    21300156: Alicia2.0-Attack_78
+    21300158: Alicia2.0-Attack_79
+    21300160: Alicia2.0-Attack_80
+    21300162: Alicia2.0-Attack_81
+    21300164: Alicia2.0-Attack_82
+    21300166: Alicia2.0-Attack_83
+    21300168: Alicia2.0-Attack_84
+    21300170: Alicia2.0-Attack_85
+    21300172: Alicia2.0-Attack_86
+    21300174: Alicia2.0-Attack_87
+    21300176: Alicia2.0-Attack_88
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 200
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2988
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_1
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 2988
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_2
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 2988
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_3
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 2988
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_4
+      rect:
+        serializedVersion: 2
+        x: 1444
+        y: 2988
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_5
+      rect:
+        serializedVersion: 2
+        x: 1805
+        y: 2988
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_6
+      rect:
+        serializedVersion: 2
+        x: 2166
+        y: 2988
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_7
+      rect:
+        serializedVersion: 2
+        x: 2527
+        y: 2988
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_8
+      rect:
+        serializedVersion: 2
+        x: 2888
+        y: 2988
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_9
+      rect:
+        serializedVersion: 2
+        x: 3249
+        y: 2988
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_10
+      rect:
+        serializedVersion: 2
+        x: 3610
+        y: 2988
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_11
+      rect:
+        serializedVersion: 2
+        x: 3971
+        y: 2988
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_12
+      rect:
+        serializedVersion: 2
+        x: 4332
+        y: 2988
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2490
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_14
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 2490
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_15
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 2490
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_16
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 2490
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_17
+      rect:
+        serializedVersion: 2
+        x: 1444
+        y: 2490
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_18
+      rect:
+        serializedVersion: 2
+        x: 1805
+        y: 2490
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_19
+      rect:
+        serializedVersion: 2
+        x: 2166
+        y: 2490
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_20
+      rect:
+        serializedVersion: 2
+        x: 2527
+        y: 2490
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_21
+      rect:
+        serializedVersion: 2
+        x: 2888
+        y: 2490
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_22
+      rect:
+        serializedVersion: 2
+        x: 3249
+        y: 2490
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_23
+      rect:
+        serializedVersion: 2
+        x: 3610
+        y: 2490
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_24
+      rect:
+        serializedVersion: 2
+        x: 3971
+        y: 2490
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_25
+      rect:
+        serializedVersion: 2
+        x: 4332
+        y: 2490
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1992
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_27
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 1992
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_28
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 1992
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_29
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 1992
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_30
+      rect:
+        serializedVersion: 2
+        x: 1444
+        y: 1992
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_31
+      rect:
+        serializedVersion: 2
+        x: 1805
+        y: 1992
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_32
+      rect:
+        serializedVersion: 2
+        x: 2166
+        y: 1992
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_33
+      rect:
+        serializedVersion: 2
+        x: 2527
+        y: 1992
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_34
+      rect:
+        serializedVersion: 2
+        x: 2888
+        y: 1992
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_35
+      rect:
+        serializedVersion: 2
+        x: 3249
+        y: 1992
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_36
+      rect:
+        serializedVersion: 2
+        x: 3610
+        y: 1992
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_37
+      rect:
+        serializedVersion: 2
+        x: 3971
+        y: 1992
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_38
+      rect:
+        serializedVersion: 2
+        x: 4332
+        y: 1992
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1494
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_40
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 1494
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_41
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 1494
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_42
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 1494
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_43
+      rect:
+        serializedVersion: 2
+        x: 1444
+        y: 1494
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_44
+      rect:
+        serializedVersion: 2
+        x: 1805
+        y: 1494
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_45
+      rect:
+        serializedVersion: 2
+        x: 2166
+        y: 1494
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_46
+      rect:
+        serializedVersion: 2
+        x: 2527
+        y: 1494
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_47
+      rect:
+        serializedVersion: 2
+        x: 2888
+        y: 1494
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_48
+      rect:
+        serializedVersion: 2
+        x: 3249
+        y: 1494
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_49
+      rect:
+        serializedVersion: 2
+        x: 3610
+        y: 1494
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_50
+      rect:
+        serializedVersion: 2
+        x: 3971
+        y: 1494
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_51
+      rect:
+        serializedVersion: 2
+        x: 4332
+        y: 1494
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_52
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 996
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_53
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 996
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_54
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 996
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_55
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 996
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_56
+      rect:
+        serializedVersion: 2
+        x: 1444
+        y: 996
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_57
+      rect:
+        serializedVersion: 2
+        x: 1805
+        y: 996
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_58
+      rect:
+        serializedVersion: 2
+        x: 2166
+        y: 996
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_59
+      rect:
+        serializedVersion: 2
+        x: 2527
+        y: 996
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_60
+      rect:
+        serializedVersion: 2
+        x: 2888
+        y: 996
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_61
+      rect:
+        serializedVersion: 2
+        x: 3249
+        y: 996
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_62
+      rect:
+        serializedVersion: 2
+        x: 3610
+        y: 996
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_63
+      rect:
+        serializedVersion: 2
+        x: 3971
+        y: 996
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_64
+      rect:
+        serializedVersion: 2
+        x: 4332
+        y: 996
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_65
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 498
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_66
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 498
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_67
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 498
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_68
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 498
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_69
+      rect:
+        serializedVersion: 2
+        x: 1444
+        y: 498
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_70
+      rect:
+        serializedVersion: 2
+        x: 1805
+        y: 498
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_71
+      rect:
+        serializedVersion: 2
+        x: 2166
+        y: 498
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_72
+      rect:
+        serializedVersion: 2
+        x: 2527
+        y: 498
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_73
+      rect:
+        serializedVersion: 2
+        x: 2888
+        y: 498
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_74
+      rect:
+        serializedVersion: 2
+        x: 3249
+        y: 498
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_75
+      rect:
+        serializedVersion: 2
+        x: 3610
+        y: 498
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_76
+      rect:
+        serializedVersion: 2
+        x: 3971
+        y: 498
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_77
+      rect:
+        serializedVersion: 2
+        x: 4332
+        y: 498
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_79
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 0
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_80
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 0
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_81
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 0
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_82
+      rect:
+        serializedVersion: 2
+        x: 1444
+        y: 0
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_83
+      rect:
+        serializedVersion: 2
+        x: 1805
+        y: 0
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_84
+      rect:
+        serializedVersion: 2
+        x: 2166
+        y: 0
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_85
+      rect:
+        serializedVersion: 2
+        x: 2527
+        y: 0
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_86
+      rect:
+        serializedVersion: 2
+        x: 2888
+        y: 0
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_87
+      rect:
+        serializedVersion: 2
+        x: 3249
+        y: 0
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Alicia2.0-Attack_88
+      rect:
+        serializedVersion: 2
+        x: 3610
+        y: 0
+        width: 361
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
