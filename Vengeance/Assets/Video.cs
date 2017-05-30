@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Video;
 public class Video : MonoBehaviour {
 
+
+    VideoPlayer vp;
 	// Use this for initialization
 	void Start () {
-        ((MovieTexture)GetComponent<Renderer>().material.mainTexture).Play();
+
+        vp = GetComponent<VideoPlayer>();
+        StartCoroutine(wait(vp.clip.length));
 
     }
 
@@ -14,4 +18,14 @@ public class Video : MonoBehaviour {
     void Update () {
 		
 	}
+
+
+    IEnumerator wait(double time)
+    {
+
+        float timef = (float)(time-1.5f);
+        Debug.Log(timef);
+        yield return new WaitForSeconds(timef);
+        Destroy(vp);
+    }
 }
