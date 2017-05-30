@@ -1,0 +1,820 @@
+fileFormatVersion: 2
+guid: 402973a1069dba54b8a38b28d8603fb6
+timeCreated: 1496181076
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Eye_0
+    21300002: Eye_1
+    21300004: Eye_2
+    21300006: Eye_3
+    21300008: Eye_4
+    21300010: Eye_5
+    21300012: Eye_6
+    21300014: Eye_7
+    21300016: Eye_8
+    21300018: Eye_9
+    21300020: Eye_10
+    21300022: Eye_11
+    21300024: Eye_12
+    21300026: Eye_13
+    21300028: Eye_14
+    21300030: Eye_15
+    21300032: Eye_16
+    21300034: Eye_17
+    21300036: Eye_18
+    21300038: Eye_19
+    21300040: Eye_20
+    21300042: Eye_21
+    21300044: Eye_22
+    21300046: Eye_23
+    21300048: Eye_24
+    21300050: Eye_25
+    21300052: Eye_26
+    21300054: Eye_27
+    21300056: Eye_28
+    21300058: Eye_29
+    21300060: Eye_30
+    21300062: Eye_31
+    21300064: Eye_32
+    21300066: Eye_33
+    21300068: Eye_34
+    21300070: Eye_35
+    21300072: Eye_36
+    21300074: Eye_37
+    21300076: Eye_38
+    21300078: Eye_39
+    21300080: Eye_40
+    21300082: Eye_41
+    21300084: Eye_42
+    21300086: Eye_43
+    21300088: Eye_44
+    21300090: Eye_45
+    21300092: Eye_46
+    21300094: Eye_47
+    21300096: Eye_48
+    21300098: Eye_49
+    21300100: Eye_50
+    21300102: Eye_51
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Eye_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1416
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_1
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 1416
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_2
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 1416
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_3
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1416
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_4
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1416
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_5
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 1416
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1239
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_7
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 1239
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_8
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 1239
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_9
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1239
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_10
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1239
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_11
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 1239
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1062
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_13
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 1062
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_14
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 1062
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_15
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1062
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_16
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1062
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_17
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 1062
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 885
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_19
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 885
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_20
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 885
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_21
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 885
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_22
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 885
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_23
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 885
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 708
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_25
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 708
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_26
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 708
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_27
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 708
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_28
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 708
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_29
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 708
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 531
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_31
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 531
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_32
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 531
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_33
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 531
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_34
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 531
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_35
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 531
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 354
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_37
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 354
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_38
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 354
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_39
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 354
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_40
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 354
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_41
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 354
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 177
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_43
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 177
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_44
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 177
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_45
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 177
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_46
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 177
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_47
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 177
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_49
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_50
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Eye_51
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 0
+        width: 168
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
