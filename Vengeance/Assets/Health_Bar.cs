@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Health_Bar : MonoBehaviour {
 
     public float initialHealth;
@@ -26,7 +27,7 @@ public class Health_Bar : MonoBehaviour {
         lol = health / initialHealth;
         health = gameObject.GetComponent<EnemyStats>().health;
 
-        health_shader.SetFloat("_range", health / initialHealth);
+        health_shader.SetFloat("_range",Mathf.Abs( 1-(health / initialHealth)));
 
     }
 }
