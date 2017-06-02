@@ -24,7 +24,8 @@ public class PlayerController : MonoBehaviour
     private GameObject spawnedBullet;
     private Rigidbody2D rb2d;
     private SpriteRenderer charRenderer;
-    private float BombIcon_Position = 19.2f;//x-position of bombicons;
+    private GameObject Bomb_UI;
+    private float BombIcon_Position;//x-position of bombicons;
     private List<GameObject> Bombs;//A list for icon objects
     private enum attackPattern {I, II, III, IV, V};
     private float shootTime;
@@ -47,6 +48,8 @@ public class PlayerController : MonoBehaviour
 
         updateLivesText();
         updateScoreText();
+        Bomb_UI = GameObject.FindGameObjectWithTag("BombIcons");
+        BombIcon_Position = BombIcon.transform.position.x;
         updateBombText();
         updatePatternText();
 
@@ -152,10 +155,15 @@ public class PlayerController : MonoBehaviour
                 Destroy(Bombs[x]);
             for (int i = 0; i <= bombCount-1; i++) //calculat the spawn distance of icons
             {
-                Vector3 Iconpos = new Vector3(BombIcon_Position + (i * 1.3f), 0.3f, 0);
+                Vector3 Iconpos = new Vector3(BombIcon_Position + (i * 20f), BombIcon.transform.position.y, 0);
+            Debug.Log(Bomb_UI.GetComponent<RectTransform>().position.y);
 
+                GameObject Canvas = GameObject.FindGameObjectWithTag("Canvas");
                 GameObject clone = (GameObject)Instantiate(BombIcon, Iconpos, Quaternion.identity);
+                clone.transform.SetParent(Bomb_UI.transform, false);
+                clone.layer = 5;
                 Bombs.Add(clone);
+            
             }
 
         
