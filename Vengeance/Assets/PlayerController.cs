@@ -51,7 +51,6 @@ public class PlayerController : MonoBehaviour
         Bomb_UI = GameObject.FindGameObjectWithTag("BombIcons");
         BombIcon_Position = BombIcon.transform.position.x;
         updateBombText();
-        updatePatternText();
 
    
         playerBulletOffset = new Vector3(0, 1, 0);
@@ -126,7 +125,6 @@ public class PlayerController : MonoBehaviour
             else
             {
                 currentAttackPattern++;
-                updatePatternText();
             }
 
             //increase our score
@@ -138,42 +136,28 @@ public class PlayerController : MonoBehaviour
     //update our lives text
     public void updateLivesText()
     {
-        livesText.text = "Lives: " + lives.ToString();
+        //livesText.text = "Lives: " + lives.ToString();
     }
 
     //update our score text
     public void updateScoreText()
     {
-        scoreText.text = "Score: " + score.ToString();
+        scoreText.text = score.ToString();
     }
 
     //update our bomb text
     void updateBombText()
     {
- 
-            for (int x = 0; x != Bombs.Count; x++)  //Clear the List by destroying all objexts
-                Destroy(Bombs[x]);
-            for (int i = 0; i <= bombCount-1; i++) //calculat the spawn distance of icons
-            {
-                Vector3 Iconpos = new Vector3(BombIcon_Position + (i * 20f), BombIcon.transform.position.y, 0);
-            Debug.Log(Bomb_UI.GetComponent<RectTransform>().position.y);
-
-                GameObject Canvas = GameObject.FindGameObjectWithTag("Canvas");
-                GameObject clone = (GameObject)Instantiate(BombIcon, Iconpos, Quaternion.identity);
-                clone.transform.SetParent(Bomb_UI.transform, false);
-                clone.layer = 5;
-                Bombs.Add(clone);
-            
-            }
-
-        
-
-        bombsText.text = "Bombs: " + bombCount.ToString();
-    }
-
-    //update our pattern text
-    void updatePatternText()
-    {
-        AttackPatternText.text = "Pattern: " + currentAttackPattern.ToString();
+        for (int x = 0; x != Bombs.Count; x++)  //Clear the List by destroying all objexts
+            Destroy(Bombs[x]);
+        for (int i = 0; i <= bombCount-1; i++) //calculat the spawn distance of icons
+        {
+        Vector3 Iconpos = new Vector3(BombIcon_Position + (i * 20f) - 70f, BombIcon.transform.position.y -20, 0);
+        GameObject Canvas = GameObject.FindGameObjectWithTag("Canvas");
+        GameObject clone = (GameObject)Instantiate(BombIcon, Iconpos, Quaternion.identity);
+        clone.transform.SetParent(Bomb_UI.transform, false);
+        clone.layer = 5;
+        Bombs.Add(clone); 
+        }
     }
 }

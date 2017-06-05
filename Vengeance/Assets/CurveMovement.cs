@@ -18,7 +18,7 @@ public class CurveMovement : MonoBehaviour {
     void Start()
     {
 
-       prev.Set(locX.Evaluate(time), locY.Evaluate(time), 0f);
+        prev.Set(locX.Evaluate(time), locY.Evaluate(time), 0f);
         anim = GetComponent<Animator>();
     }
 	void FixedUpdate () {

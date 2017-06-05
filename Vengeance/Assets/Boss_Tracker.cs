@@ -4,32 +4,26 @@ using UnityEngine;
 
 public class Boss_Tracker : MonoBehaviour {
 
-    private GameObject Boss;
+    public GameObject Boss;
     private float Boss_Position;
+    private bool active = false;
 
 	// Use this for initialization
 	void Start () {
         GetComponent<SpriteRenderer>().enabled = false;
- 
     }
 	
 	// Update is called once per frame
-	void Update () {
-
-        Boss = GameObject.FindGameObjectWithTag("Boss");
-        
-        if (Boss == null)
+	void FixedUpdate () {
+        if(active != Boss.activeSelf)
         {
-            GetComponent<SpriteRenderer>().enabled = false;
-
+            GetComponent<SpriteRenderer>().enabled = Boss.activeSelf;
+            active = Boss.activeSelf;
         }
-        else
+        if (active)
         {
-            GetComponent<SpriteRenderer>().enabled = true;
-
             Boss_Position = Boss.GetComponent<Rigidbody2D>().position.x;
-            this.transform.position = new Vector3(Boss_Position, this.transform.position.y, this.transform.position.z);
-           
+            this.transform.position = new Vector3(Boss_Position, this.transform.position.y, this.transform.position.z);    
         }
     }
 }
