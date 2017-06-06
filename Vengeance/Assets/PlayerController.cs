@@ -4,12 +4,15 @@ using System.Collections;
 using System.Collections.Generic;
 public class PlayerController : MonoBehaviour
 {
+    int hiScore;
     public int score;
     public float speed;
     public Text livesText;
+    public Text hiScoreText;
     public Text scoreText;
     public Text bombsText;
     public GameObject BombIcon; //Bomb display
+    public GameObject LifeIcon;
     public Text AttackPatternText;
     public GameObject playerBullets;
     public GameObject bomb;
@@ -25,8 +28,11 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb2d;
     private SpriteRenderer charRenderer;
     private GameObject Bomb_UI;
+    private GameObject Life_UI;
     private float BombIcon_Position;//x-position of bombicons;
+    private float LifeIcon_Position;//x-position of bombicons;
     private List<GameObject> Bombs;//A list for icon objects
+    private List<GameObject> Lives;//A list for icon objects
     private enum attackPattern {I, II, III, IV, V};
     private float shootTime;
     attackPattern currentAttackPattern;
@@ -34,7 +40,14 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        
+        if(!PlayerPrefs.HasKey("Hi-Score"))
+        {
+            PlayerPrefs.SetInt("Hi-Score", 0);
+        }
+        else
+        {
+            hiScore = PlayerPrefs.GetInt("Hi-Score");
+        }
         shootTime = 0;
         movement = new Vector2();
         myObject = GameObject.Find("HitDot");
@@ -45,15 +58,20 @@ public class PlayerController : MonoBehaviour
         score = 0;
         bombCount = 3;
         Bombs = new List<GameObject>();
+        Lives = new List<GameObject>();
 
-        updateLivesText();
-        updateScoreText();
+
         Bomb_UI = GameObject.FindGameObjectWithTag("BombIcons");
+        Life_UI = GameObject.FindGameObjectWithTag("PlayerIcons");
+        Debug.Log(Life_UI.name);
         BombIcon_Position = BombIcon.transform.position.x;
+        LifeIcon_Position = LifeIcon.transform.position.x;
+        updateLivesText();
+        updateHiScoreText();
+        updateScoreText();
         updateBombText();
 
-   
-        playerBulletOffset = new Vector3(0, 1, 0);
+  
 
         currentAttackPattern = attackPattern.I;
 
@@ -62,6 +80,8 @@ public class PlayerController : MonoBehaviour
     //occurs every frame
     void Update()
     {
+        score++;
+        updateScoreText();
         if (Input.GetButtonDown("Bomb"))
         {
             if (bombCount != 0)
@@ -136,13 +156,34 @@ public class PlayerController : MonoBehaviour
     //update our lives text
     public void updateLivesText()
     {
-        //livesText.text = "Lives: " + lives.ToString();
+        for (int x = 0; x != Lives.Count; x++)  //Clear the List by destroying all objexts
+            Destroy(Lives[x]);
+        for (int i = 0; i <= lives - 1; i++) //calculat the spawn distance of icons
+        {
+            Vector3 Iconpos = new Vector3(LifeIcon_Position + (i * 20f) - 70f, LifeIcon.transform.position.y - 20, 0);
+            GameObject Canvas = GameObject.FindGameObjectWithTag("Canvas");
+            GameObject clone = (GameObject)Instantiate(LifeIcon, Iconpos, Quaternion.identity);
+            clone.transform.SetParent(Life_UI.transform, false);
+            clone.layer = 5;
+            Lives.Add(clone);
+        }
     }
 
     //update our score text
     public void updateScoreText()
     {
         scoreText.text = score.ToString();
+        if(PlayerPrefs.GetInt("Hi-Score") < score)
+        {
+            hiScore = score;
+            PlayerPrefs.SetInt("Hi-Score", hiScore);
+            updateHiScoreText();
+        }
+    }
+
+    public void updateHiScoreText()
+    {
+        hiScoreText.text = hiScore.ToString();
     }
 
     //update our bomb text
@@ -152,12 +193,12 @@ public class PlayerController : MonoBehaviour
             Destroy(Bombs[x]);
         for (int i = 0; i <= bombCount-1; i++) //calculat the spawn distance of icons
         {
-        Vector3 Iconpos = new Vector3(BombIcon_Position + (i * 20f) - 70f, BombIcon.transform.position.y -20, 0);
-        GameObject Canvas = GameObject.FindGameObjectWithTag("Canvas");
-        GameObject clone = (GameObject)Instantiate(BombIcon, Iconpos, Quaternion.identity);
-        clone.transform.SetParent(Bomb_UI.transform, false);
-        clone.layer = 5;
-        Bombs.Add(clone); 
+            Vector3 Iconpos = new Vector3(BombIcon_Position + (i * 20f) - 70f, BombIcon.transform.position.y -20, 0);
+            GameObject Canvas = GameObject.FindGameObjectWithTag("Canvas");
+            GameObject clone = (GameObject)Instantiate(BombIcon, Iconpos, Quaternion.identity);
+            clone.transform.SetParent(Bomb_UI.transform, false);
+            clone.layer = 5;
+            Bombs.Add(clone); 
         }
     }
 }

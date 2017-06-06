@@ -144,7 +144,7 @@ public class BulletStats : MonoBehaviour {
         {
             if (!isBomb)
             {
-                if (poolManager.bombActive)
+                if (poolManager.bombActive && gameObject.tag != "playerBullet")
                 {
                     disBomb = Distance(bomb.gameObject, sizeTemp);
                 }
