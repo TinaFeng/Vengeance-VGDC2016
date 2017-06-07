@@ -35,16 +35,19 @@ public class EnemyStats : MonoBehaviour {
 		if (gameObject.tag == "Boss") {
 			
 			deatheffect.Play ();
+			yield return new WaitForSeconds (deatheffect.main.duration);
 			deatheffect.Play ();
+			yield return new WaitForSeconds (deatheffect.main.duration);
 			deatheffect.Play ();
 			this.GetComponent<SpriteRenderer> ().enabled = false;
-			yield return new WaitForSeconds (2f);
+			yield return new WaitForSeconds (deatheffect.main.duration);
 		} 
 		else {
 			this.GetComponent<SpriteRenderer> ().enabled = false;
 			deatheffect.Play ();
+
 		
-			yield return new WaitForSeconds (0.2f);
+			yield return new WaitForSeconds (deatheffect.main.duration);
 
 		}
 
