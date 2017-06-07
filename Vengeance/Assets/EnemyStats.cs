@@ -12,6 +12,7 @@ public class EnemyStats : MonoBehaviour {
     {
         player = GameObject.FindGameObjectWithTag("Player");
 		deatheffect = GetComponent<ParticleSystem> ();
+        
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -45,7 +46,7 @@ public class EnemyStats : MonoBehaviour {
 		else {
 			this.GetComponent<SpriteRenderer> ().enabled = false;
 			deatheffect.Play ();
-
+ 
 		
 			yield return new WaitForSeconds (deatheffect.main.duration);
 
