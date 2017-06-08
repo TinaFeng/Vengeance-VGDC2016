@@ -58,10 +58,10 @@ public class BulletStats : MonoBehaviour {
 
     void Awake()
     {
-        isBomb = (gameObject.name == "Bomb");
+        isBomb = (gameObject.tag == "Bomb");
         if (!isBomb && bomb == null)
         {
-            bomb = GameObject.Find("Bomb").GetComponent<BulletStats>();
+            bomb = GameObject.FindGameObjectWithTag("Bomb").GetComponent<BulletStats>();
         }
         if (poolManager == null)
         {
