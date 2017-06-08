@@ -87,6 +87,7 @@ public class PlayerController : MonoBehaviour
             if (bombCount != 0)
             {
                 bomb.GetComponent<BulletStats>().enabled = true;
+                bomb.GetComponent<SpriteRenderer>().enabled = true;
                 poolManager.bombActive = true;
                 bombCount -= 1;
                 updateBombText();

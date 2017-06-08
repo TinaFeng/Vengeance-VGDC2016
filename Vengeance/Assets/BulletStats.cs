@@ -205,6 +205,7 @@ public class BulletStats : MonoBehaviour {
         else
         {
             this.enabled = false;
+            this.GetComponent<SpriteRenderer>().enabled = false;
             poolManager.bombActive = false;
         }
     }
