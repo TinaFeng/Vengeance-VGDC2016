@@ -26,22 +26,22 @@ public class CurveMovement : MonoBehaviour {
         
         temp.Set(locX.Evaluate(time), locY.Evaluate(time), 0f);
         transform.position = temp;
-        /////Determine direction between updates
+        ///////Determine direction between updates
         
-        if (temp.x - prev.x > 0)
-            anim.SetBool("Right", true);
+        //if (temp.x - prev.x > 0)
+        //    anim.SetBool("Right", true);
    
       
-        else if (temp.x - prev.x < 0)
-            anim.SetBool("Left", true);
+        //else if (temp.x - prev.x < 0)
+        //    anim.SetBool("Left", true);
  
-        else
-        {
-            anim.SetBool("Left", false);
-            anim.SetBool("Right", false);
-        }
+        //else
+        //{
+        //    anim.SetBool("Left", false);
+        //    anim.SetBool("Right", false);
+        //}
         
-        prev = temp;
+        //prev = temp;
         if (time > timeToKill && timeToKill != 0)
         {
             gameObject.SetActive(false);

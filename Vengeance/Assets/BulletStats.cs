@@ -56,10 +56,10 @@ public class BulletStats : MonoBehaviour {
     public float disableTime;
     bool isBomb;
 
-    void OnEnable()
+    void Awake()
     {
         isBomb = (gameObject.name == "Bomb");
-        if(!isBomb && bomb == null)
+        if (!isBomb && bomb == null)
         {
             bomb = GameObject.Find("Bomb").GetComponent<BulletStats>();
         }
@@ -67,17 +67,22 @@ public class BulletStats : MonoBehaviour {
         {
             poolManager = GameObject.Find("ObjectPooling").GetComponent<PoolManager>();
         }
-        if (poolManager != null && poolManager.destroyAll)
-        {
-            Disable();
-        }
-        if (aliveTime < 0 && ((int)moveType & 1) == 1)
+        if (((int)moveType & 1) == 1)
         {
             target = GameObject.FindGameObjectWithTag(targetTag);
         }
-        if(player == null)
+        if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
+        }
+    }
+
+    void OnEnable()
+    {
+        
+        if (poolManager != null && poolManager.destroyAll)
+        {
+            Disable();
         }
         if (((int)moveType & 1) == 1 && target != null)
         {
@@ -134,11 +139,10 @@ public class BulletStats : MonoBehaviour {
             {
                 if (poolManager.bombActive)
                 {
-                    disBomb = Distance(bomb.gameObject, sizeTemp);
+                    disBomb = Vector3.Distance(player.transform.position, transform.position) - (radius * sizeTemp) - (bomb.radius * bomb.sizeTemp);
                 }
-                dis = Distance(player, sizeTemp); //doesnt work on nonsphere hitboxes
+                dis = Vector3.Distance(player.transform.position, transform.position) - (radius * sizeTemp);
             }
-
         }
         else
         {
@@ -146,9 +150,9 @@ public class BulletStats : MonoBehaviour {
             {
                 if (poolManager.bombActive && gameObject.tag != "playerBullet")
                 {
-                    disBomb = Distance(bomb.gameObject, sizeTemp);
+                    disBomb = Vector3.Distance(player.transform.position, transform.position) - (radius) - (bomb.radius * bomb.sizeTemp);
                 }
-                dis = Distance(player, 1);
+                dis = Vector3.Distance(player.transform.position, transform.position) - (radius);
             }
         }
         if (((int)moveType & 8) == 8)
@@ -156,7 +160,7 @@ public class BulletStats : MonoBehaviour {
             rot = Quaternion.Euler(0, 0, startAngle + rotation.Evaluate(aliveTime));
             transform.rotation = rot;
         }
-        if (dis < 0 && !isBomb) //Utilize this for bomb
+        if (dis < 0 && !isBomb && gameObject.tag != "playerBullet") //Utilize this for bomb
         {
             player.GetComponent<PlayerController>().lives--;
             player.GetComponent<PlayerController>().updateLivesText();
@@ -164,7 +168,7 @@ public class BulletStats : MonoBehaviour {
         }
         if (poolManager.bombActive)
         {
-            if(disBomb < 0)
+            if (disBomb < 0)
             {
                 Disable();
             }
@@ -172,7 +176,7 @@ public class BulletStats : MonoBehaviour {
         tempVector3 = transform.position;
         if (((int)moveType & 2) == 2 && bounceCount < bounceMax)
         {
-            if(tempVector3.x + radius > 10 || tempVector3.x - radius < -10)
+            if (tempVector3.x + radius > 10 || tempVector3.x - radius < -10)
             {
                 transform.rotation = Quaternion.Euler(0f, 0f, -transform.rotation.eulerAngles.z);
                 bounceCount++;
@@ -210,16 +214,6 @@ public class BulletStats : MonoBehaviour {
         CancelInvoke();
         if (!isBomb)
             gameObject.GetComponent<BulletStats>().objectPool.deactivatedObjects.Push(gameObject);
-    }
-
-    float Distance(GameObject t, float s)
-    {
-        if(t.name == "Bomb")
-        {
-            return Vector3.Distance(t.transform.position, transform.position) - (radius * s) - (bomb.radius * bomb.sizeTemp);
-        }
-        else
-            return Vector3.Distance(t.transform.position, transform.position) - (radius * s);
     }
 }
 

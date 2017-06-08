@@ -12,47 +12,42 @@ public class EnemyStats : MonoBehaviour {
     {
         player = GameObject.FindGameObjectWithTag("Player");
 		deatheffect = GetComponent<ParticleSystem> ();
-        
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         other.gameObject.SetActive(false);
         health -= 10;
-
-
         if (health <= 0)
 		{
-			StartCoroutine(PaticleTime ());
+            gameObject.SetActive(false);
             player.GetComponent<PlayerController>().score += 100;
-
-            
         }
     }
 
-	IEnumerator PaticleTime()
+	//IEnumerator PaticleTime()
 
-	{	
-		if (gameObject.tag == "Boss") {
+	//{	
+	//	if (gameObject.tag == "Boss") {
 			
-			deatheffect.Play ();
-			yield return new WaitForSeconds (deatheffect.main.duration);
-			deatheffect.Play ();
-			yield return new WaitForSeconds (deatheffect.main.duration);
-			deatheffect.Play ();
-			this.GetComponent<SpriteRenderer> ().enabled = false;
-			yield return new WaitForSeconds (deatheffect.main.duration);
-		} 
-		else {
-			this.GetComponent<SpriteRenderer> ().enabled = false;
-			deatheffect.Play ();
+	//		deatheffect.Play ();
+	//		yield return new WaitForSeconds (deatheffect.main.duration);
+	//		deatheffect.Play ();
+	//		yield return new WaitForSeconds (deatheffect.main.duration);
+	//		deatheffect.Play ();
+	//		this.GetComponent<SpriteRenderer> ().enabled = false;
+	//		yield return new WaitForSeconds (deatheffect.main.duration);
+	//	} 
+	//	else {
+	//		this.GetComponent<SpriteRenderer> ().enabled = false;
+	//		deatheffect.Play ();
  
 		
-			yield return new WaitForSeconds (deatheffect.main.duration);
+	//		yield return new WaitForSeconds (deatheffect.main.duration);
 
-		}
+	//	}
 
 
-		gameObject.SetActive(false);
-	}
+		
+	//}
 }
