@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public GameObject playerBullets;
     public GameObject bomb;
     public PoolManager poolManager;
+    public bool iFrames; //If true, player invincible
 
     private bool firePressed = false;
     public int lives;
@@ -75,6 +76,8 @@ public class PlayerController : MonoBehaviour
 
         currentAttackPattern = attackPattern.I;
 
+        //player does not start invincible, sorry :P
+        iFrames = false;
     }
 
     //occurs every frame
@@ -116,8 +119,8 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         //get player's inputs
-        movement.x = Input.GetAxisRaw("Horizontal") * speed/100;
-        movement.y = Input.GetAxisRaw("Vertical") * speed/100;
+        movement.x = Input.GetAxisRaw("Horizontal") * Time.deltaTime * speed;
+        movement.y = Input.GetAxisRaw("Vertical") * Time.deltaTime * speed;
 
         gameObject.transform.Translate(movement);
     }
@@ -201,5 +204,11 @@ public class PlayerController : MonoBehaviour
             clone.layer = 5;
             Bombs.Add(clone); 
         }
+    }
+
+    //when our player is damaged, cause their sprite to flash for a few moments, and give them invincibility for that duration
+    void playerDamaged()
+    {
+
     }
 }
