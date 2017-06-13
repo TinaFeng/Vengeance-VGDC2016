@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public GameObject bomb;
     public PoolManager poolManager;
     public bool iFrames; //If true, player invincible
+    public float iFrameTimer; //How long we want the player to be invincible on damage
 
     private bool firePressed = false;
     public int lives;
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour
     private enum attackPattern {I, II, III, IV, V};
     private float shootTime;
     attackPattern currentAttackPattern;
+    private bool iFrameBlink;
 
     // Use this for initialization
     void Start()
@@ -78,6 +80,8 @@ public class PlayerController : MonoBehaviour
 
         //player does not start invincible, sorry :P
         iFrames = false;
+        iFrameTimer = 1.0f; // default 1 sec invulnerability
+        iFrameBlink = false; //default to not blinking
     }
 
     //occurs every frame
@@ -123,6 +127,33 @@ public class PlayerController : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical") * Time.deltaTime * speed;
 
         gameObject.transform.Translate(movement);
+
+        if (iFrames) //if we go invincible
+        {
+            if (iFrameTimer > 0)
+            {
+                //reduce time
+                iFrameTimer -= Time.deltaTime;
+
+                if (!iFrameBlink) //if player is visible
+                {
+                    GetComponent<SpriteRenderer>().color -= new Color(0, 0, 0, 255); //make the player transparent
+                    iFrameBlink = !iFrameBlink; // toggle iframe blink
+                }
+                else //player is blinking
+                {
+                    GetComponent<SpriteRenderer>().color += new Color(0, 0, 0, 255); //make the player apparent
+                    iFrameBlink = !iFrameBlink; // toggle iframe blink
+                }
+            }
+            else //turn off iframes, reset timer, clear blink flag
+            {
+                iFrames = false; //turn off iframes
+                iFrameTimer = 1.0f; //reset timer
+                if (iFrameBlink) GetComponent<SpriteRenderer>().color += new Color(0, 0, 0, 255); //Ensure the player is visible if they weren't
+                iFrameBlink = false; //ensure iframe isn't blinking anymore
+            }
+        }
     }
 
     //function that's called when our player collides with a 2D trigger
@@ -207,8 +238,8 @@ public class PlayerController : MonoBehaviour
     }
 
     //when our player is damaged, cause their sprite to flash for a few moments, and give them invincibility for that duration
-    void playerDamaged()
+    public void playerDamaged()
     {
-
+        iFrames = true; // set us invincible, which kicks off the blink code
     }
 }

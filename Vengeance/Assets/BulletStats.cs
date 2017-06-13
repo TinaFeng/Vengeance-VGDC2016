@@ -160,10 +160,11 @@ public class BulletStats : MonoBehaviour {
             rot = Quaternion.Euler(0, 0, startAngle + rotation.Evaluate(aliveTime));
             transform.rotation = rot;
         }
-        if (dis < 0 && !isBomb && gameObject.tag != "playerBullet") //Utilize this for bomb
+        if (dis < 0 && !isBomb && gameObject.tag != "playerBullet" && player.GetComponent<PlayerController>().iFrames == false /*only deal damage if player isn't invuln*/) //Utilize this for bomb
         {
             player.GetComponent<PlayerController>().lives--;
             player.GetComponent<PlayerController>().updateLivesText();
+            player.GetComponent<PlayerController>().playerDamaged();
             Disable();
         }
         if (poolManager.bombActive)
