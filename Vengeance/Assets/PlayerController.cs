@@ -7,13 +7,10 @@ public class PlayerController : MonoBehaviour
     int hiScore;
     public int score;
     public float speed;
-    public Text livesText;
     public Text hiScoreText;
     public Text scoreText;
-    public Text bombsText;
     public GameObject BombIcon; //Bomb display
     public GameObject LifeIcon;
-    public Text AttackPatternText;
     public GameObject playerBullets;
     public GameObject bomb;
     public PoolManager poolManager;
@@ -35,9 +32,7 @@ public class PlayerController : MonoBehaviour
     private float LifeIcon_Position;//x-position of bombicons;
     private List<GameObject> Bombs;//A list for icon objects
     private List<GameObject> Lives;//A list for icon objects
-    private enum attackPattern {I, II, III, IV, V};
     private float shootTime;
-    attackPattern currentAttackPattern;
     private bool iFrameBlink;
 
     // Use this for initialization
@@ -73,10 +68,6 @@ public class PlayerController : MonoBehaviour
         updateHiScoreText();
         updateScoreText();
         updateBombText();
-
-  
-
-        currentAttackPattern = attackPattern.I;
 
         //player does not start invincible, sorry :P
         iFrames = false;
@@ -164,29 +155,6 @@ public class PlayerController : MonoBehaviour
             lives++;
             updateLivesText();
         }
-        /*else if (other.gameObject.CompareTag("pBlock"))
-        {
-            score += 100;
-            updateScoreText();
-        }*/
-        else if (other.gameObject.CompareTag("pBlock"))
-        {
-            //level up our attack pattern, otherwise give us a bomb
-            if (currentAttackPattern == attackPattern.V)
-            {
-                bombCount++;
-                updateBombText();
-            }
-            else
-            {
-                currentAttackPattern++;
-            }
-
-            //increase our score
-            score += 1000;
-            updateScoreText();
-        }
-
     }
     //update our lives text
     public void updateLivesText()
