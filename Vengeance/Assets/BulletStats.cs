@@ -164,8 +164,9 @@ public class BulletStats : MonoBehaviour {
         {
             player.GetComponent<PlayerController>().lives--;
             player.GetComponent<PlayerController>().updateLivesText();
-            player.GetComponent<PlayerController>().playerDamaged();
             Disable();
+            if (player.GetComponent<PlayerController>().lives > 0) player.GetComponent<PlayerController>().playerDamaged(); //If the player isn't dead, flash sprit and give 1 sec invuln
+            else player.GetComponent<PlayerController>().gameOver(); //end the game until its reset
         }
         if (poolManager.bombActive)
         {

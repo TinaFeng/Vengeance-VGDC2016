@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     private List<GameObject> Bombs;//A list for icon objects
     private List<GameObject> Lives;//A list for icon objects
     private float shootTime;
-    private bool iFrameBlink;
+    private bool iFrameBlink, isGamePaused, isGameOver; //iFrame, game pause, and game over flags
 
     // Use this for initialization
     void Start()
@@ -70,81 +70,94 @@ public class PlayerController : MonoBehaviour
         updateBombText();
 
         //player does not start invincible, sorry :P
-        iFrames = false;
+        iFrames = iFrameBlink = false; //default to not blinking and not invulnerable
         iFrameTimer = 1.0f; // default 1 sec invulnerability
-        iFrameBlink = false; //default to not blinking
+
+        isGameOver = isGamePaused = false; //game is not over or paused by default
     }
 
     //occurs every frame
     void Update()
     {
-        score++;
-        updateScoreText();
-        if (Input.GetButtonDown("Bomb"))
+        if (!isGameOver && !isGamePaused) //only update the game logic if the game isn't over or isn't paused
         {
-            if (bombCount != 0)
+            score++;
+            updateScoreText();
+
+            if (Input.GetButtonDown("Bomb"))
             {
-                bomb.GetComponent<BulletStats>().enabled = true;
-                bomb.GetComponent<SpriteRenderer>().enabled = true;
-                poolManager.bombActive = true;
-                bombCount -= 1;
-                updateBombText();
+                if (bombCount != 0)
+                {
+                    bomb.GetComponent<BulletStats>().enabled = true;
+                    bomb.GetComponent<SpriteRenderer>().enabled = true;
+                    poolManager.bombActive = true;
+                    bombCount -= 1;
+                    updateBombText();
+                }
             }
-        }
-        if (Input.GetButtonDown("Fire2"))
-        {
-            speed /= 2;
-            charRenderer.enabled = true;
-        }
-        else if (Input.GetButtonUp("Fire2"))
-        {
-            speed *= 2;
-            charRenderer.enabled = false;
-        }
-        if (Input.GetButtonDown("Fire1"))
-        {
-            playerBullets.SetActive(true);
-        }
-        if (Input.GetButtonUp("Fire1"))
-        {
-            playerBullets.SetActive(false);
-        }
+            if (Input.GetButtonDown("Fire2"))
+            {
+                speed /= 2;
+                charRenderer.enabled = true;
+            }
+            else if (Input.GetButtonUp("Fire2"))
+            {
+                speed *= 2;
+                charRenderer.enabled = false;
+            }
+            if (Input.GetButtonDown("Fire1"))
+            {
+                playerBullets.SetActive(true);
+            }
+            if (Input.GetButtonUp("Fire1"))
+            {
+                playerBullets.SetActive(false);
+            }
+        } //code below this line will still run when the game is paused or over
+
+       
     }
+
     //occurs based on set time, independent of frame
     void FixedUpdate()
     {
-        //get player's inputs
-        movement.x = Input.GetAxisRaw("Horizontal") * Time.deltaTime * speed;
-        movement.y = Input.GetAxisRaw("Vertical") * Time.deltaTime * speed;
-
-        gameObject.transform.Translate(movement);
-
-        if (iFrames) //if we go invincible
+        if (!isGameOver && !isGamePaused) //only update the game logic if the game isn't over or isn't paused
         {
-            if (iFrameTimer > 0)
-            {
-                //reduce time
-                iFrameTimer -= Time.deltaTime;
+            //get player's inputs
+            movement.x = Input.GetAxisRaw("Horizontal") * Time.deltaTime * speed;
+            movement.y = Input.GetAxisRaw("Vertical") * Time.deltaTime * speed;
 
-                if (!iFrameBlink) //if player is visible
-                {
-                    GetComponent<SpriteRenderer>().color -= new Color(0, 0, 0, 255); //make the player transparent
-                    iFrameBlink = !iFrameBlink; // toggle iframe blink
-                }
-                else //player is blinking
-                {
-                    GetComponent<SpriteRenderer>().color += new Color(0, 0, 0, 255); //make the player apparent
-                    iFrameBlink = !iFrameBlink; // toggle iframe blink
-                }
-            }
-            else //turn off iframes, reset timer, clear blink flag
+            gameObject.transform.Translate(movement);
+
+            if (iFrames) //if we go invincible
             {
-                iFrames = false; //turn off iframes
-                iFrameTimer = 1.0f; //reset timer
-                if (iFrameBlink) GetComponent<SpriteRenderer>().color += new Color(0, 0, 0, 255); //Ensure the player is visible if they weren't
-                iFrameBlink = false; //ensure iframe isn't blinking anymore
+                if (iFrameTimer > 0)
+                {
+                    //reduce time
+                    iFrameTimer -= Time.deltaTime;
+
+                    if (!iFrameBlink) //if player is visible
+                    {
+                        GetComponent<SpriteRenderer>().color -= new Color(0, 0, 0, 255); //make the player transparent
+                        iFrameBlink = !iFrameBlink; // toggle iframe blink
+                    }
+                    else //player is blinking
+                    {
+                        GetComponent<SpriteRenderer>().color += new Color(0, 0, 0, 255); //make the player apparent
+                        iFrameBlink = !iFrameBlink; // toggle iframe blink
+                    }
+                }
+                else //turn off iframes, reset timer, clear blink flag
+                {
+                    iFrames = false; //turn off iframes
+                    iFrameTimer = 1.0f; //reset timer
+                    if (iFrameBlink) GetComponent<SpriteRenderer>().color += new Color(0, 0, 0, 255); //Ensure the player is visible if they weren't
+                    iFrameBlink = false; //ensure iframe isn't blinking anymore
+                }
             }
-        }
+        } //anything below this will still run when the game is paused or over
+
+
     }
 
     //function that's called when our player collides with a 2D trigger
@@ -209,5 +222,15 @@ public class PlayerController : MonoBehaviour
     public void playerDamaged()
     {
         iFrames = true; // set us invincible, which kicks off the blink code
+    }
+
+    //called when the game is over
+    public void gameOver()
+    {
+        //set game over
+        isGameOver = true;
+
+        //stop the game simulation
+        Time.timeScale = 0;
     }
 }
