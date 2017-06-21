@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public PoolManager poolManager;
     public bool iFrames; //If true, player invincible
     public float iFrameTimer; //How long we want the player to be invincible on damage
+    public GameObject gameOverScreen;
 
     private bool firePressed = false;
     public int lives;
@@ -74,6 +75,8 @@ public class PlayerController : MonoBehaviour
         iFrameTimer = 1.0f; // default 1 sec invulnerability
 
         isGameOver = isGamePaused = false; //game is not over or paused by default
+
+        gameOverScreen.SetActive(false);
     }
 
     //occurs every frame
@@ -229,8 +232,11 @@ public class PlayerController : MonoBehaviour
     {
         //set game over
         isGameOver = true;
-
+        //disable the player
+        GetComponent<SpriteRenderer>().enabled = false;
         //stop the game simulation
         Time.timeScale = 0;
+        //turn on the gameover menu
+        gameOverScreen.SetActive(true);
     }
 }
