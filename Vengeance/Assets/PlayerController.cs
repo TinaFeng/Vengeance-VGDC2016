@@ -224,6 +224,9 @@ public class PlayerController : MonoBehaviour
     //when our player is damaged, cause their sprite to flash for a few moments, and give them invincibility for that duration
     public void playerDamaged()
     {
+        bomb.GetComponent<BulletStats>().enabled = true;
+        bomb.GetComponent<SpriteRenderer>().enabled = true;
+        poolManager.bombActive = true;
         iFrames = true; // set us invincible, which kicks off the blink code
     }
 
