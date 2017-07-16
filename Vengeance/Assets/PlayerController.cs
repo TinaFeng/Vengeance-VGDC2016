@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
 
         //player does not start invincible, sorry :P
         iFrames = iFrameBlink = false; //default to not blinking and not invulnerable
-        iFrameTimer = 1.0f; // default 1 sec invulnerability
+        iFrameTimer = 2.0f; // default 1 sec invulnerability
 
         isGameOver = isGamePaused = false; //game is not over or paused by default
 
@@ -84,7 +84,8 @@ public class PlayerController : MonoBehaviour
     {
         if (!isGameOver && !isGamePaused) //only update the game logic if the game isn't over or isn't paused
         {
-            score++;
+            if(!iFrames)
+                score++;
             updateScoreText();
 
             if (Input.GetButtonDown("Bomb"))
@@ -153,7 +154,7 @@ public class PlayerController : MonoBehaviour
                 else //turn off iframes, reset timer, clear blink flag
                 {
                     iFrames = false; //turn off iframes
-                    iFrameTimer = 1.0f; //reset timer
+                    iFrameTimer = 2.0f; //reset timer
                     if (iFrameBlink) GetComponent<SpriteRenderer>().color += new Color(0, 0, 0, 255); //Ensure the player is visible if they weren't
                     iFrameBlink = false; //ensure iframe isn't blinking anymore
                 }
