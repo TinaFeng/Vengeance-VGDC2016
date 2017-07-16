@@ -12,6 +12,7 @@ public class BulletStats : MonoBehaviour {
     //General Variables
     PoolManager poolManager;
     BulletStats bomb;
+    BulletStats bossBomb;
     public ObjectPooler objectPool;
     public Disable disableType;
     public Movement moveType;
@@ -54,13 +55,19 @@ public class BulletStats : MonoBehaviour {
     //Disable Time
     public float disableTime;
     bool isBomb;
+    bool isBossBomb;
 
     void Awake()
     {
         isBomb = (gameObject.tag == "Bomb");
+        isBossBomb = (gameObject.tag == "BossBomb");
         if (!isBomb && bomb == null)
         {
             bomb = GameObject.FindGameObjectWithTag("Bomb").GetComponent<BulletStats>();
+        }
+        if (!isBossBomb && bossBomb == null)
+        {
+            bossBomb = GameObject.FindGameObjectWithTag("BossBomb").GetComponent<BulletStats>();
         }
         if (poolManager == null)
         {
@@ -134,22 +141,30 @@ public class BulletStats : MonoBehaviour {
             sizeTemp = size.Evaluate(aliveTime);
             tempVector3.Set(sizeTemp, sizeTemp, sizeTemp);
             transform.localScale = tempVector3;
-            if (!isBomb)
+            if (!isBomb && !isBossBomb)
             {
-                if (poolManager.bombActive)
+                if (poolManager.bombActive && gameObject.tag != "playerBullet")
                 {
                     disBomb = Vector3.Distance(player.transform.position, transform.position) - (radius * sizeTemp) - (bomb.radius * bomb.sizeTemp);
+                }
+                if (poolManager.bossBombActive)
+                {
+                    disBomb = Vector3.Distance(bossBomb.transform.position, transform.position) - (radius * sizeTemp) - (bossBomb.radius * bossBomb.sizeTemp);
                 }
                 dis = Vector3.Distance(player.transform.position, transform.position) - (radius * sizeTemp);
             }
         }
         else
         {
-            if (!isBomb)
+            if (!isBomb && !isBossBomb)
             {
                 if (poolManager.bombActive && gameObject.tag != "playerBullet")
                 {
                     disBomb = Vector3.Distance(player.transform.position, transform.position) - (radius) - (bomb.radius * bomb.sizeTemp);
+                }
+                if (poolManager.bossBombActive)
+                {
+                    disBomb = Vector3.Distance(bossBomb.transform.position, transform.position) - (radius) - (bossBomb.radius * bossBomb.sizeTemp);
                 }
                 dis = Vector3.Distance(player.transform.position, transform.position) - (radius);
             }
@@ -159,7 +174,7 @@ public class BulletStats : MonoBehaviour {
             rot = Quaternion.Euler(0, 0, startAngle + rotation.Evaluate(aliveTime));
             transform.rotation = rot;
         }
-        if (dis < 0 && !isBomb && gameObject.tag != "playerBullet" && player.GetComponent<PlayerController>().iFrames == false /*only deal damage if player isn't invuln*/) //Utilize this for bomb
+        if (dis < 0 && !isBomb && !isBossBomb && gameObject.tag != "playerBullet" && player.GetComponent<PlayerController>().iFrames == false /*only deal damage if player isn't invuln*/) //Utilize this for bomb
         {
             player.GetComponent<PlayerController>().lives--;
             player.GetComponent<PlayerController>().updateLivesText();
@@ -167,7 +182,7 @@ public class BulletStats : MonoBehaviour {
             if (player.GetComponent<PlayerController>().lives > 0) player.GetComponent<PlayerController>().playerDamaged(); //If the player isn't dead, flash sprit and give 1 sec invuln
             else player.GetComponent<PlayerController>().gameOver(); //end the game until its reset
         }
-        if (poolManager.bombActive)
+        if (poolManager.bombActive || poolManager.bossBombActive)
         {
             if (disBomb < 0)
             {
@@ -201,20 +216,23 @@ public class BulletStats : MonoBehaviour {
 
     void Disable()
     {
-        if (!isBomb)
+        if (!isBomb && !isBossBomb)
             gameObject.SetActive(false);
         else
         {
             this.enabled = false;
             this.GetComponent<SpriteRenderer>().enabled = false;
-            poolManager.bombActive = false;
+            if(isBomb)
+                poolManager.bombActive = false;
+            if (isBossBomb)
+                poolManager.bossBombActive = false;
         }
     }
 
     void OnDisable()
     {
         CancelInvoke();
-        if (!isBomb)
+        if (!isBomb && !isBossBomb)
             gameObject.GetComponent<BulletStats>().objectPool.deactivatedObjects.Push(gameObject);
     }
 }
