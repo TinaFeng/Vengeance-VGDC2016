@@ -18,6 +18,7 @@ public class BulletStats : MonoBehaviour {
     public Movement moveType;
     bool start = true;
     Vector3 tempVector3;
+    public Vector3 additiveForce;
     GameObject player;
     float dis;
     float disBomb;
@@ -141,6 +142,7 @@ public class BulletStats : MonoBehaviour {
             deltaTime = 0;
         tempVector3.Set(speedVarX.Evaluate(aliveTime) * deltaTime, speedVarY.Evaluate(aliveTime) * deltaTime, 0);
         transform.position += rot * tempVector3;
+        transform.position += additiveForce;
         if (((int)moveType & 4) == 4)
         {
             sizeTemp = size.Evaluate(aliveTime);
