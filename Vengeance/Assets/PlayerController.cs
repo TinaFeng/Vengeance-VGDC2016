@@ -101,12 +101,12 @@ public class PlayerController : MonoBehaviour
             }
             if (Input.GetButtonDown("Fire2"))
             {
-                speed /= 2;
+                poolManager.timeStop = true;
                 charRenderer.enabled = true;
             }
             else if (Input.GetButtonUp("Fire2"))
             {
-                speed *= 2;
+                poolManager.timeStop = false;
                 charRenderer.enabled = false;
             }
             if (Input.GetButtonDown("Fire1"))

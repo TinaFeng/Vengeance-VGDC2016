@@ -7,6 +7,7 @@ public enum Frequency {Repeating = 1, Disable = 2};
 
 public class SpawnBullet : MonoBehaviour {
 
+    PoolManager poolManager;
     public ObjectPooler bulletPool;
     public Position posType;
     public Frequency freqType;
@@ -31,13 +32,22 @@ public class SpawnBullet : MonoBehaviour {
     public float chaMax;
 
     //Repeating
+    public float startDelay;
     public float repFreq;
     public float repDelay;
     public int shotMax;
+    bool startWait;
+    bool delayWait;
     int shotCount = 0;
 
 	void OnEnable () {
         deltaTime = 0;
+        delayWait = false;
+        startWait = true;
+        if (poolManager == null)
+        {
+            poolManager = GameObject.Find("ObjectPooling").GetComponent<PoolManager>();
+        }
         if (target == null)
         {
             target = GameObject.FindGameObjectWithTag("Player");
@@ -54,15 +64,48 @@ public class SpawnBullet : MonoBehaviour {
         {
             functionName = "Chaos";
         }
-        if (((int)freqType & 2) != 2)
-        {
-            InvokeRepeating(functionName, repDelay, repFreq);
-        }
     }
 	
     void FixedUpdate()
     {
-        deltaTime += Time.deltaTime;
+        if (!poolManager.timeStop)
+        {
+            if (poolManager.timeSlow)
+                deltaTime += Time.deltaTime * poolManager.timeSlowAmount;
+            else
+                deltaTime += Time.deltaTime;
+        }
+        if (((int)freqType & 2) != 2)
+        {
+            if (startWait)
+            {
+                if(deltaTime >= startDelay)
+                {
+                    startWait = false;
+                    deltaTime = repFreq;
+                }
+            }
+            if(!startWait)
+            {
+                if (delayWait)
+                {
+                    if (deltaTime >= repDelay)
+                    {
+                        delayWait = false;
+                        deltaTime = repFreq;
+                    }
+                }
+                if (!delayWait)
+                {
+                    if(deltaTime >= repFreq)
+                    {
+                        Invoke(functionName, 0);
+                        deltaTime = 0;
+                    }
+                }
+            }
+        }
+
     }
 	void Forward()
     {
@@ -114,8 +157,8 @@ public class SpawnBullet : MonoBehaviour {
             if(shotCount > shotMax && shotMax != 0)
             {
                 shotCount = 0;
-                CancelInvoke();
-                InvokeRepeating(functionName, repDelay, repFreq);
+                delayWait = true;
+                deltaTime = 0;
             }
         }
     }

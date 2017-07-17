@@ -31,8 +31,9 @@ public class SpawnBulletEditor : Editor
         script.freqType = (Frequency)EditorGUILayout.EnumMaskField("Frequency Type", script.freqType);
         if (((int)script.freqType & 1) == 1)
         {
+            script.startDelay = EditorGUILayout.FloatField("Delay to Start", script.startDelay);
             script.repFreq = EditorGUILayout.FloatField("Repeating Frequency", script.repFreq);
-            script.repDelay = EditorGUILayout.FloatField("Delay to Start", script.repDelay);
+            script.repDelay = EditorGUILayout.FloatField("Delay to Repeat", script.repDelay);
             script.shotMax = EditorGUILayout.IntField("Burst Number", script.shotMax);
         }
 

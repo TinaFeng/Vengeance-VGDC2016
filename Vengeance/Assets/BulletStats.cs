@@ -56,6 +56,7 @@ public class BulletStats : MonoBehaviour {
     public float disableTime;
     bool isBomb;
     bool isBossBomb;
+    bool disableTimeCheck;
 
     void Awake()
     {
@@ -114,7 +115,7 @@ public class BulletStats : MonoBehaviour {
         }
         if (((int)disableType & 2) == 2)
         {
-            Invoke("Disable", disableTime);
+            disableTimeCheck = true;
         }
         if (isBomb)
         {
@@ -134,6 +135,10 @@ public class BulletStats : MonoBehaviour {
         //Bullet Movement
         rot = transform.rotation;
         deltaTime = Time.deltaTime;
+        if (poolManager.timeSlow)
+            deltaTime *= poolManager.timeSlowAmount;
+        if (poolManager.timeStop)
+            deltaTime = 0;
         tempVector3.Set(speedVarX.Evaluate(aliveTime) * deltaTime, speedVarY.Evaluate(aliveTime) * deltaTime, 0);
         transform.position += rot * tempVector3;
         if (((int)moveType & 4) == 4)
@@ -208,6 +213,10 @@ public class BulletStats : MonoBehaviour {
             Disable();
         }
         if (tempVector3.y > 16 + radius || tempVector3.y < -16 - radius)
+        {
+            Disable();
+        }
+        if(disableTimeCheck && aliveTime > disableTime)
         {
             Disable();
         }
