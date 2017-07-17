@@ -21,6 +21,7 @@ public class SpawnBullet : MonoBehaviour {
     Vector3 tPlayer;
     float angle;
     float deltaTime;
+    float aliveTime;
 
     //Radial
     public float radMin;
@@ -41,6 +42,7 @@ public class SpawnBullet : MonoBehaviour {
     int shotCount = 0;
 
 	void OnEnable () {
+        aliveTime = 0;
         deltaTime = 0;
         delayWait = false;
         startWait = true;
@@ -74,6 +76,7 @@ public class SpawnBullet : MonoBehaviour {
                 deltaTime += Time.deltaTime * poolManager.timeSlowAmount;
             else
                 deltaTime += Time.deltaTime;
+            aliveTime += deltaTime;
         }
         if (((int)freqType & 2) != 2)
         {
@@ -111,7 +114,7 @@ public class SpawnBullet : MonoBehaviour {
     {
         obj = bulletPool.GetObject();
         obj.transform.position = transform.position + offset;
-        obj.transform.rotation = Quaternion.Euler(0f, 0f, dir.Evaluate(deltaTime));
+        obj.transform.rotation = Quaternion.Euler(0f, 0f, dir.Evaluate(aliveTime));
         obj.SetActive(true);
         Refire();
     }
@@ -122,13 +125,13 @@ public class SpawnBullet : MonoBehaviour {
         {
             tPlayer = transform.position - target.transform.position;
             angle = Mathf.Atan2(tPlayer.y, tPlayer.x) * Mathf.Rad2Deg;
-            dir.AddKey(deltaTime, angle + 90);
+            dir.AddKey(aliveTime, angle + 90);
         }
         for (int i = 0; i < radNum; i++)
         {
             obj = bulletPool.GetObject();
             obj.transform.position = transform.position + offset;
-            obj.transform.rotation = Quaternion.Euler(0f, 0f, dir.Evaluate(deltaTime) + radMin + (i*(radMax - radMin)/(radNum-1)));
+            obj.transform.rotation = Quaternion.Euler(0f, 0f, dir.Evaluate(aliveTime) + radMin + (i*(radMax - radMin)/(radNum-1)));
             obj.SetActive(true);
         }
         Refire();
@@ -140,11 +143,11 @@ public class SpawnBullet : MonoBehaviour {
         {
             tPlayer = transform.position - target.transform.position;
             angle = Mathf.Atan2(tPlayer.y, tPlayer.x) * Mathf.Rad2Deg;
-            dir.AddKey(deltaTime, angle + 90);
+            dir.AddKey(aliveTime, angle + 90);
         }
         obj = bulletPool.GetObject();
         obj.transform.position = transform.position + offset;
-        obj.transform.rotation = Quaternion.Euler(0f, 0f, dir.Evaluate(deltaTime) + chaMin + (Random.value * (chaMax - chaMin)));
+        obj.transform.rotation = Quaternion.Euler(0f, 0f, dir.Evaluate(aliveTime) + chaMin + (Random.value * (chaMax - chaMin)));
         obj.SetActive(true);
         Refire();
     }

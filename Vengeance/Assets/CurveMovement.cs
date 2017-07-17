@@ -36,8 +36,9 @@ public class CurveMovement : MonoBehaviour {
         temp.Set(locX.Evaluate(time), locY.Evaluate(time), 0f);
         transform.position = temp;
         /////Determine direction between updates
-        if (gameObject.tag == "Boss")
+        if (gameObject.tag == "Boss" && !poolManager.timeStop)
         {
+            anim.enabled = true;
             if (temp.x - prev.x > 0)
                 anim.SetBool("Right", true);
 
@@ -52,6 +53,10 @@ public class CurveMovement : MonoBehaviour {
             }
 
             prev = temp;
+        }
+        else
+        {
+            anim.enabled = false;
         }
         if (time > timeToKill && timeToKill != 0)
         {
