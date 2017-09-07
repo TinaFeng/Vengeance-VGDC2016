@@ -18,9 +18,7 @@ public class CurveMovement : MonoBehaviour {
     void Start()
     {
         if (poolManager == null)
-        {
             poolManager = GameObject.Find("ObjectPooling").GetComponent<PoolManager>();
-        }
         prev.Set(locX.Evaluate(time), locY.Evaluate(time), 0f);
         anim = GetComponent<Animator>();
     }
@@ -31,11 +29,9 @@ public class CurveMovement : MonoBehaviour {
                 time += Time.deltaTime * poolManager.timeSlowAmount;
             else
                 time += Time.deltaTime;
-        }
-        
+        } 
         temp.Set(locX.Evaluate(time), locY.Evaluate(time), 0f);
         transform.position = temp;
-        /////Determine direction between updates
         if (gameObject.tag == "Boss" && !poolManager.timeStop)
         {
             anim.enabled = true;
