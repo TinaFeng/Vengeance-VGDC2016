@@ -62,7 +62,6 @@ public class PlayerController : MonoBehaviour
 
         Bomb_UI = GameObject.FindGameObjectWithTag("BombIcons");
         Life_UI = GameObject.FindGameObjectWithTag("PlayerIcons");
-        Debug.Log(Life_UI.name);
         BombIcon_Position = BombIcon.transform.position.x;
         LifeIcon_Position = LifeIcon.transform.position.x;
         updateLivesText();
@@ -86,7 +85,7 @@ public class PlayerController : MonoBehaviour
         {
             if(!iFrames)
                 score++;
-            updateScoreText();
+            
 
             if (Input.GetButtonDown("Bomb"))
             {
@@ -129,6 +128,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!isGameOver && !isGamePaused) //only update the game logic if the game isn't over or isn't paused
         {
+            updateScoreText();
             //get player's inputs
             movement.x = Input.GetAxisRaw("Horizontal") * Time.deltaTime * speed;
             movement.y = Input.GetAxisRaw("Vertical") * Time.deltaTime * speed;

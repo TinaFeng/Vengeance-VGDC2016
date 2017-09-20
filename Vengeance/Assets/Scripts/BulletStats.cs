@@ -18,10 +18,9 @@ public class BulletStats : MonoBehaviour {
     public Movement moveType;
     bool start = true;
     Vector3 tempVector3;
-    public Vector3 additiveForce;
     GameObject player;
     float dis;
-    float disBomb;
+    float disBomb = 1.1f;
     public float radius;
 
     //Rotation
@@ -39,7 +38,7 @@ public class BulletStats : MonoBehaviour {
     public AnimationCurve speedVarY;
     public AnimationCurve rotation;
     public AnimationCurve size;
-    float sizeTemp;
+    float sizeTemp = 1;
     float aliveTime = -1;
     float deltaTime;
 
@@ -142,46 +141,30 @@ public class BulletStats : MonoBehaviour {
             deltaTime = 0;
         tempVector3.Set(speedVarX.Evaluate(aliveTime) * deltaTime, speedVarY.Evaluate(aliveTime) * deltaTime, 0);
         transform.position += rot * tempVector3;
-        transform.position += additiveForce;
         if (((int)moveType & 4) == 4)
         {
             sizeTemp = size.Evaluate(aliveTime);
             tempVector3.Set(sizeTemp, sizeTemp, sizeTemp);
             transform.localScale = tempVector3;
-            if (!isBomb && !isBossBomb)
-            {
-                if (poolManager.bombActive && gameObject.tag != "playerBullet")
-                {
-                    disBomb = Vector3.Distance(player.transform.position, transform.position) - (radius * sizeTemp) - (bomb.radius * bomb.sizeTemp);
-                }
-                if (poolManager.bossBombActive)
-                {
-                    disBomb = Vector3.Distance(bossBomb.transform.position, transform.position) - (radius * sizeTemp) - (bossBomb.radius * bossBomb.sizeTemp);
-                }
-                dis = Vector3.Distance(player.transform.position, transform.position) - (radius * sizeTemp);
-            }
         }
-        else
+        if (!isBomb && !isBossBomb)
         {
-            if (!isBomb && !isBossBomb)
+            if (poolManager.bombActive && gameObject.tag != "playerBullet")
             {
-                if (poolManager.bombActive && gameObject.tag != "playerBullet")
-                {
-                    disBomb = Vector3.Distance(player.transform.position, transform.position) - (radius) - (bomb.radius * bomb.sizeTemp);
-                }
-                if (poolManager.bossBombActive)
-                {
-                    disBomb = Vector3.Distance(bossBomb.transform.position, transform.position) - (radius) - (bossBomb.radius * bossBomb.sizeTemp);
-                }
-                dis = Vector3.Distance(player.transform.position, transform.position) - (radius);
+                disBomb = Vector3.Distance(player.transform.position, transform.position) - (radius) - (bomb.radius * bomb.sizeTemp);
             }
+            if (poolManager.bossBombActive)
+            {
+                disBomb = Vector3.Distance(bossBomb.transform.position, transform.position) - (radius) - (bossBomb.radius * bossBomb.sizeTemp);
+            }
+            dis = Vector3.Distance(player.transform.position, transform.position) - radius * sizeTemp;
         }
         if (((int)moveType & 8) == 8)
         {
             rot = Quaternion.Euler(0, 0, startAngle + rotation.Evaluate(aliveTime));
             transform.rotation = rot;
         }
-        if (dis < 0 && !isBomb && !isBossBomb && gameObject.tag != "playerBullet" && player.GetComponent<PlayerController>().iFrames == false /*only deal damage if player isn't invuln*/) //Utilize this for bomb
+        if (dis <= 1 && !isBomb && !isBossBomb && gameObject.tag != "playerBullet" && player.GetComponent<PlayerController>().iFrames == false /*only deal damage if player isn't invuln*/) //Utilize this for bomb
         {
             player.GetComponent<PlayerController>().lives--;
             player.GetComponent<PlayerController>().updateLivesText();
@@ -224,6 +207,7 @@ public class BulletStats : MonoBehaviour {
         }
         aliveTime += deltaTime;
     }
+
 
     void Disable()
     {

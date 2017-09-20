@@ -15,7 +15,6 @@ public class ScreenFade : MonoBehaviour {
         if (fade)
         {
             t += Time.deltaTime / time;
-            Debug.Log(t);
             image = GetComponent<Image>();
             var tempColor = image.color;
             tempColor.a = Mathf.Lerp(0, 1, t);

@@ -19,7 +19,7 @@ public class EnemyStats : MonoBehaviour {
             poolManager = GameObject.Find("ObjectPooling").GetComponent<PoolManager>();
         }
         player = GameObject.FindGameObjectWithTag("Player");
-		deatheffect = GetComponent<ParticleSystem> ();
+		deatheffect = GetComponent<ParticleSystem>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -36,33 +36,7 @@ public class EnemyStats : MonoBehaviour {
                 bossBomb.enabled = true;
             }
             gameObject.SetActive(false);
-            player.GetComponent<PlayerController>().score += 100;
+            player.GetComponent<PlayerController>().score += score;
         }
     }
-
-	//IEnumerator PaticleTime()
-
-	//{	
-	//	if (gameObject.tag == "Boss") {
-			
-	//		deatheffect.Play ();
-	//		yield return new WaitForSeconds (deatheffect.main.duration);
-	//		deatheffect.Play ();
-	//		yield return new WaitForSeconds (deatheffect.main.duration);
-	//		deatheffect.Play ();
-	//		this.GetComponent<SpriteRenderer> ().enabled = false;
-	//		yield return new WaitForSeconds (deatheffect.main.duration);
-	//	} 
-	//	else {
-	//		this.GetComponent<SpriteRenderer> ().enabled = false;
-	//		deatheffect.Play ();
- 
-		
-	//		yield return new WaitForSeconds (deatheffect.main.duration);
-
-	//	}
-
-
-		
-	//}
 }
