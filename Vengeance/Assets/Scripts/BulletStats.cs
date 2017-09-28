@@ -147,6 +147,10 @@ public class BulletStats : MonoBehaviour {
             tempVector3.Set(sizeTemp, sizeTemp, sizeTemp);
             transform.localScale = tempVector3;
         }
+        else
+        {
+            sizeTemp = 1;
+        }
         if (!isBomb && !isBossBomb)
         {
             if (poolManager.bombActive && gameObject.tag != "playerBullet")
@@ -164,7 +168,7 @@ public class BulletStats : MonoBehaviour {
             rot = Quaternion.Euler(0, 0, startAngle + rotation.Evaluate(aliveTime));
             transform.rotation = rot;
         }
-        if (dis <= 1 && !isBomb && !isBossBomb && gameObject.tag != "playerBullet" && player.GetComponent<PlayerController>().iFrames == false /*only deal damage if player isn't invuln*/) //Utilize this for bomb
+        if (dis <= 0 && !isBomb && !isBossBomb && gameObject.tag != "playerBullet" && player.GetComponent<PlayerController>().iFrames == false /*only deal damage if player isn't invuln*/) //Utilize this for bomb
         {
             player.GetComponent<PlayerController>().lives--;
             player.GetComponent<PlayerController>().updateLivesText();
