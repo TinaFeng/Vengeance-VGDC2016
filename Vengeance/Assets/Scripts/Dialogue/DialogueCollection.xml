@@ -1,33 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <DialogueCollection>
-  <levelDialogue level="1">
-    
-    <midBossDialogue>
-      <conversation tag="prefight">
-        <text speaker="Synn">"Haha! You'll never defeat me!"</text>
-        <text speaker="Alicia">"We'll never let you get away with this!"</text>
-        <text speaker="Synn">"You're already dead."</text>
-        <text speaker="Alicia">"W-what!?"</text>
-      </conversation>
-      <conversation tag="postfight">
-        <text speaker="Synn">"What'd I say?"</text>
-        <text speaker="Alicia">"C-curse y-you..."</text>
-      </conversation>
-    </midBossDialogue>
-    
-    <bossDialogue>
-      <conversation tag="prefight">
-        <text speaker="Alexia">"What'd you do to Alicia!?"</text>
-        <text speaker="Synn">"Hold still and I'll show you."</text>
-        <text speaker="Alexia">"You monster!"</text>
-        <text speaker="Synn">"I seem to get that a lot."</text>
-      </conversation>
-      <conversation tag="postfight">
-        <text speaker="Synn">"Wrecked."</text>
-        <text speaker="Alexia">"B-but how...?"</text>
-      </conversation>
-    </bossDialogue>
-    
-  </levelDialogue>  
+  <Scene>
+
+    <name> midBossDialogue </name>
+
+
+    <object name ="???">null* Stooooop!</object>>
+    <object name ="???">Alicia* These flames are not for strangers to mess around!</object>>
+    <object name ="Alicia">Alexia* But,hey! My name is Alicia, what's your name?</object>>
+
+
+
+  </Scene>
 </DialogueCollection>
