@@ -31,6 +31,8 @@ public class Dialogue_Manager : MonoBehaviour {
     List<Type_Dialogue> Script = new List<Type_Dialogue>();
     int line_count = 0;
     int end_of_chapter;
+    bool talking = true; 
+
 
     public GameObject Arrow;
     ///
@@ -40,31 +42,43 @@ public class Dialogue_Manager : MonoBehaviour {
     /// 
     /// </summary>
     /// 
-
+    public GameObject panel;
 
     void Start () {
+
+        //Get the panel object and shuts in in the beginning
+
+        panel.SetActive(false);
+
+        // find the loader who had the xml data
          GameObject loader = GameObject.FindGameObjectWithTag("Script_Data");
          Script =  loader.GetComponent<LoadXml>().dialogues;
 
-        //
+        //set the protrait to null
         image = (RawImage)ImagePosition.GetComponent<RawImage>();
         image.texture = (Texture)Resources.Load("null");
         Arrow.SetActive(false);
+
+        
     }
 	
 	// Update is called once per frame
 	void Update () {
-        end_of_chapter = Script.Count+1;
+        end_of_chapter = Script.Count;
 
-        if (line_count == end_of_chapter)
-        {
-            Debug.Break();
-        }
-        if (done)
+        if (done) //arrow display
         {
             Arrow.SetActive(true);
         }
-		if(Input.GetMouseButtonDown(0))
+
+
+        if (line_count >= end_of_chapter && done==true)
+        {
+
+            talking = false;
+
+        }
+        if (Input.GetMouseButtonDown(0) && talking == true)
         {
             
             if(!done)
@@ -74,6 +88,7 @@ public class Dialogue_Manager : MonoBehaviour {
             }
             if (done)
             {
+   
                 wait_time = 0.1f;
                 name.text = Script[line_count].name;
                 string processing = Script[line_count].text;
@@ -82,17 +97,22 @@ public class Dialogue_Manager : MonoBehaviour {
                 StartCoroutine(PlayText(processing, conversation));
                 Arrow.SetActive(false);
                 line_count++;
-                
+
+
             }
-            
-            
+
             //conversation.text = Script[line_count].text;
-          
+
 
             //Debug.Log(line_count);
             //Debug.Log(end_of_chapter);
-        }  
-	}
+        }
+
+
+        else if (Input.GetMouseButtonDown(0) && talking == false &&done==true)
+            panel.SetActive(false);
+
+    }
 
     IEnumerator PlayText(string story,Text conversation)
     {
@@ -159,6 +179,6 @@ public class Dialogue_Manager : MonoBehaviour {
 
         }
 
-        done = true;
+        done = true;          
     }
 }
