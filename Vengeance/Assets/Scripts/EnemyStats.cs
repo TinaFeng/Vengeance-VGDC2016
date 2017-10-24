@@ -34,6 +34,11 @@ public class EnemyStats : MonoBehaviour {
                 bossBomb.transform.position = this.transform.position;
                 bossBomb.GetComponent<SpriteRenderer>().enabled = true;
                 bossBomb.enabled = true;
+
+                //here until I figure out a solution
+                this.GetComponent<Dialogue_Trigger>().Conversation.GetComponent<Dialogue_Manager>().trigger = this.name + "-A";
+               this.GetComponent<Dialogue_Trigger>().Conversation.SetActive(true);
+               
             }
             gameObject.SetActive(false);
             player.GetComponent<PlayerController>().score += score;

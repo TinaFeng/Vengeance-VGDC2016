@@ -12,18 +12,22 @@ public class Type_Dialogue
     //make an empty game object and name it loader and just throw this script in and add the xml file
 
     //Currently just for straight up playing dialogues, figuring out triggers later
-
+    
     public string name;
     public string icon;
     public string text;
 
+    //read xmls and make it a list of tuples that consised of the name,icon,and actuall conversation.
+
 }
+
 
 public class LoadXml : MonoBehaviour {
 
     public TextAsset script;
 
     public List<Type_Dialogue> dialogues = new List<Type_Dialogue>();
+    public Dictionary<string, List<Type_Dialogue>> sections = new Dictionary<string, List<Type_Dialogue>>();
 
     private void Start()
     {
@@ -35,15 +39,21 @@ public class LoadXml : MonoBehaviour {
         XmlDocument xmlDoc = new XmlDocument();//create an xml
         xmlDoc.LoadXml(script.text);//load?
         XmlNodeList SceneList = xmlDoc.GetElementsByTagName("Scene");//array of scene Nodes
-
-        foreach(XmlNode SceneInfo in SceneList)
+        string trigger_name = "null";
+        foreach (XmlNode SceneInfo in SceneList)
         {
+            
             XmlNodeList SceneContent = SceneInfo.ChildNodes;
-
-           
+            dialogues = new List<Type_Dialogue>();
+            
             foreach(XmlNode SceneItems in SceneContent)
             {
-                if(SceneItems.Name == "object")
+                if(SceneItems.Name =="name")
+                {
+                    trigger_name = SceneItems.InnerText;
+                    //Debug.Log(SceneItems.InnerText);
+                }
+                else if(SceneItems.Name == "object")
                 {
                     Type_Dialogue line = new Type_Dialogue();
 
@@ -60,10 +70,18 @@ public class LoadXml : MonoBehaviour {
                     //Debug.Log(line.text);
                     dialogues.Add(line);
                 }
+               
 
             }
-            
+               sections.Add(trigger_name, dialogues);
         }
-        
+     
+        foreach(string k in sections.Keys)
+        {
+           for(int i = 0; i!=sections[k].Count; i++)
+            {
+                Debug.Log(sections[k][i]);
+            }
+        }
     }
 }

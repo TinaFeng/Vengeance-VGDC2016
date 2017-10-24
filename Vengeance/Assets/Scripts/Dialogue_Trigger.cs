@@ -5,19 +5,29 @@ using UnityEngine;
 public class Dialogue_Trigger : MonoBehaviour {
 
     public GameObject Conversation;
-    // Use this for initialization
 
-    bool call = true;
+
+    bool call;
+
+
+    int health;
 	void Start () {
-//        Conversation = GameObject.FindGameObjectWithTag("Dialogue_Box");
-
+        health = this.GetComponent<EnemyStats>().health;
+        call = true;
 	}
 	
-	// Update is called once per frame
+
+
 	void Update () {
-		if(isActiveAndEnabled &&call)
+        if (!isActiveAndEnabled)
+        {
+            call = true;
+        }
+
+		if(isActiveAndEnabled && call)  //if the boss showed up and we need to call it, call dialogue box by making it active
         {
             Conversation.SetActive(true);
+            Conversation.GetComponent<Dialogue_Manager>().trigger = this.name+"-P";
             call = false;
         }
 	}

@@ -2,15 +2,17 @@
 
 <DialogueCollection>
   <Scene>
-
-    <name> midBossDialogue </name>
-
-
+    <name>MidBossAlicia-P</name>
     <object name ="???">null* Stooooop!</object>>
     <object name ="???">Alicia* These flames are not for strangers to mess around!</object>>
     <object name ="Alicia">Alexia* But,hey! My name is Alicia, what's your name?</object>>
-
-
-
   </Scene>
+
+  <Scene>
+    <name>MidBossAlicia-A</name>
+    <object name ="???">null* Stooooop!</object>>
+    <object name ="???">Alicia* These flames are not for strangers to mess around!</object>>
+    <object name ="Alicia">Alexia* But,hey! My name is Alicia, what's your name?</object>>
+  </Scene>
+
 </DialogueCollection>
